@@ -4,28 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahmoud Mohamed: High School Portfolio</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Chart.js CDN for interactive charts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    
-    <!-- Link to this page's specific CSS file -->
-    <link rel="stylesheet" href="high_school.css"> 
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F7F4;
+            color: #1a202c;
+        }
+        .active-nav {
+            color: #0d9488;
+            font-weight: 600;
+            position: relative;
+        }
+        .active-nav::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #0d9488;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .project-details-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .project-details-content.expanded {
+            max-height: 500px; /* Adjust based on max content height */
+            transition: max-height 0.5s ease-in;
+        }
+        .edp-step-header {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .edp-step-header:hover {
+            background-color: #f0fdfa;
+        }
+        .edp-step-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .edp-step-content.expanded {
+            max-height: 300px; /* Adjust based on max content height */
+            transition: max-height 0.5s ease-in;
+        }
+    </style>
 </head>
 <body class="antialiased">
 
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Link back to the main homepage -->
-            <a href="../../home_page/index.html" class="text-xl md:text-2xl font-extrabold text-gray-800 hover:text-teal-600 transition duration-300">
-                &larr; Mahmoud Mohamed (Seeny)
-            </a>
+            <h1 class="text-xl md:text-2xl font-extrabold text-gray-800">
+                Mahmoud Mohamed (Seeny)
+            </h1>
             <div class="hidden md:flex space-x-8 text-gray-500 font-medium">
                 <a href="#innovation" class="hover:text-teal-600 transition duration-300 nav-link">Innovation</a>
                 <a href="#academics" class="hover:text-teal-600 transition duration-300 nav-link">Academics</a>
@@ -58,14 +116,13 @@
                 <p class="text-center text-gray-500 mb-8">Each of these science-based projects earned the highest possible grade (A+) and demonstrates mastery of interdisciplinary problem-solving and the engineering design process.</p>
                 
                 <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Projects will be dynamically loaded here by JavaScript -->
-                </div>
+                    </div>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
-                   <h4 class="text-xl md:text-2xl font-bold text-center mb-4 text-gray-800">Consistent Capstone Excellence</h4>
-                   <p class="text-center text-gray-500 mb-6">This chart visually confirms the consistent A+ grade achieved across all five demanding capstone projects, highlighting a track record of top-tier performance.</p>
+                     <h4 class="text-xl md:text-2xl font-bold text-center mb-4 text-gray-800">Consistent Capstone Excellence</h4>
+                     <p class="text-center text-gray-500 mb-6">This chart visually confirms the consistent A+ grade achieved across all five demanding capstone projects, highlighting a track record of top-tier performance.</p>
                     <div class="chart-container">
                         <canvas id="capstoneChart"></canvas>
                     </div>
@@ -75,8 +132,7 @@
                     <h4 class="text-xl md:text-2xl font-bold text-center mb-4 text-gray-800">Interactive: The Engineering Design Process</h4>
                     <p class="text-center text-gray-500 mb-8">Explore the systematic, iterative process that guided each project from concept to impactful solution. Click on each step to learn more.</p>
                     <div id="edp-process-container" class="flex flex-col gap-4">
-                        <!-- EDP Steps will be dynamically loaded here by JavaScript -->
-                    </div>
+                        </div>
                 </div>
             </div>
         </section>
@@ -105,28 +161,28 @@
                     <p class="mt-2 font-semibold text-gray-700"><a href="https://drive.google.com/drive/folders/1iB0ixFIblBZDvJwZGOQtYLVJQWmyiIxv?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Worldwide Chemistry</a></p>
                 </div>
             </div>
-               <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-8">
-                   <h4 class="text-xl md:text-2xl font-bold text-center mb-2 text-gray-800">Exceptional Self-Learning Ability</h4>
-                   <p class="text-center text-gray-500 mb-8">Demonstrated a remarkable capacity for self-directed learning by independently completing advanced math courses far ahead of the school curriculum, a skill critical for mastering new domains.</p>
-                   <div class="flex flex-wrap justify-center gap-3">
-                       <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Algebra I & II</span>
-                       <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Geometry</span>
-                       <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Trigonometry</span>
-                       <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Pre-Calculus</span>
-                       <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Multivariable Calculus</span>
-                       <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Differential Equations</span>
-                       <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Number Theory</span>
-                   </div>
-               </div>
-               <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
-                   <h4 class="text-xl md:text-2xl font-bold text-center mb-4 text-gray-800">Memberships & Additional Recognition</h4>
-                   <p class="text-center text-gray-500 mb-6">Beyond core academics, I actively engaged with scientific communities and received further accolades, broadening my perspective and validating my capabilities.</p>
-                   <ul class="list-disc list-inside space-y-2 text-gray-600 max-w-xl mx-auto">
-                       <li>Selected as a young member of the <span class="font-semibold text-teal-700">Junior Academy – The New York Academy of Sciences.</span></li>
-                       <li>Received a <span class="font-semibold text-teal-700">Successful Ambassador certificate</span> from the International Astronomy and Astrophysics Competition.</li>
-                       <li>Participated in a workshop certified by the <a href="https://drive.google.com/drive/folders/1mvQFOKbIKWYQ7Z7J6CrpbTM-PRCsNKxu?usp=sharing" target="_blank" class="text-teal-600 hover:underline font-semibold">Egyptian Space Agency</a>.</li>
-                   </ul>
-               </div>
+             <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-8">
+                 <h4 class="text-xl md:text-2xl font-bold text-center mb-2 text-gray-800">Exceptional Self-Learning Ability</h4>
+                 <p class="text-center text-gray-500 mb-8">Demonstrated a remarkable capacity for self-directed learning by independently completing advanced math courses far ahead of the school curriculum, a skill critical for mastering new domains.</p>
+                 <div class="flex flex-wrap justify-center gap-3">
+                     <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Algebra I & II</span>
+                     <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Geometry</span>
+                     <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Trigonometry</span>
+                     <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Pre-Calculus</span>
+                     <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Multivariable Calculus</span>
+                     <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Differential Equations</span>
+                     <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Number Theory</span>
+                 </div>
+             </div>
+             <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                <h4 class="text-xl md:text-2xl font-bold text-center mb-4 text-gray-800">Memberships & Additional Recognition</h4>
+                <p class="text-center text-gray-500 mb-6">Beyond core academics, I actively engaged with scientific communities and received further accolades, broadening my perspective and validating my capabilities.</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-600 max-w-xl mx-auto">
+                    <li>Selected as a young member of the <span class="font-semibold text-teal-700">Junior Academy – The New York Academy of Sciences.</span></li>
+                    <li>Received a <span class="font-semibold text-teal-700">Successful Ambassador certificate</span> from the International Astronomy and Astrophysics Competition.</li>
+                    <li>Participated in a workshop certified by the <a href="https://drive.google.com/drive/folders/1mvQFOKbIKWYQ7Z7J6CrpbTM-PRCsNKxu?usp=sharing" target="_blank" class="text-teal-600 hover:underline font-semibold">Egyptian Space Agency</a>.</li>
+                </ul>
+            </div>
         </section>
 
         <section id="leadership" class="mb-16 md:mb-24 scroll-mt-20">
@@ -167,7 +223,7 @@
                     <hr class="my-6">
                     <h4 class="text-xl md:text-2xl font-bold text-gray-800">Contribution to Student Resources</h4>
                     <span class="text-teal-600 font-semibold">Empowering Peers & Supporting Initiatives</span>
-                    <p class="mt-4 text-600">Co-authored "The Ultimate Guide to STEM Students," sharing best practices and opportunity insights. Additionally, collected data on private universities to support the STEM Unit's scholarship initiatives, demonstrating a commitment to peer support and institutional improvement.</p>
+                    <p class="mt-4 text-gray-600">Co-authored "The Ultimate Guide to STEM Students," sharing best practices and opportunity insights. Additionally, collected data on private universities to support the STEM Unit's scholarship initiatives, demonstrating a commitment to peer support and institutional improvement.</p>
                     <p class="mt-2 text-gray-600 text-sm italic">Supervisors: Doaa Ragab (STEM October's School Counselor), Ahmed Ramadan (Social Advisor, STEM October)</p>
                 </div>
 
@@ -199,7 +255,6 @@
     </footer>
 
     <script>
-        // Data for Capstone Projects
         const allProjectData = [
             {
                 id: 'ai_system',
@@ -283,7 +338,6 @@
             }
         ];
 
-        // Data for Engineering Design Process (EDP) Steps
         const edpSteps = [
             {
                 name: "Ask",
@@ -317,16 +371,13 @@
             },
             {
                 name: "Improve",
-                icon: "�",
+                icon: "🔄",
                 description: "Refine the design based on testing results. This iterative step involves making modifications and repeating the cycle until the optimal solution is achieved."
             }
         ];
 
-        // Function to render Capstone Projects dynamically
         function renderProjects() {
             const projectsContainer = document.getElementById('projects-container');
-            if (!projectsContainer) return;
-
             projectsContainer.innerHTML = ''; // Clear existing content
             allProjectData.forEach(project => {
                 const projectCard = document.createElement('div');
@@ -368,179 +419,166 @@
                             ${documentationLinkHtml}
                         </div>
                     </div>
-                    <button class="view-details-btn mt-4 text-teal-600 hover:text-teal-800 text-sm font-semibold self-start" data-target="details-${project.id}">
-                        View Details <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                    </button>
+                    <button class="view-details-btn mt-4 bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600 transition duration-300 text-sm font-semibold self-start" data-project-id="${project.id}">View Details</button>
                 `;
                 projectsContainer.appendChild(projectCard);
             });
 
-            // Add event listeners for project detail toggles
             document.querySelectorAll('.view-details-btn').forEach(button => {
-                button.addEventListener('click', function() {
-                    const targetId = this.dataset.target;
-                    const content = document.getElementById(targetId);
-                    content.classList.toggle('expanded');
-                    if (content.classList.contains('expanded')) {
-                        this.innerHTML = `Hide Details <i class="fas fa-chevron-up ml-1 text-xs"></i>`;
+                button.addEventListener('click', (event) => {
+                    const projectId = event.target.dataset.projectId;
+                    const detailsDiv = document.getElementById(`details-${projectId}`);
+                    detailsDiv.classList.toggle('expanded');
+                    if (detailsDiv.classList.contains('expanded')) {
+                        event.target.textContent = 'Hide Details';
                     } else {
-                        this.innerHTML = `View Details <i class="fas fa-chevron-down ml-1 text-xs"></i>`;
+                        event.target.textContent = 'View Details';
                     }
                 });
             });
         }
 
-        // Function to render EDP Steps dynamically
-        function renderEDPSteps() {
+        function renderEdpProcess() {
             const edpContainer = document.getElementById('edp-process-container');
-            if (!edpContainer) return;
-
             edpContainer.innerHTML = ''; // Clear existing content
-            edpSteps.forEach(step => {
+            edpSteps.forEach((step, index) => {
                 const stepElement = document.createElement('div');
-                stepElement.className = 'bg-gray-50 rounded-lg shadow-sm border border-gray-100';
+                stepElement.className = 'bg-gray-50 rounded-xl shadow-sm border border-gray-100';
                 stepElement.innerHTML = `
-                    <div class="edp-step-header p-4 flex items-center justify-between">
-                        <h4 class="font-semibold text-gray-800 text-lg">${step.icon} ${step.name}</h4>
-                        <i class="fas fa-chevron-down text-gray-500 text-sm transform transition-transform duration-300"></i>
+                    <div class="edp-step-header p-4 flex items-center gap-4">
+                        <span class="text-3xl">${step.icon}</span>
+                        <h5 class="text-lg font-bold text-gray-800">${index + 1}. ${step.name}</h5>
                     </div>
-                    <div class="edp-step-content p-4 pt-0 text-gray-600 text-sm">
-                        ${step.description}
+                    <div id="edp-content-${index}" class="edp-step-content p-4 pt-0">
+                        <p class="text-gray-600">${step.description}</p>
                     </div>
                 `;
                 edpContainer.appendChild(stepElement);
             });
 
-            // Add event listeners for EDP step toggles
-            document.querySelectorAll('.edp-step-header').forEach(header => {
-                header.addEventListener('click', function() {
-                    const content = this.nextElementSibling; // The .edp-step-content div
-                    const icon = this.querySelector('i'); // The chevron icon
-
-                    // Close other expanded steps
-                    document.querySelectorAll('.edp-step-content.expanded').forEach(expandedContent => {
-                        if (expandedContent !== content) {
-                            expandedContent.classList.remove('expanded');
-                            expandedContent.previousElementSibling.querySelector('i').classList.remove('rotate-180');
-                        }
-                    });
-
-                    // Toggle current step
-                    content.classList.toggle('expanded');
-                    icon.classList.toggle('rotate-180');
+            document.querySelectorAll('.edp-step-header').forEach((header, index) => {
+                header.addEventListener('click', () => {
+                    const contentDiv = document.getElementById(`edp-content-${index}`);
+                    contentDiv.classList.toggle('expanded');
                 });
             });
         }
 
-        // Initialize Chart.js for Capstone Chart
-        function initCapstoneChart() {
-            const ctx = document.getElementById('capstoneChart');
-            if (!ctx) return;
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjects();
+            renderEdpProcess();
 
-            new Chart(ctx, {
+            const capstoneCtx = document.getElementById('capstoneChart').getContext('2d');
+            new Chart(capstoneCtx, {
                 type: 'bar',
                 data: {
-                    labels: ['AI System', 'Energy Research', 'Building Block', 'Fuel Cell', 'Water Filter', 'COVID AI'],
+                    labels: ['AI System', 'Energy Research', 'Recycled Block', 'Microbial Cell', 'Water Filter', 'COVID AI'],
                     datasets: [{
-                        label: 'Capstone Project Grade',
-                        data: [100, 100, 100, 100, 100, 100], // All A+ (100%)
-                        backgroundColor: '#0D9488', // Teal color
-                        borderRadius: 5,
+                        label: 'All Projects Achieved A+ Grade',
+                        data: [100, 100, 100, 100, 100, 100],
+                        backgroundColor: '#0d9488',
+                        borderColor: '#047857',
+                        borderWidth: 1,
+                        borderRadius: 5
                     }]
                 },
                 options: {
+                    indexAxis: 'y',
                     responsive: true,
                     maintainAspectRatio: false,
-                    indexAxis: 'y', // Horizontal bars
-                    plugins: {
-                        legend: {
+                    scales: {
+                        x: {
                             display: false,
+                            max: 100
                         },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return context.label + ': A+'; // Custom tooltip for A+
-                                }
+                        y: {
+                            ticks: {
+                                font: {
+                                    size: 14,
+                                    weight: '500'
+                                },
+                                color: '#374151'
+                            },
+                             grid: {
+                                display: false
                             }
                         }
                     },
-                    scales: {
-                        x: {
-                            display: false, // Hide x-axis
-                            beginAtZero: true,
-                            max: 100 // Set max to 100 for A+
+                    plugins: {
+                        legend: {
+                            display: false
                         },
-                        y: {
-                            grid: {
-                                display: false // Hide y-axis grid lines
-                            }
+                        tooltip: {
+                            enabled: false
                         }
                     }
                 }
             });
-        }
 
-        // Initialize Chart.js for Mentorship Chart
-        function initMentorshipChart() {
-            const ctx = document.getElementById('mentorshipChart');
-            if (!ctx) return;
-
-            new Chart(ctx, {
+            const mentorshipCtx = document.getElementById('mentorshipChart').getContext('2d');
+            new Chart(mentorshipCtx, {
                 type: 'doughnut',
                 data: {
                     labels: ['A+ Grade Achieved'],
                     datasets: [{
-                        data: [100, 0], // 100% A+
-                        backgroundColor: ['#0D9488', '#E5E7EB'], // Teal for A+, light gray for rest
-                        borderColor: ['#0D9488', '#E5E7EB'],
+                        label: 'Students Mentored',
+                        data: [100],
+                        backgroundColor: ['#0d9488'],
+                        borderColor: ['#F8F7F4'],
+                        borderWidth: 4,
                         hoverOffset: 4
                     }]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
+                    cutout: '70%',
                     plugins: {
                         legend: {
-                            position: 'top',
-                            labels: {
-                                font: {
-                                    family: 'Inter',
-                                    size: 14
-                                },
-                                color: '#4A5568' // Gray color for legend
-                            }
+                            display: false
                         },
                         tooltip: {
                             callbacks: {
-                                label: function(context) {
-                                    const label = context.label || '';
-                                    const value = context.parsed;
-                                    return `${label}: ${value}%`;
-                                }
-                            },
-                             titleFont: {
-                                family: 'Inter',
-                                size: 14,
-                                weight: 'bold'
-                            },
-                            bodyFont: {
-                                family: 'Inter',
-                                size: 12
+                                label: () => '100% Success Rate'
                             }
+                        },
+                        title: {
+                            display: true,
+                            text: '25 Students Mentored',
+                            font: { size: 16, weight: 'bold' },
+                            color: '#1a202c',
+                            position: 'bottom'
                         }
                     }
                 }
             });
-        }
 
-        // Render all dynamic content on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProjects();
-            renderEDPSteps();
-            initCapstoneChart();
-            initMentorshipChart();
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.4
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active-nav');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active-nav');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
         });
     </script>
 </body>
 </html>
-�
