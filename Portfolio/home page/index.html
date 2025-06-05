@@ -4,44 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahmoud Mohamed: Comprehensive Portfolio Hub</title>
+    <!-- Tailwind CSS CDN for utility-first styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter for clean typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
     <!-- Link to your external CSS file -->
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="antialiased">
 
+    <!-- Header Section: Navigation Bar -->
     <header class="bg-white/90 backdrop-blur-lg sticky top-0 z-50 shadow-md">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Site Title / Logo -->
             <h1 class="text-xl md:text-2xl font-extrabold text-gray-800">
                 Mahmoud Mohamed (Seeny)
             </h1>
+            <!-- Desktop Navigation Links -->
             <div class="hidden md:flex space-x-8 text-gray-600 font-medium">
                 <a href="#summary" class="hover:text-teal-500 transition duration-300">Overview</a>
                 <a href="#achievements" class="hover:text-teal-500 transition duration-300">Impact</a>
                 <a href="#portfolios" class="hover:text-teal-500 transition duration-300">My Work</a>
                 <a href="#skills" class="hover:text-teal-500 transition duration-300">Skills</a>
+                <a href="#contact" class="hover:text-teal-500 transition duration-300">Contact</a>
             </div>
+            <!-- LinkedIn Button -->
             <a href="https://www.linkedin.com/in/mahmoudseeny" target="_blank" class="bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg btn-primary">
                 View LinkedIn
             </a>
         </nav>
     </header>
 
+    <!-- Main Content Area -->
     <main class="container mx-auto px-6 py-8 md:py-16">
 
+        <!-- Hero Section: Introduction and Profile -->
         <section id="hero" class="text-center mb-20 md:mb-28 pt-8">
-            <span class="text-teal-600 font-bold uppercase tracking-widest text-sm md:text-base hero-animate-fade-in">Your Journey to Innovation</span>
-            <h2 class="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight mt-4 hero-animate-fade-in delay-1">
+            <!-- Circular Profile Picture with specified image path -->
+            <img src="images/Seeny.jpg" alt="Mahmoud Mohamed Profile Picture" class="profile-img hero-animate-fade-in">
+            
+            <!-- Tagline and Main Heading with animation -->
+            <span class="text-teal-600 font-bold uppercase tracking-widest text-sm md:text-base hero-animate-fade-in delay-1">Your Journey to Innovation</span>
+            <h2 class="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight mt-4 hero-animate-fade-in delay-2">
                 <span class="text-gradient">Engineering Excellence.</span> <br> Digital Transformation. Data-Driven Impact.
             </h2>
+            <!-- Introductory paragraph -->
             <p class="max-w-4xl mx-auto mt-8 text-xl text-gray-700 leading-relaxed hero-animate-fade-in delay-2">
                 Welcome to my comprehensive portfolio. I am Mahmoud Mohamed, an Industrial Engineering student and Oracle ERP specialist with a proven track record in optimizing complex systems, driving digital transformation, and leveraging data for strategic insights. Explore my journey from academic rigor to real-world industrial impact and cutting-edge technical proficiency.
             </p>
         </section>
 
+        <!-- Summary Section: My Story -->
         <section id="summary" class="mb-20 md:mb-28 scroll-mt-20">
             <div class="text-center mb-16">
                 <h3 class="text-4xl md:text-5xl font-bold text-gray-800">My Story: A Journey of Continuous Growth</h3>
@@ -51,6 +69,7 @@
             </div>
         </section>
 
+        <!-- Achievements Section: Quantifiable Impact -->
         <section id="achievements" class="mb-20 md:mb-28 scroll-mt-20">
             <div class="text-center mb-16">
                 <h3 class="text-4xl md:text-5xl font-bold text-gray-800">Quantifiable Impact & Key Achievements</h3>
@@ -59,40 +78,54 @@
                 </p>
             </div>
 
+            <!-- Grid of Statistic Cards with varying backgrounds -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="stat-card">
+                <!-- Stat Card 1: Projects Completed -->
+                <div class="stat-card bg-blue-50">
+                    <i class="fas fa-project-diagram text-teal-600 text-4xl mb-4"></i>
                     <div class="stat-number text-gradient">27+</div>
                     <div class="stat-description font-semibold">Projects Completed</div>
                     <p class="text-sm text-gray-600 mt-1">Spanning ERP implementation, data analytics, automation, engineering design, and more.</p>
                 </div>
-                <div class="stat-card">
+                <!-- Stat Card 2: Automation Achieved -->
+                <div class="stat-card bg-green-50">
+                    <i class="fas fa-robot text-teal-600 text-4xl mb-4"></i>
                     <div class="stat-number text-gradient">90%</div>
                     <div class="stat-description font-semibold">Automation Achieved</div>
                     <p class="text-sm text-gray-600 mt-1">Eliminated manual data entry in key procure-to-pay workflows (Oracle ERP).</p>
                 </div>
-                <div class="stat-card">
+                <!-- Stat Card 3: Efficiency Increase -->
+                <div class="stat-card bg-yellow-50">
+                    <i class="fas fa-chart-line text-teal-600 text-4xl mb-4"></i>
                     <div class="stat-number text-gradient">8%</div>
                     <div class="stat-description font-semibold">Efficiency Increase</div>
                     <p class="text-sm text-gray-600 mt-1">Per machine through cycle time optimization at YesPac.</p>
                 </div>
-                <div class="stat-card">
+                <!-- Stat Card 4: Professionals & Peers Collaborated With -->
+                <div class="stat-card bg-purple-50">
+                    <i class="fas fa-users text-teal-600 text-4xl mb-4"></i>
                     <div class="stat-number text-gradient">70+</div>
                     <div class="stat-description font-semibold">Professionals & Peers Collaborated With</div>
                     <p class="text-sm text-gray-600 mt-1">Across diverse teams and projects, fostering cross-functional success.</p>
                 </div>
-                <div class="stat-card">
+                <!-- Stat Card 5: Technical & Business Presentations Delivered -->
+                <div class="stat-card bg-red-50">
+                    <i class="fas fa-chalkboard-teacher text-teal-600 text-4xl mb-4"></i>
                     <div class="stat-number text-gradient">100+</div>
                     <div class="stat-description font-semibold">Technical & Business Presentations Delivered</div>
                     <p class="text-sm text-gray-600 mt-1">Skilled in articulating complex ideas to diverse audiences.</p>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number text-gradient">Top 0.75%</div>
-                    <div class="stat-description font-semibold">Academic Excellence</div>
-                    <p class="text-sm text-gray-600 mt-1">Ranked among top students in national STEM program with full scholarship.</p>
+                <!-- Stat Card 6: Academic Excellence / Research Paper -->
+                <div class="stat-card bg-indigo-50">
+                    <i class="fas fa-award text-teal-600 text-4xl mb-4"></i>
+                    <div class="stat-number text-gradient">1st</div>
+                    <div class="stat-description font-semibold">Research Paper</div>
+                    <p class="text-sm text-gray-600 mt-1">Achieved top standing by publishing a research paper among 10+ STEM schools.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Portfolios Section: Links to Detailed Portfolios -->
         <section id="portfolios" class="mb-20 md:mb-28 scroll-mt-20">
             <div class="text-center mb-16">
                 <h3 class="text-4xl md:text-5xl font-bold text-gray-800">Explore My Detailed Portfolios</h3>
@@ -101,49 +134,87 @@
                 </p>
             </div>
 
+            <!-- Grid of Portfolio Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- DEPI Program Portfolio -->
-                <a href="#depi_portfolio_link" class="block section-card p-6 hover:shadow-xl transition-shadow duration-300">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-3 text-gradient">Digital Transformation & ERP (DEPI)</h4>
-                    <p class="text-gray-700 text-base">
+                <!-- DEPI Program Portfolio Card -->
+                <a href="#depi_portfolio_link" class="block section-card p-6 h-full flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/depi.jpg" alt="ERP & Digital Transformation Project Image" class="w-full h-[250px] rounded-md mb-4 object-cover portfolio-card-img">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-3 flex items-center justify-center text-gradient">
+                        <i class="fas fa-industry mr-3 text-3xl"></i> <!-- Icon for ERP/Industry -->
+                        Digital Transformation & ERP (DEPI)
+                    </h4>
+                    <p class="text-gray-700 text-base flex-grow">
                         Showcases expertise in Oracle ERP, Supply Chain Management, and leading digital transformation initiatives, highlighted by the "Golden Cart" project.
                     </p>
+                    <div class="mt-4 text-center">
+                        <span class="inline-block text-teal-600 hover:text-teal-800 font-semibold text-sm">Learn More <i class="fas fa-arrow-right ml-1"></i></span>
+                    </div>
                 </a>
 
-                <!-- Data Analytics & Programming Portfolio -->
-                <a href="#data_analytics_portfolio_link" class="block section-card p-6 hover:shadow-xl transition-shadow duration-300">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-3 text-gradient">Data Analytics & Programming</h4>
-                    <p class="text-gray-700 text-base">
+                <!-- Data Analytics & Programming Portfolio Card -->
+                <a href="#data_analytics_portfolio_link" class="block section-card p-6 h-full flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/python.png" alt="Data Analytics & Programming Project Image" class="w-full h-[250px] rounded-md mb-4 object-cover portfolio-card-img">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-3 flex items-center justify-center text-gradient">
+                        <i class="fas fa-chart-area mr-3 text-3xl"></i> <!-- Icon for Data Analytics -->
+                        Data Analytics & Programming
+                    </h4>
+                    <p class="text-gray-700 text-base flex-grow">
                         Demonstrates proficiency in Python (100 Days of Code projects) and advanced Excel (Power Query, DAX) for data analysis, automation, and application development.
                     </p>
+                    <div class="mt-4 text-center">
+                        <span class="inline-block text-teal-600 hover:text-teal-800 font-semibold text-sm">Learn More <i class="fas fa-arrow-right ml-1"></i></span>
+                    </div>
                 </a>
 
-                <!-- YesPac Internship Portfolio -->
-                <a href="#internship_portfolio_link" class="block section-card p-6 hover:shadow-xl transition-shadow duration-300">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-3 text-gradient">Industrial Engineering Internship</h4>
-                    <p class="text-gray-700 text-base">
+                <!-- YesPac Internship Portfolio Card -->
+                <a href="#internship_portfolio_link" class="block section-card p-6 h-full flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <!-- REMINDER: Please upload your image to 'images/industrial_eng.jpg' or update this path! -->
+                    <img src="images/industrial_eng.jpg" alt="Industrial Engineering Internship Project Image" class="w-full h-[250px] rounded-md mb-4 object-cover portfolio-card-img">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-3 flex items-center justify-center text-gradient">
+                        <i class="fas fa-cogs mr-3 text-3xl"></i> <!-- Icon for Industrial Engineering -->
+                        Industrial Engineering Internship
+                    </h4>
+                    <p class="text-gray-700 text-base flex-grow">
                         Highlights practical contributions to operational efficiency, process optimization, and technician training in a manufacturing environment.
                     </p>
+                    <div class="mt-4 text-center">
+                        <span class="inline-block text-teal-600 hover:text-teal-800 font-semibold text-sm">Learn More <i class="fas fa-arrow-right ml-1"></i></span>
+                    </div>
                 </a>
 
-                <!-- College Engineering Portfolio -->
-                <a href="#college_portfolio_link" class="block section-card p-6 hover:shadow-xl transition-shadow duration-300">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-3 text-gradient">College Engineering Projects</h4>
-                    <p class="text-gray-700 text-base">
+                <!-- College Engineering Portfolio Card -->
+                <a href="#college_portfolio_link" class="block section-card p-6 h-full flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/college.jpg" alt="College Engineering Projects Image" class="w-full h-[250px] rounded-md mb-4 object-cover portfolio-card-img">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-3 flex items-center justify-center text-gradient">
+                        <i class="fas fa-flask mr-3 text-3xl"></i> <!-- Icon for Engineering -->
+                        College Engineering Projects
+                    </h4>
+                    <p class="text-gray-700 text-base flex-grow">
                         Features hands-on projects in control systems, mechanical design, fluid dynamics, and manufacturing technologies.
                     </p>
+                    <div class="mt-4 text-center">
+                        <span class="inline-block text-teal-600 hover:text-teal-800 font-semibold text-sm">Learn More <i class="fas fa-arrow-right ml-1"></i></span>
+                    </div>
                 </a>
 
-                <!-- High School Portfolio -->
-                <a href="#high_school_portfolio_link" class="block section-card p-6 hover:shadow-xl transition-shadow duration-300">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-3 text-gradient">High School Achievements</h4>
-                    <p class="text-gray-700 text-base">
+                <!-- High School Portfolio Card -->
+                <a href="#high_school_portfolio_link" class="block section-card p-6 h-full flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <img src="images/seenyschool.jpg" alt="High School Achievements Image" class="w-full h-[250px] rounded-md mb-4 object-cover portfolio-card-img">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-3 flex items-center justify-center text-gradient">
+                        <i class="fas fa-graduation-cap mr-3 text-3xl"></i> <!-- Icon for Academic Excellence -->
+                        High School Achievements
+                    </h4>
+                    <p class="text-gray-700 text-base flex-grow">
                         Showcases early academic excellence, leadership, scientific inquiry, and national competition wins.
                     </p>
+                    <div class="mt-4 text-center">
+                        <span class="inline-block text-teal-600 hover:text-teal-800 font-semibold text-sm">Learn More <i class="fas fa-arrow-right ml-1"></i></span>
+                    </div>
                 </a>
             </div>
         </section>
 
+        <!-- Skills Section: Core Competencies & Technical Stack -->
         <section id="skills" class="mb-20 md:mb-28 scroll-mt-20">
             <div class="text-center mb-16">
                 <h3 class="text-4xl md:text-5xl font-bold text-gray-800">My Core Competencies & Technical Stack</h3>
@@ -154,66 +225,129 @@
 
             <div class="section-card">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Programming Languages List -->
                     <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
                         <h5 class="text-xl font-semibold text-gray-800 mb-3">Programming Languages</h5>
                         <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li>Python (Proficient)</li>
-                            <li>SQL (Foundational)</li>
-                            <li>M Language (Power Query)</li>
-                            <li>DAX (Power Pivot)</li>
-                            <li>HTML5, CSS3</li>
+                            <li class="skill-list-item"><i class="fas fa-code mr-2 text-teal-600"></i>Python (Proficient)</li>
+                            <li class="skill-list-item"><i class="fas fa-database mr-2 text-teal-600"></i>SQL (Foundational)</li>
+                            <li class="skill-list-item"><i class="fas fa-terminal mr-2 text-teal-600"></i>M Language (Power Query)</li>
+                            <li class="skill-list-item"><i class="fas fa-calculator mr-2 text-teal-600"></i>DAX (Power Pivot)</li>
+                            <li class="skill-list-item"><i class="fas fa-file-code mr-2 text-teal-600"></i>HTML5, CSS3</li>
                         </ul>
                     </div>
+                    <!-- Data Analytics & BI Tools List -->
                     <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
                         <h5 class="text-xl font-semibold text-gray-800 mb-3">Data Analytics & BI Tools</h5>
                         <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li>Microsoft Excel (Advanced)</li>
-                            <li>PivotTables, Power Query, Power Pivot</li>
-                            <li>Analysis ToolPak, Charts & Data Visualization</li>
+                            <li class="skill-list-item"><i class="fas fa-file-excel mr-2 text-teal-600"></i>Microsoft Excel (Advanced)</li>
+                            <li class="skill-list-item"><i class="fas fa-table mr-2 text-teal-600"></i>PivotTables, Power Query, Power Pivot</li>
+                            <li class="skill-list-item"><i class="fas fa-chart-bar mr-2 text-teal-600"></i>Analysis ToolPak, Charts & Data Visualization</li>
                         </ul>
                     </div>
+                    <!-- ERP & SCM Systems List -->
                     <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
                         <h5 class="text-xl font-semibold text-gray-800 mb-3">ERP & SCM Systems</h5>
                         <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li>Oracle EBS (Inventory, Order Management, Procurement, HR)</li>
-                            <li>SAP (familiarity)</li>
+                            <li class="skill-list-item"><i class="fas fa-boxes mr-2 text-teal-600"></i>Oracle EBS (Inventory, Order Management, Procurement, HR)</li>
+                            <li class="skill-list-item"><i class="fas fa-dolly-flatbed mr-2 text-teal-600"></i>SAP (familiarity)</li>
                         </ul>
                     </div>
+                    <!-- Engineering Software List -->
                     <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
                         <h5 class="text-xl font-semibold text-gray-800 mb-3">Engineering Software</h5>
                         <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li>MATLAB Simulink, Arduino IDE</li>
-                            <li>Autodesk Inventor, ANSYS, EES</li>
+                            <li class="skill-list-item"><i class="fas fa-microchip mr-2 text-teal-600"></i>MATLAB Simulink, Arduino IDE</li>
+                            <li class="skill-list-item"><i class="fas fa-pencil-ruler mr-2 text-teal-600"></i>Autodesk Inventor, ANSYS, EES</li>
                         </ul>
                     </div>
+                    <!-- Key Competencies List -->
                     <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
                         <h5 class="text-xl font-semibold text-gray-800 mb-3">Key Competencies</h5>
                         <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li>Problem-Solving & Analytical Thinking</li>
-                            <li>Process Optimization & Digital Transformation</li>
-                            <li>Systems Integration & Automation</li>
-                            <li>Project Management & Collaboration</li>
-                            <li>Continuous Learning & Adaptability</li>
+                            <li class="skill-list-item"><i class="fas fa-lightbulb mr-2 text-teal-600"></i>Problem-Solving & Analytical Thinking</li>
+                            <li class="skill-list-item"><i class="fas fa-sync-alt mr-2 text-teal-600"></i>Process Optimization & Digital Transformation</li>
+                            <li class="skill-list-item"><i class="fas fa-puzzle-piece mr-2 text-teal-600"></i>Systems Integration & Automation</li>
+                            <li class="skill-list-item"><i class="fas fa-users-cog mr-2 text-teal-600"></i>Project Management & Collaboration</li>
+                            <li class="skill-list-item"><i class="fas fa-book-open mr-2 text-teal-600"></i>Continuous Learning & Adaptability</li>
                         </ul>
                     </div>
+                    <!-- Development Tools & Concepts List -->
                     <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
                         <h5 class="text-xl font-semibold text-gray-800 mb-3">Development Tools & Concepts</h5>
                         <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li>PyCharm, Jupyter Notebooks, Google Colab</li>
-                            <li>Git, GitHub, Object-Oriented Programming (OOP)</li>
-                            <li>API Integration, File I/O, Error Handling</li>
+                            <li class="skill-list-item"><i class="fas fa-laptop-code mr-2 text-teal-600"></i>PyCharm, Jupyter Notebooks, Google Colab</li>
+                            <li class="skill-list-item"><i class="fas fa-code-branch mr-2 text-teal-600"></i>Git, GitHub, Object-Oriented Programming (OOP)</li>
+                            <li class="skill-list-item"><i class="fas fa-plug mr-2 text-teal-600"></i>API Integration, File I/O, Error Handling</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Contact Section: Contact Form -->
+        <section id="contact" class="mb-20 md:mb-28 scroll-mt-20">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold text-gray-800">Get In Touch</h3>
+                <p class="mt-5 text-lg text-gray-700 max-w-3xl mx-auto">
+                    Have a question, an opportunity, or just want to connect? Feel free to reach out through the form below.
+                </p>
+            </div>
+
+            <!-- Contact Form Card -->
+            <div class="section-card max-w-2xl mx-auto p-6 md:p-8">
+                <form action="https://formspree.io/f/mjkrkerp" method="POST" class="space-y-6">
+                    <!-- Name Input -->
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                        <input type="text" id="name" name="name" required
+                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500 sm:text-sm placeholder-gray-400"
+                               placeholder="Your Name">
+                    </div>
+                    <!-- Email Input -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" id="email" name="email" required
+                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500 sm:text-sm placeholder-gray-400"
+                               placeholder="your.email@example.com">
+                    </div>
+                    <!-- Subject Input (Optional) -->
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject (Optional)</label>
+                        <input type="text" id="subject" name="subject"
+                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500 sm:text-sm placeholder-gray-400"
+                               placeholder="Regarding a job opportunity, collaboration, etc.">
+                    </div>
+                    <!-- Message Textarea -->
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                        <textarea id="message" name="message" rows="5" required
+                                  class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500 sm:text-sm placeholder-gray-400"
+                                  placeholder="Type your message here..."></textarea>
+                    </div>
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button type="submit"
+                                class="inline-flex justify-center py-3 px-8 border border-transparent shadow-sm text-base font-medium rounded-xl text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 btn-primary">
+                            Send Message
+                        </button>
+                    </div>
+                    <!-- Disclaimer for Form Functionality -->
+                    <p class="text-center text-gray-500 text-sm italic mt-4">
+                        *This form requires a backend service (e.g., Formspree.io, Netlify Forms, or a custom API) to send emails after deployment.*
+                    </p>
+                </form>
+            </div>
+        </section>
+
     </main>
 
+    <!-- Footer Section -->
     <footer class="bg-gray-900 text-white">
         <div class="container mx-auto px-6 py-8 text-center">
             <p>&copy; 2024 Mahmoud Mohamed. All rights reserved.</p>
-            <p class="text-gray-400 mt-2">Connecting engineering excellence with digital innovation.</p>
+            <p class="text-gray-400 mt-2">"If you can't understand it, just feel it."</p>
+            <p class="text-gray-400 mt-1">Connecting engineering excellence with digital innovation.</p>
         </div>
     </footer>
 
