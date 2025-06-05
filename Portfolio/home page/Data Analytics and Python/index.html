@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons (now only for non-list elements where needed) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -39,8 +41,8 @@
         }
         .text-gradient {
             background-image: linear-gradient(to right, #0F766E, #10B981);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; /* Clip background to text shape */
+            -webkit-text-fill-color: transparent; /* Make text transparent to show background */
         }
         .expandable-content {
             max-height: 0;
@@ -50,15 +52,34 @@
         .expandable-content.expanded {
             max-height: 2000px; /* Adjusted to accommodate more content */
         }
+        /* Styling for images within project cards */
+        .project-card-img {
+            width: 100%;
+            height: 250px; /* Fixed height for consistency */
+            object-fit: cover; /* Ensures image covers the area, cropping if necessary */
+            border-radius: 0.5rem; /* Slightly rounded corners */
+            margin-bottom: 1rem; /* Space below the image */
+        }
+        /* Styling for skill list items to add a subtle border on hover */
+        .skill-list-item {
+            padding: 0.25rem 0; /* Vertical padding for each list item */
+            transition: background-color 0.2s ease-in-out; /* Smooth hover effect */
+            border-radius: 0.25rem; /* Small rounded corners for hover */
+            /* Removed flex properties and direct i styling, relying on native list-disc */
+        }
+        .skill-list-item:hover {
+            background-color: #F3F6F9; /* Lighter grey on hover */
+        }
     </style>
 </head>
 <body class="antialiased">
 
     <header class="bg-white/90 backdrop-blur-lg sticky top-0 z-50 shadow-md">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-xl md:text-2xl font-extrabold text-gray-800">
-                Mahmoud Mohamed (Seeny)
-            </h1>
+            <!-- Site Title / Logo with Back to Hub link -->
+            <a href="https://seeny-portfolio-hub.vercel.app" class="text-xl md:text-2xl font-extrabold text-gray-800 hover:text-teal-600 transition duration-300">
+                &larr; Mahmoud Mohamed (Seeny)
+            </a>
             <div class="hidden md:flex space-x-8 text-gray-600 font-medium">
                 <a href="#program-overview" class="hover:text-teal-500 transition duration-300 nav-link">Program Overview</a>
                 <a href="#excel-expertise" class="hover:text-teal-500 transition duration-300 nav-link">Excel Analytics</a>
@@ -80,7 +101,7 @@
                 <span class="text-gradient">Driving Insights</span> <br> with Python & Advanced Excel
             </h2>
             <p class="max-w-4xl mx-auto mt-8 text-xl text-gray-700 leading-relaxed">
-                This portfolio showcases my robust capabilities in data analytics and programming, honed through intensive training in Dr. Angela Yu's "100 Days of Code: The Complete Python Pro Bootcamp" and comprehensive Excel data analysis courses. I leverage these skills to extract actionable insights, automate processes, and build dynamic applications.
+                This portfolio showcases my robust capabilities in data analytics and programming, honed through intensive training in Dr. Angela Yu's "100 Days of Code: The Complete Python Pro Bootcamp" and comprehensive Excel data analysis courses. <strong class="text-teal-700">Notably, the foundational Python skills acquired have been directly applied in the development of *all* my interactive online portfolios, showcasing a real-world, tangible application of my learning.</strong> I leverage these skills to extract actionable insights, automate processes, and build dynamic applications.
             </p>
         </section>
 
@@ -402,187 +423,8 @@
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-                <!-- Excel Project 1: Salary Dashboard -->
-                <div class="section-card p-6">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">Excel Project #1: Salary Dashboard</h4>
-                    <p class="text-gray-700 text-base mb-4">Developed a comprehensive and interactive salary dashboard using advanced Excel features to visualize and analyze salary data effectively.</p>
-                    <div class="expandable-content">
-                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li><strong>Problem:</strong> Need for a clear, concise, and interactive way to present salary data for quick insights and decision-making.</li>
-                            <li><strong>Solution:</strong> Built a dynamic dashboard leveraging various Excel functionalities.</li>
-                            <li><strong>Tools Used:</strong> Excel (Formulas, Functions, Charts, Tables, Formatting).</li>
-                            <li><strong>Outcome:</strong> Enabled stakeholders to easily explore salary trends, distributions, and comparisons through a user-friendly interface.</li>
-                        </ul>
-                        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
-                            <p>View Documentation: <a href="https://drive.google.com/drive/folders/1lLcfMOTIDLj7H3TTrDFSRYfX1TT4vEQL?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
-                        </div>
-                    </div>
-                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
-                </div>
-
-                <!-- Excel Project 2: Salary Analysis -->
-                <div class="section-card p-6">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">Excel Project #2: Salary Analysis</h4>
-                    <p class="text-gray-700 text-base mb-4">Conducted in-depth salary analysis using advanced Excel tools, including PivotTables, Power Query, and DAX, to derive actionable insights.</p>
-                    <div class="expandable-content">
-                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li><strong>Problem:</strong> Extracting meaningful insights from raw salary datasets to understand underlying patterns and inform compensation strategies.</li>
-                            <li><strong>Solution:</strong> Performed comprehensive data analysis and modeling.</li>
-                            <li><strong>Tools Used:</strong> Excel (PivotTables, Power Query, Power Pivot, DAX, Analysis ToolPak).</li>
-                            <li><strong>Outcome:</strong> Identified key factors influencing salaries, summarized data efficiently, and prepared the data for further reporting, ready for sharing via Git & GitHub.</li>
-                        </ul>
-                        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
-                            <p>View Documentation: <a href="https://drive.google.com/drive/folders/1IgMl48ucxZsHw5xkukKRwmVyXoehnyhV?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
-                        </div>
-                    </div>
-                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
-                </div>
-
-                <!-- Python Project 1: Flight Deal Finder Capstone -->
-                <div class="section-card p-6">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">Python Project: Flight Deal Finder Capstone</h4>
-                    <p class="text-gray-700 text-base mb-4">Developed an automated flight deal notification system, demonstrating API integration, data comparison, and automated communication.</p>
-                    <div class="expandable-content">
-                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li><strong>Problem:</strong> Manually tracking cheap flight deals is time-consuming and inefficient for travelers.</li>
-                            <li><strong>Solution:</strong> Built a Python application that fetches flight prices from an API (Amadeus), compares them against desired prices in a Google Sheet (via Sheety API), and sends notifications (e.g., SMS/email) if a deal is found.</li>
-                            <li><strong>Tools Used:</strong> Python, Requests library, Sheety API, Amadeus API, Google Sheets.</li>
-                            <li><strong>Outcome:</strong> Created a proactive system to alert users to significant flight price drops, saving time and potentially money.</li>
-                        </ul>
-                        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
-                            <p>View Documentation (Days 39 & 40): <a href="https://drive.google.com/drive/folders/1rgsIBDjjniMgYLpyze5ypJa19J9UcA_y?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
-                        </div>
-                    </div>
-                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
-                </div>
-
-                <!-- Python Project 2: Password Manager GUI App -->
-                <div class="section-card p-6">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">Python Project: Password Manager GUI App</h4>
-                    <p class="text-gray-700 text-base mb-4">Designed and implemented a secure desktop password manager with a graphical user interface, demonstrating GUI development, file handling, and error management.</p>
-                    <div class="expandable-content">
-                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li><strong>Problem:</strong> Users need a secure and convenient way to store and retrieve website credentials.</li>
-                            <li><strong>Solution:</strong> Developed a Tkinter-based GUI application that allows users to generate, save (to JSON), and search for passwords, incorporating robust error handling.</li>
-                            <li><strong>Tools Used:</strong> Python, Tkinter, JSON module.</li>
-                            <li><strong>Outcome:</strong> Created a functional and user-friendly desktop application for secure password management, showcasing skills in GUI design, file I/O, and exception handling.</li>
-                        </ul>
-                        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
-                            <p>View Documentation (Day 29): <a href="https://drive.google.com/drive/folders/1s-Ur8AW-CtVfRQflm1X2y_gZjOhBGBm0?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
-                        </div>
-                    </div>
-                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
-                </div>
-
-                <!-- Python Project 3: Classic Arcade Games (Snake / Pong) -->
-                <div class="section-card p-6">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">Python Project: Classic Arcade Games (Snake / Pong)</h4>
-                    <p class="text-gray-700 text-base mb-4">Built classic arcade games like Snake and Pong, demonstrating object-oriented programming, game logic, and graphical rendering with Python's Turtle module.</p>
-                    <div class="expandable-content">
-                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li><strong>Problem:</strong> Learning core programming concepts and OOP through engaging, visual projects.</li>
-                            <li><strong>Solution:</strong> Developed fully functional versions of Snake and Pong, implementing game mechanics, collision detection, scoring, and user input handling.</li>
-                            <li><strong>Tools Used:</strong> Python, Turtle module.</li>
-                            <li><strong>Outcome:</strong> Solidified understanding of OOP principles, game loop design, and basic graphics programming, resulting in playable applications.</li>
-                        </ul>
-                        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
-                            <p>View Documentation (Day 20 - Snake, Day 22 - Pong): Access Snake Game files: <a href="https://drive.google.com/drive/folders/1Bc1ov0dWPqHNlKvtMtbpmfOetOBV_9F9?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder (Snake)</a> | Access Pong Game files: <a href="https://drive.google.com/drive/folders/1dq6xeWpnSyQs8w-_RucDjJ-5r6DVsGwi?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder (Pong)</a></p>
-                        </div>
-                    </div>
-                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
-                </div>
-
-                <!-- Python Project: Pomodoro App GUI -->
-                <div class="section-card p-6">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">Python Project: Pomodoro App GUI</h4>
-                    <p class="text-gray-700 text-base mb-4">Developed a Pomodoro timer application with a graphical user interface, demonstrating GUI development, timer logic, and visual feedback.</p>
-                    <div class="expandable-content">
-                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li><strong>Problem:</strong> Users need a productivity tool to manage work and break intervals.</li>
-                            <li><strong>Solution:</strong> Built a Tkinter-based GUI application that implements the Pomodoro technique with customizable timings and visual cues.</li>
-                            <li><strong>Tools Used:</strong> Python, Tkinter, `time` module.</li>
-                            <li><strong>Outcome:</strong> A functional desktop application for time management, showcasing GUI design and event handling.</li>
-                        </ul>
-                        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
-                            <p>View Documentation (Day 28): <a href="https://drive.google.com/drive/folders/1Nvnlg2j4VMKjvJJG1gxtyQs8Jvkyo0d-?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
-                        </div>
-                    </div>
-                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
-                </div>
-
-                <!-- Python Project: Flash Card App -->
-                <div class="section-card p-6">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">Python Project: Flash Card App</h4>
-                    <p class="text-gray-700 text-base mb-4">Designed and implemented a flash card application with a GUI, enabling users to learn new vocabulary or concepts interactively through CSV file handling.</p>
-                    <div class="expandable-content">
-                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li><strong>Problem:</strong> Creating an interactive tool for language learning or memorization.</li>
-                            <li><strong>Solution:</strong> Developed a Tkinter-based GUI application that displays flashcards, tracks known/unknown words, and allows users to progress through a word list loaded from a CSV file.</li>
-                            <li><strong>Tools Used:</strong> Python, Tkinter, Pandas (or CSV module for file handling).</li>
-                            <li><strong>Outcome:</strong> A practical learning application demonstrating GUI development, file I/O, and basic data management.</li>
-                        </ul>
-                        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
-                            <p>View Documentation (Day 31): <a href="https://drive.google.com/drive/folders/1czIsJEUBW6UhhqIbnpBsuONIUkc4yTtV?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
-                        </div>
-                    </div>
-                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
-                </div>
-
-                <!-- Python Project: Quizzler App (GUI with API) -->
-                <div class="section-card p-6">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">Python Project: Quizzler App (GUI with API)</h4>
-                    <p class="text-gray-700 text-base mb-4">Developed a dynamic quiz application with a graphical user interface that fetches questions from an external API, demonstrating advanced GUI design and API integration.</p>
-                    <div class="expandable-content">
-                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li><strong>Problem:</strong> Creating a quiz app with fresh, dynamic content.</li>
-                            <li><strong>Solution:</strong> Built a Tkinter GUI that interacts with a trivia API (e.g., Open Trivia DB) to display questions, handle user input, and provide real-time feedback.</li>
-                            <li><strong>Tools Used:</strong> Python, Tkinter, Requests library (for API calls).</li>
-                            <li><strong>Outcome:</strong> An engaging and interactive quiz application showcasing complex GUI development and seamless external data integration.</li>
-                        </ul>
-                        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
-                            <p>View Documentation (Day 34): <a href="https://drive.google.com/drive/folders/1LI9NsVD5si9TSbfd4n8J0qmj3jSE8vSv?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
-                        </div>
-                    </div>
-                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
-                </div>
-
-                <!-- Python Project: Habit Tracker (API + Pixela) -->
-                <div class="section-card p-6">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">Python Project: Habit Tracker (API + Pixela)</h4>
-                    <p class="text-gray-700 text-base mb-4">Created a personal habit tracking system that interacts with the Pixela API to log daily progress, demonstrating advanced API interaction (POST, PUT, DELETE requests) and data visualization through an external service.</p>
-                    <div class="expandable-content">
-                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li><strong>Problem:</strong> Tracking personal habits and visualizing progress over time.</li>
-                            <li><strong>Solution:</strong> Developed a Python script that uses the Pixela API to create user graphs, post daily pixel data, update entries, and delete data, effectively building a digital habit tracker.</li>
-                            <li><strong>Tools Used:</strong> Python, Requests library, Pixela API.</li>
-                            <li><strong>Outcome:</strong> A functional backend for a habit tracking system, showcasing robust API communication and data management.</li>
-                        </ul>
-                        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
-                            <p>View Documentation (Day 37): <a href="https://drive.google.com/drive/folders/1zTreu13kGFimECCxwuVW14SBWOBa_I6s?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
-                        </div>
-                    </div>
-                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
-                </div>
-
-                <!-- Python Project: Workout Tracking (Google Sheets + NLP) -->
-                <div class="section-card p-6">
-                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">Python Project: Workout Tracking (Google Sheets + NLP)</h4>
-                    <p class="text-gray-700 text-base mb-4">Developed an intelligent workout tracker that takes natural language input, processes it using Natural Language Processing (NLP), and logs workout data to Google Sheets via APIs, demonstrating advanced data integration and text processing.</p>
-                    <div class="expandable-content">
-                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li><strong>Problem:</strong> Manually logging workout details can be cumbersome; desire for a more intuitive input method.</li>
-                            <li><strong>Solution:</strong> Built a Python application that uses a Natural Language Processing API (e.g., Nutritionix as per course) to parse user-entered workout descriptions, then sends the structured data to a Google Sheet via the Sheety API.</li>
-                            <li><strong>Tools Used:</strong> Python, Requests library, Google Sheets API (via Sheety), NLP API.</li>
-                            <li><strong>Outcome:</strong> A smart, automated workout logging system that simplifies data entry and provides a structured record of fitness activities.</li>
-                        </ul>
-                        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
-                            <p>View Documentation (Day 38): <a href="https://drive.google.com/drive/folders/1j94szA3OFZcUFac20tRdVZashGMCjYfZ?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
-                        </div>
-                    </div>
-                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
-                </div>
-
+            <div id="key-projects-container" class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Projects will be dynamically loaded here by JavaScript -->
             </div>
         </section>
 
@@ -600,60 +442,57 @@
                     <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
                         <h5 class="text-xl font-semibold text-gray-800 mb-3">Programming Languages</h5>
                         <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li>Python (Proficient)</li>
-                            <li>SQL (Foundational)</li>
-                            <li>M Language (Power Query)</li>
-                            <li>DAX (Power Pivot)</li>
-                            <li>HTML5</li>
-                            <li>CSS3</li>
+                            <li class="skill-list-item">Python (Proficient)</li>
+                            <li class="skill-list-item">SQL (Foundational)</li>
+                            <li class="skill-list-item">M Language (Power Query)</li>
+                            <li class="skill-list-item">DAX (Power Pivot)</li>
+                            <li class="skill-list-item">HTML5</li>
+                            <li class="skill-list-item">CSS3</li>
                         </ul>
                     </div>
                     <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
                         <h5 class="text-xl font-semibold text-gray-800 mb-3">Python Libraries & Frameworks</h5>
                         <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li><strong>Data Manipulation:</strong> Pandas, NumPy</li>
-                            <li><strong>GUI Development:</strong> Tkinter, Turtle</li>
-                            <li><strong>Web Requests/APIs:</strong> Requests</li>
-                            <li><strong>Automation/Scripting:</strong> Smtplib, Datetime</li>
-                            <li><strong>Web Scraping (Intro):</strong> BeautifulSoup (Course mention, but beyond Day 44)</li>
-                            <li><strong>Machine Learning (Intro):</strong> Scikit-learn (Course mention, but beyond Day 44)</li>
-                            <li><strong>Web Frameworks (Intro):</strong> Flask (Course mention, but beyond Day 44)</li>
+                            <li class="skill-list-item"><strong>Data Manipulation:</strong> Pandas, NumPy</li>
+                            <li class="skill-list-item"><strong>GUI Development:</strong> Tkinter, Turtle</li>
+                            <li class="skill-list-item"><strong>Web Requests/APIs:</strong> Requests</li>
+                            <li class="skill-list-item"><strong>Automation/Scripting:</strong> Smtplib, Datetime</li>
+                            <li class="skill-list-item"><strong>Web Scraping (Intro):</strong> BeautifulSoup (Course mention, but beyond Day 44)</li>
+                            <li class="skill-list-item"><strong>Machine Learning (Intro):</strong> Scikit-learn (Course mention, but beyond Day 44)</li>
+                            <li class="skill-list-item"><strong>Web Frameworks (Intro):</strong> Flask (Course mention, but beyond Day 44)</li>
                         </ul>
                     </div>
                     <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
                         <h5 class="text-xl font-semibold text-gray-800 mb-3">Data Analytics Tools & Concepts</h5>
                         <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li>Microsoft Excel (Advanced)</li>
-                            <li>Formulas & Functions (Logical, Math, Statistical, Array, Lookup, Text, Date/Time)</li>
-                            <li>Charts & Data Visualization</li>
-                            <li>PivotTables & PivotCharts</li>
-                            <li>Analysis Add-ins & ToolPak</li>
-                            <li>Power Query (Data Transformation)</li>
-                            <li>Power Pivot (Data Modeling)</li>
-                            <li>Demand Forecasting (Conceptual)</li>
-                            <li>Data Cleaning & Preprocessing (Excel, Python)</li>
-                            <li>Exploratory Data Analysis (Excel, Python)</li>
+                            <li class="skill-list-item">Microsoft Excel (Advanced)</li>
+                            <li class="skill-list-item">Formulas & Functions (Logical, Math, Statistical, Array, Lookup, Text, Date/Time)</li>
+                            <li class="skill-list-item">Charts & Data Visualization</li>
+                            <li class="skill-list-item">PivotTables & PivotCharts</li>
+                            <li class="skill-list-item">Analysis Add-ins & ToolPak</li>
+                            <li class="skill-list-item">Power Query (Data Transformation)</li>
+                            <li class="skill-list-item">Power Pivot (Data Modeling)</li>
+                            <li class="skill-list-item">Demand Forecasting (Conceptual)</li>
+                            <li class="skill-list-item">Data Cleaning & Preprocessing (Excel, Python)</li>
+                            <li class="skill-list-item">Exploratory Data Analysis (Excel, Python)</li>
                         </ul>
                     </div>
                     <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
                         <h5 class="text-xl font-semibold text-gray-800 mb-3">Development Environments & Version Control</h5>
                         <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li>PyCharm</li>
-                            <li>Jupyter Notebooks</li>
-                            <li>Google Colab</li>
-                            <li>Git (Basic)</li>
-                            <li>GitHub (Basic for project sharing)</li>
+                            <li class="skill-list-item">PyCharm, Jupyter Notebooks, Google Colab</li>
+                            <li class="skill-list-item">Git, GitHub (Basic for project sharing)</li>
                         </ul>
                     </div>
                     <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
                         <h5 class="text-xl font-semibold text-gray-800 mb-3">Core Programming Concepts</h5>
                         <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
-                            <li>Object-Oriented Programming (OOP)</li>
-                            <li>Error Handling & Exception Management</li>
-                            <li>Debugging Techniques</li>
-                            <li>File I/O</li>
-                            <li>API Integration</li>
-                            <li>Modular Programming</li>
+                            <li class="skill-list-item">Object-Oriented Programming (OOP)</li>
+                            <li class="skill-list-item">Error Handling & Exception Management</li>
+                            <li class="skill-list-item">Debugging Techniques</li>
+                            <li class="skill-list-item">File I/O</li>
+                            <li class="skill-list-item">API Integration</li>
+                            <li class="skill-list-item">Modular Programming</li>
                         </ul>
                     </div>
                 </div>
@@ -688,15 +527,191 @@
     <footer class="bg-gray-900 text-white">
         <div class="container mx-auto px-6 py-8 text-center">
             <p>&copy; 2024 Mahmoud Mohamed. All rights reserved.</p>
-            <p class="text-gray-400 mt-2">This interactive portfolio showcases my data analytics and programming expertise.</p>
+            <p class="text-gray-400 mt-2">"If you can't understand it, just feel it."</p>
+            <p class="text-gray-400 mt-1">Connecting engineering excellence with digital innovation.</p>
+            <p class="text-gray-400 text-sm mt-4">Phone: +20 1127961626</p>
         </div>
     </footer>
 
     <script>
+        const keyProjectsData = [
+            {
+                id: 'excel_salary_dashboard',
+                title: "Excel Project #1: Salary Dashboard",
+                summary: "Developed a comprehensive and interactive salary dashboard using advanced Excel features to visualize and analyze salary data effectively.",
+                details: `
+                    <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                        <li><strong>Problem:</strong> Need for a clear, concise, and interactive way to present salary data for quick insights and decision-making.</li>
+                        <li><strong>Solution:</strong> Built a dynamic dashboard leveraging various Excel functionalities.</li>
+                        <li><strong>Tools Used:</strong> Excel (Formulas, Functions, Charts, Tables, Formatting).</li>
+                        <li><strong>Outcome:</strong> Enabled stakeholders to easily explore salary trends, distributions, and comparisons through a user-friendly interface.</li>
+                    </ul>
+                    <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                        <p>View Documentation: <a href="https://drive.google.com/drive/folders/1lLcfMOTIDLj7H3TTrDFSRYfX1TT4vEQL?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                    </div>
+                `,
+                image: "data images/salary.PNG" // Updated image path
+            },
+            {
+                id: 'excel_salary_analysis',
+                title: "Excel Project #2: Salary Analysis",
+                summary: "Conducted in-depth salary analysis using advanced Excel tools, including PivotTables, Power Query, and DAX, to derive actionable insights.",
+                details: `
+                    <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                        <li><strong>Problem:</strong> Extracting meaningful insights from raw salary datasets to understand underlying patterns and inform compensation strategies.</li>
+                        <li><strong>Solution:</strong> Performed comprehensive data analysis and modeling.</li>
+                        <li><strong>Tools Used:</strong> Excel (PivotTables, Power Query, Power Pivot, DAX, Analysis ToolPak).</li>
+                        <li><strong>Outcome:</strong> Identified key factors influencing salaries, summarized data efficiently, and prepared the data for further reporting, ready for sharing via Git & GitHub.</li>
+                    </ul>
+                    <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                        <p>View Documentation: <a href="https://drive.google.com/drive/folders/1IgMl48ucxZsHw5xkukKRwmVyXoehnyhV?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                    </div>
+                `,
+                image: "data images/analysis.PNG" // Updated image path
+            },
+            {
+                id: 'python_password_manager',
+                title: "Python Project: Password Manager GUI App",
+                summary: "Designed and implemented a secure desktop password manager with a graphical user interface, demonstrating GUI development, file handling, and error management.",
+                details: `
+                    <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                        <li><strong>Problem:</strong> Users need a secure and convenient way to store and retrieve website credentials.</li>
+                        <li><strong>Solution:</strong> Developed a Tkinter-based GUI application that allows users to generate, save (to JSON), and search for passwords, incorporating robust error handling.</li>
+                        <li><strong>Tools Used:</strong> Python, Tkinter, JSON module.</li>
+                        <li><strong>Outcome:</strong> Created a functional and user-friendly desktop application for secure password management, showcasing skills in GUI design, file I/O, and exception handling.</li>
+                    </ul>
+                    <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                        <p>View Documentation (Day 29): <a href="https://drive.google.com/drive/folders/1s-Ur8AW-CtVfRQflm1X2y_gZjOhBGBm0?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                    </div>
+                `,
+                image: "data images/pass manager.PNG" // Updated image path
+            },
+            {
+                id: 'python_pomodoro_app',
+                title: "Python Project: Pomodoro App GUI",
+                summary: "Developed a Pomodoro timer application with a graphical user interface, demonstrating GUI development, timer logic, and visual feedback.",
+                details: `
+                    <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                        <li><strong>Problem:</strong> Users need a productivity tool to manage work and break intervals.</li>
+                        <li><strong>Solution:</strong> Built a Tkinter-based GUI application that implements the Pomodoro technique with customizable timings and visual cues.</li>
+                        <li><strong>Tools Used:</strong> Python, Tkinter, \`time\` module.</li>
+                        <li><strong>Outcome:</strong> A functional desktop application for time management, showcasing GUI design and event handling.</li>
+                    </ul>
+                    <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                        <p>View Documentation (Day 28): <a href="https://drive.google.com/drive/folders/1Nvnlg2j4VMKjvJJG1gxtyQs8Jvkyo0d-?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                    </div>
+                `,
+                image: "data images/pomo.PNG" // Updated image path
+            },
+            {
+                id: 'python_quizzler_app',
+                title: "Python Project: Quizzler App (GUI with API)",
+                summary: "Developed a dynamic quiz application with a graphical user interface that fetches questions from an external API, demonstrating advanced GUI design and API integration.",
+                details: `
+                    <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                        <li><strong>Problem:</strong> Creating a quiz app with fresh, dynamic content.</li>
+                        <li><strong>Solution:</strong> Built a Tkinter GUI that interacts with a trivia API (e.g., Open Trivia DB) to display questions, handle user input, and provide real-time feedback.</li>
+                        <li><strong>Tools Used:</strong> Python, Tkinter, Requests library (for API calls).</li>
+                        <li><strong>Outcome:</strong> An engaging and interactive quiz application showcasing complex GUI development and seamless external data integration.</li>
+                    </ul>
+                    <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                        <p>View Documentation (Day 34): <a href="https://drive.google.com/drive/folders/1LI9NsVD5si9TSbfd4n8J0qmj3jSE8vSv?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                    </div>
+                `,
+                image: "data images/quizzler.PNG" // Updated image path
+            },
+            {
+                id: 'python_arcade_games',
+                title: "Python Project: Classic Arcade Games (Snake / Pong)",
+                summary: "Built classic arcade games like Snake and Pong, demonstrating object-oriented programming, game logic, and graphical rendering with Python's Turtle module.",
+                details: `
+                    <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                        <li><strong>Problem:</strong> Learning core programming concepts and OOP through engaging, visual projects.</li>
+                        <li><strong>Solution:</strong> Developed fully functional versions of Snake and Pong, implementing game mechanics, collision detection, scoring, and user input handling.</li>
+                        <li><strong>Tools Used:</strong> Python, Turtle module.</li>
+                        <li><strong>Outcome:</strong> Solidified understanding of OOP principles, game loop design, and basic graphics programming, resulting in playable applications.</li>
+                    </ul>
+                    <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                        <p>View Documentation (Days 20 - Snake, Day 22 - Pong): Access Snake Game files: <a href="https://drive.google.com/drive/folders/1Bc1ov0dWPqHNlKvtMtbpmfOetOBV_9F9?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder (Snake)</a> | Access Pong Game files: <a href="https://drive.google.com/drive/folders/1dq6xeWpnSyQs8w-_RucDjJ-5r6DVsGwi?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder (Pong)</a></p>
+                    </div>
+                `,
+                image: "data images/snake.PNG" // Updated image path
+            },
+            {
+                id: 'python_workout_tracking',
+                title: "Python Project: Workout Tracking (Google Sheets + NLP)",
+                summary: "Developed an intelligent workout tracker that takes natural language input, processes it using Natural Language Processing (NLP), and logs workout data to Google Sheets via APIs, demonstrating advanced data integration and text processing.",
+                details: `
+                    <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                        <li><strong>Problem:</strong> Manually logging workout details can be cumbersome; desire for a more intuitive input method.</li>
+                        <li><strong>Solution:</strong> Built a Python application that uses a Natural Language Processing API (e.g., Nutritionix as per course) to parse user-entered workout descriptions, then sends the structured data to a Google Sheet via the Sheety API.</li>
+                        <li><strong>Tools Used:</strong> Python, Tkinter, Requests library, Google Sheets API (via Sheety), NLP API.</li>
+                        <li><strong>Outcome:</strong> A smart, automated workout logging system that simplifies data entry and provides a structured record of fitness activities.</li>
+                    </ul>
+                    <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                        <p>View Documentation (Day 38): <a href="https://drive.google.com/drive/folders/1j94szA3OFZcUFac20tRdVZashGMCjYfZ?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                    </div>
+                `,
+                image: "data images/workout.PNG" // Updated image path
+            },
+            {
+                id: 'python_flash_card_app',
+                title: "Python Project: Flash Card App",
+                summary: "Designed and implemented a flash card application with a GUI, enabling users to learn new vocabulary or concepts interactively through CSV file handling. This project demonstrates practical GUI development and data interaction, offering a glimpse into how interactive learning tools can be built.",
+                details: `
+                    <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                        <li><strong>Problem:</strong> Creating an interactive tool for language learning or memorization.</li>
+                        <li><strong>Solution:</strong> Developed a Tkinter-based GUI application that displays flashcards, tracks known/unknown words, and allows users to progress through a word list loaded from a CSV file.</li>
+                        <li><strong>Tools Used:</strong> Python, Tkinter, Pandas (or CSV module for file handling).</li>
+                        <li><strong>Outcome:</strong> A practical learning application demonstrating GUI development, file I/O, and basic data management. This interactive application provides a solid foundation for more complex educational tools and showcases the power of Python for creating user-friendly desktop applications.</li>
+                    </ul>
+                    <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                        <p>View Documentation (Day 31): <a href="https://drive.google.com/drive/folders/1czIsJEUBW6UhhqIbnpBsuONIUkc4yTtV?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                    </div>
+                `,
+                image: "data images/flash.PNG" // Updated image path
+            }
+        ];
+
+        function renderKeyProjects() {
+            const container = document.getElementById('key-projects-container');
+            container.innerHTML = ''; // Clear existing content
+            keyProjectsData.forEach(project => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'section-card p-6'; // Apply existing card style
+                
+                projectCard.innerHTML = `
+                    <div>
+                        <img src="${project.image}" alt="${project.title} Image" class="project-card-img" onerror="this.onerror=null;this.src='https://placehold.co/600x200/E5E7EB/6B7280?text=Image+Not+Found';">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">${project.title}</h4>
+                        <p class="text-gray-700 text-base mb-4">${project.summary}</p>
+                        <div id="details-${project.id}" class="expandable-content">
+                            ${project.details}
+                        </div>
+                    </div>
+                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg" data-item-id="${project.id}">View Details</button>
+                `;
+                container.appendChild(projectCard);
+            });
+
+            document.querySelectorAll('#key-projects-container .expand-button').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const itemId = event.target.dataset.itemId;
+                    const detailsDiv = document.getElementById(`details-${itemId}`);
+                    detailsDiv.classList.toggle('expanded');
+                    if (detailsDiv.classList.contains('expanded')) {
+                        event.target.textContent = 'Hide Details';
+                    } else {
+                        event.target.textContent = 'View Details';
+                    }
+                });
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const navLinks = document.querySelectorAll('.nav-link');
             const sections = document.querySelectorAll('section');
-            const expandButtons = document.querySelectorAll('.expand-button');
+            const expandButtons = document.querySelectorAll('.expand-button'); // For Excel/Python skill details
 
             // Smooth scroll and active nav link logic
             const observerOptions = {
@@ -722,7 +737,7 @@
                 observer.observe(section);
             });
 
-            // Expand/Collapse functionality for content sections
+            // Expand/Collapse functionality for content sections (Excel/Python skills)
             expandButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const content = button.previousElementSibling; // The div containing the expandable content
@@ -734,6 +749,9 @@
                     }
                 });
             });
+
+            // Render Key Projects
+            renderKeyProjects();
         });
     </script>
 </body>
