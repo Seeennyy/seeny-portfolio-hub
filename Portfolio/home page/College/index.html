@@ -9,7 +9,641 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        body {<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahmoud Mohamed: College Projects Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
         body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F7F4;
+            color: #1a202c;
+        }
+        .active-nav {
+            color: #0d9488;
+            font-weight: 600;
+            position: relative;
+        }
+        .active-nav::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #0d9488;
+        }
+        .project-details-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .project-details-content.expanded {
+            max-height: 1200px; /* Adjusted to ensure all content is visible */
+            transition: max-height 0.5s ease-in;
+        }
+        /* General card styling, consistent with other portfolio pages */
+        .section-card {
+            background-color: #FFFFFF;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
+            transition: all 0.3s ease-in-out;
+            border: 1px solid transparent;
+        }
+        .section-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.15), 0 6px 10px -3px rgba(0, 0, 0, 0.08);
+            border-color: #10B981;
+        }
+        .btn-call-to-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+            margin-top: 1rem;
+        }
+        .btn-call-to-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+        }
+        .btn-contact {
+            background-color: #0D9488; /* Teal-600 */
+            color: white;
+        }
+        .btn-contact:hover {
+            background-color: #0F766E; /* Darker Teal */
+        }
+        .btn-linkedin {
+            background-color: #0077B5; /* LinkedIn Blue */
+            color: white;
+        }
+        .btn-linkedin:hover {
+            background-color: #005582; /* Darker LinkedIn Blue */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Link back to the main homepage -->
+            <a href="https://seeny-portfolio-hub.vercel.app" class="text-xl md:text-2xl font-extrabold text-gray-800 hover:text-teal-600 transition duration-300">
+                &larr; Mahmoud Mohamed (Seeny)
+            </a>
+            <div class="hidden md:flex space-x-8 text-gray-500 font-medium">
+                <a href="#mechatronics" class="hover:text-teal-600 transition duration-300 nav-link">Mechatronics & Control</a>
+                <a href="#manufacturing" class="hover:text-teal-600 transition duration-300 nav-link">Manufacturing & Design</a>
+                <a href="#industrial" class="hover:text-teal-600 transition duration-300 nav-link">Industrial Operations</a>
+                <a href="#skills" class="hover:text-teal-600 transition duration-300 nav-link">Skills & Tools</a>
+                <a href="#courses" class="hover:text-teal-600 transition duration-300 nav-link">Courses Taken</a>
+            </div>
+            <a href="https://www.linkedin.com/in/mahmoudseeny" target="_blank" class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-md">
+                View LinkedIn
+            </a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8 md:py-16">
+
+        <section id="hero" class="text-center mb-16 md:mb-24">
+            <span class="text-teal-600 font-semibold uppercase tracking-wider">College Projects Portfolio</span>
+            <h2 class="text-4xl md:text-6xl font-extrabold text-gray-800 mt-2">Engineering Solutions in Production & Design</h2>
+            <p class="max-w-3xl mx-auto mt-6 text-lg text-gray-600">
+                Showcasing a diverse range of projects from Ain Shams University, Faculty of Engineering, demonstrating expertise in Industrial Engineering, Product Design, Manufacturing Processes, and Digital Control.
+            </p>
+        </section>
+
+        <!-- Section 1: Mechatronics & Control Systems -->
+        <section id="mechatronics" class="mb-16 md:mb-24 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-800">Mechatronics & Digital Control Systems</h3>
+                <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Integrating mechanical, electrical, and computer engineering to create intelligent, automated solutions with precise control.</p>
+            </div>
+
+            <div id="mechatronics-projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Projects will be injected here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Section 2: Advanced Manufacturing & Design -->
+        <section id="manufacturing" class="mb-16 md:mb-24 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-800">Advanced Manufacturing & Product Design</h3>
+                <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">From conceptual design to precision fabrication, mastering the processes that bring engineering ideas to life.</p>
+            </div>
+
+            <div id="manufacturing-projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Projects will be injected here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Section 3: Industrial Operations & Energy Systems -->
+        <section id="industrial" class="mb-16 md:mb-24 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-800">Industrial Operations & Energy Systems</h3>
+                <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Optimizing complex systems for efficiency, safety, and sustainability in industrial environments.</p>
+            </div>
+
+            <div id="industrial-projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Projects will be injected here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Section 4: Key Skills & Tools -->
+        <section id="skills" class="mb-16 md:mb-24 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-800">Key Skills & Technical Proficiency</h3>
+                <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">A comprehensive overview of the engineering tools, programming languages, and core competencies developed through rigorous academic projects.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Industrial Engineering</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Quality Management</li>
+                        <li>Process Optimization</li>
+                        <li>Supply Chain Management</li>
+                        <li>Inventory Control</li>
+                        <li>Logistics</li>
+                        <li>Maintenance Planning</li>
+                        <li>Safety Management</li>
+                        <li>Risk Mitigation</li>
+                        <li>Strategic Planning</li>
+                        <li>Continuous Improvement (PDCA)</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Product Design</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Mechanical Design</li>
+                        <li>Precision Design</li>
+                        <li>Material Selection</li>
+                        <li>CAD Software (Autodesk Inventor, SolidWorks - implied)</li>
+                        <li>Design Optimization</li>
+                        <li>Technical Drawing Interpretation</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Manufacturing Processes</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Machining (Milling, Turning, Drilling)</li>
+                        <li>Precision Fabrication</li>
+                        <li>Process Planning</li>
+                        <li>Quality Control (Manufacturing)</li>
+                        <li>Casting Design & Principles</li>
+                        <li>Metal Forming & Stamping</li>
+                        <li>Die Design</li>
+                        <li>Fabrication Techniques</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Digital Control & Mechatronics</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Automatic Control Systems</li>
+                        <li>PID Control</li>
+                        <li>Closed-loop Systems</li>
+                        <li>System Integration</li>
+                        <li>Hardware Interfacing</li>
+                        <li>Embedded C (Arduino IDE)</li>
+                        <li>MATLAB Simulink</li>
+                        <li>Sensor Integration</li>
+                        <li>Wireless Communication (Bluetooth)</li>
+                        <li>Data Acquisition & Processing</li>
+                        <li>Troubleshooting (Electrical/Mechanical)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-white rounded-2xl shadow-lg p-6">
+                <h4 class="text-xl font-bold text-gray-800 mb-4 text-center">Programming Languages & Tools</h4>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">C</span>
+                    <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">C++</span>
+                    <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">MATLAB</span>
+                    <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Arduino IDE</span>
+                    <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">MATLAB Simulink</span>
+                    <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">EES (Engineering Equation Solver)</span>
+                    <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Autodesk Inventor (Implied)</span>
+                    <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">SolidWorks (Implied)</span>
+                    <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">AutoCAD (Implied)</span>
+                    <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">ERP Software (Shopify Plus, Zoho Inventory, Oracle NetSuite)</span>
+                    <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">BI Dashboards (Power BI, Oracle Analytics)</span>
+                    <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">CMMS (Computerized Maintenance Management Systems)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section: Courses Taken -->
+        <section id="courses" class="mb-16 md:mb-24 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-800">Relevant Coursework</h3>
+                <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">A comprehensive list of academic courses undertaken at Ain Shams University, providing a strong theoretical foundation for my engineering skills.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Core Engineering & Design</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Projection and Engineering Graphics</li>
+                        <li>Engineering Drawing</li>
+                        <li>Mechanical Engineering Drawing</li>
+                        <li>Machine Construction</li>
+                        <li>Machine Elements Design</li>
+                        <li>Mechanics of Machines</li>
+                        <li>Design of Tools & Production Facilities</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Manufacturing & Materials</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Production Engineering</li>
+                        <li>Structures & Properties of Materials</li>
+                        <li>Metallurgy & Material Testing</li>
+                        <li>Manufacturing Technology (1)</li>
+                        <li>Theory of Metal Cutting</li>
+                        <li>Metal Forming Technology, Machines and Dies</li>
+                        <li>Casting & Welding (1)</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Industrial & Management</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Engineering Economy</li>
+                        <li>Industrial Project Management</li>
+                        <li>Maintenance Planning and Scheduling</li>
+                        <li>Operations Research</li>
+                        <li>Work Study</li>
+                        <li>Quality Systems & Assurance</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Control & Electrical Systems</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Introduction to Electronics</li>
+                        <li>Electrical Circuits and Machines</li>
+                        <li>Automatic Control</li>
+                        <li>Hydraulics and Pneumatics Control</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Mathematics & Physics</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Mathematics (1)</li>
+                        <li>Mathematics (2)</li>
+                        <li>Probability and Statistics</li>
+                        <li>Differential Equations and Numerical Analysis</li>
+                        <li>Thermal Physics</li>
+                        <li>Thermodynamics</li>
+                        <li>Fluid Mechanics and Turbo-Machinery</li>
+                        <li>Vibration and Waves</li>
+                        <li>Statics</li>
+                        <li>Dynamics</li>
+                        <li>Rigid Body Dynamics</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">General & Computing</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Human Rights</li>
+                        <li>Report Writing & Communication skills</li>
+                        <li>Professional Ethics and Legislations</li>
+                        <li>Selected Topics in Contemporary Issues</li>
+                        <li>Fundamentals of Engineering</li>
+                        <li>Computing in Engineering</li>
+                        <li>Engineering Chemistry</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="text-center bg-teal-600 text-white p-12 rounded-3xl shadow-xl my-16 md:my-24">
+            <h3 class="text-4xl md:text-5xl font-extrabold mb-4">Ready to Transform Your Operations?</h3>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                Let's discuss how my expertise in industrial engineering, digital control, and process optimization can drive your next project forward.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://www.linkedin.com/in/mahmoudseeny" target="_blank" class="btn-call-to-action btn-linkedin">
+                    <i class="fab fa-linkedin mr-3 text-2xl"></i> Schedule a Consultation
+                </a>
+                <a href="tel:+201127961626" class="btn-call-to-action btn-contact">
+                    <i class="fas fa-phone-alt mr-3 text-xl"></i> Call Me Directly
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2024 Mahmoud Mohamed. All rights reserved.</p>
+            <p class="text-gray-400 mt-2">This interactive portfolio showcases foundational skills and achievements from college projects.</p>
+            <p class="text-gray-400 text-sm mt-4">Phone: +20 1127961626</p>
+        </div>
+    </footer>
+
+    <script>
+        const collegeProjectsData = [
+            // Section 1: Mechatronics & Control Systems
+            {
+                id: 'hydro_pneumatic',
+                category: 'mechatronics',
+                title: "Hydro-Pneumatic Lifting Mechanism: Precision Control for Automotive Platforms",
+                summary: "Developed and implemented a mechatronic system for precise, automated vertical and horizontal movement of a car platform, integrating robust hydraulics with an Arduino-based electronic control system.",
+                challenge: "Designing a responsive motion control solution for automotive service applications that could combine hydraulic force with intelligent electronic control, ensuring precision, seamless integration, intuitive UI, reliability, safety, and complex troubleshooting.",
+                project: "Constructed a sophisticated hydro-pneumatic lifting system with two degrees of freedom, featuring double-acting hydraulic cylinders, directional solenoid valves, an Arduino Uno, and precise push-button controls. The Arduino code implements advanced control logic with debouncing mechanisms for reliable operation.",
+                impact: "Provided invaluable hands-on experience in complex mechatronic system integration. The solution significantly improved workshop ergonomics, streamlined repair processes, and enhanced safety for automotive technicians. Developed crucial problem-solving skills in diagnosing intricate electrical, hydraulic, and mechanical subsystem interactions.",
+                tools: "Arduino IDE, Arduino Uno, Hydraulic Cylinders, Directional Solenoid Valves, 4-Channel Relay Module, Momentary Push Buttons, 12V DC Power Supply, Jumper Wires & Breadboard, Multimeter, Mechatronics Lab / Pneumatics Lab.",
+                skills: "Mechatronics, Fluid Power, Electronic Control, System Integration, Troubleshooting, Problem-Solving, Arduino Programming, Hardware Interfacing, Digital Control.",
+                teammates: ["Rawan Mohamed Abd El-Fattah", "Nour Abdel Raouf Awad", "Doaa Ali Abdalkader"],
+                supervisors: [], // Not explicitly mentioned in PDF
+                documentationLink: "https://drive.google.com/drive/folders/1CzmU05Ry-MWQ7wLJQhGyTZ0W28TIxlJ-?usp=sharing",
+                image: "college images/hydro.jpg" 
+            },
+            {
+                id: 'smart_flow_meter',
+                category: 'mechatronics',
+                title: "Smart Flow Meter: Engineering Precision in Airflow Measurement for Predictive Maintenance",
+                summary: "Designed and developed a fully automated smart flow meter with real-time, wireless data transmission via ESP32 and Bluetooth, seamlessly integrating advanced mechanical design with cutting-edge sensor technology for industrial applications.",
+                challenge: "Developing a highly reliable and precise system for airflow measurement that surpassed traditional methods, requiring accurate sensing, real-time data acquisition & processing, robust wireless communication, and effective noise/interference management within a compact mechanical design.",
+                project: "This comprehensive project involved the full design, mechanical fabrication, and electrical system development of a Smart Flow Meter. It utilized the KY-024 Hall Effect Sensor for rotational speed and BMP180 Sensor for precise air pressure/temperature readings. An ESP32 Development Board efficiently processed this data and transmitted it wirelessly to a mobile phone via Bluetooth, addressing challenges like sensor skipping and connectivity.",
+                impact: "Achieved significantly enhanced accuracy and enabled real-time remote monitoring of airflow, laying a crucial foundation for predictive maintenance by facilitating continuous, accessible data collection. This innovation contributes directly to resource optimization and sustainability, demonstrating scalability and adaptability for diverse industrial settings and enhancing operational efficiency.",
+                tools: "Arduino IDE, MATLAB (implied), CAD Software (implied), ESP32 Development Board, KY-024 Linear Hall Effect Sensor, BMP180 Sensor, Bluetooth, Adafruit BMP085 Library, Power Supply (3.3V), Jumper Wires & Breadboard, Mechanical Components (Pipe, Shaft, Rotor Base, Blades, Flanges).",
+                skills: "Mechanical Design, Electrical System Development, Sensor Integration, Wireless Communication (Bluetooth), Data Acquisition & Processing, Embedded C, CAD, Troubleshooting, Predictive Maintenance, Digital Control.",
+                teammates: ["Abdulrahman Jamal Abdulwahab", "Mustafa Ahmed Hassn", "Abdulrahman Mohamed Gomaa", "Mohamed Sameh Mansour"],
+                supervisors: ["Prof. Tamer El-nady", "Prof. Ayman Abdel Wahab"],
+                documentationLink: "https://drive.google.com/drive/folders/1x_-AXEX61PkY3nzg9HUMgwfvP3GzUsB0?usp=sharing",
+                image: "college images/flow.jpg" 
+            },
+            {
+                id: 'dc_motor_control',
+                category: 'mechatronics',
+                title: "Precision in Motion: Geared DC Motor Position Control System with Zero Steady-State Error",
+                summary: "Designed, implemented, and meticulously tuned a closed-loop PID control system for a geared DC motor using MATLAB Simulink and Arduino, achieving a remarkable 0 steady-state error and highly responsive motion.",
+                challenge: "The primary challenge was achieving precise and stable angular position control of a geared DC motor, overcoming inherent complexities like inertia, friction, and external disturbances. The goal was to minimize overshoot, ensure rapid settling, and completely eliminate steady-state errors.",
+                project: "Constructed a sophisticated closed-loop feedback control system utilizing a geared DC motor, an angular position sensor (encoder), Arduino, and an H-Bridge Motor Driver. A PID controller was robustly implemented in MATLAB Simulink. The tuning process involved the systematic Nicholas-Ziegler method complemented by extensive manual trials. This resulted in an exceptional 0 steady-state error, a 2.5s rise time, 26.66% overshoot, and a 2.5s settle time.",
+                impact: "Developed a highly responsive, accurate, and stable position control system critical for advanced automation and robotics. Gained invaluable hands-on experience in closed-loop system design, mastering PID controller theory and practical application, system identification and tuning techniques, and seamless integration between MATLAB Simulink and Arduino. This project significantly enhanced troubleshooting capabilities in complex digital control environments.",
+                tools: "MATLAB Simulink, Arduino, Geared DC Motor, Angular Position Sensor (encoder), H-Bridge Motor Driver, Breadboard.",
+                skills: "Automatic Control, PID Control, Closed-loop Systems, System Identification, Tuning, MATLAB Simulink, Arduino Programming, Hardware Interfacing, Motor Control, Troubleshooting, Digital Control.",
+                teammates: ["Kirollos Nagy Nabih Aziz", "George Raafat", "Kerols Mahrous", "Mohamed Alaa Eldin", "Mohamed Sameh Mansour"],
+                supervisors: [], // Not explicitly mentioned in PDF
+                documentationLink: "https://drive.google.com/drive/folders/1TlwOrUAz5zzLEub5RKH8aFJVN7wG-UC5?usp=sharing",
+                image: "college images/automatic.PNG" 
+            },
+
+            // Section 2: Advanced Manufacturing & Design
+            {
+                id: 'machine_vice',
+                category: 'manufacturing',
+                title: "Machine Vice Project: Precision Manufacturing for Versatile Workpiece Clamping",
+                summary: "Executed the comprehensive design and manufacturing process of a versatile drilling machine vice, demonstrating mastery in diverse metal cutting operations and precision fabrication techniques.",
+                challenge: "The core challenge was designing and manufacturing a robust machine vice capable of securely clamping a wide range of workpieces (flat and cylindrical) with exceptional stability and precision during drilling operations. This demanded versatile clamping mechanisms, high precision manufacturing, appropriate material selection, optimized manufacturing processes, and seamless assembly.",
+                project: "Encompassed the entire manufacturing cycle of a drilling machine vice with integrated V-anvils. Involved detailed design and fabrication of critical components like the Base, Movable Jaw, Fixed Jaw, Power Screw, and Handle. Proficiently utilized various conventional machining operations, including extensive Milling (Face, Peripheral, Straddle, End, Form, Side), Turning (Turning, Facing, Threading, Chamfering), and Drilling (Centering, Drilling, Countersinking, Counterboring, Tapping). Developed detailed operation sheets to optimize the production process for efficiency and quality.",
+                impact: "Deepened understanding of metal cutting theory and gained advanced proficiency in conventional machining. Developed highly valuable skills in precision fabrication, strategic process planning, and manufacturing optimization. Enhanced problem-solving abilities within a production context and successfully translated complex engineering drawings into a tangible, high-functional product ready for use.",
+                tools: "Horizontal Milling Machine, Vertical Milling Machine, Center Lathe, Drilling Machines, Shaping Machines (mentioned), various Milling Cutters, Lathe Tools, Drilling Tools, Workholding Devices (Milling Vice, 4-Jaw Chuck, Drill Chuck), Measurement Tools (implied).",
+                skills: "Manufacturing, Machining (Milling, Turning, Drilling), Precision Engineering, Material Selection, Process Planning, Fabrication, Technical Drawing Interpretation, Problem-Solving (Production), Design.",
+                teammates: ["Amged Hisham Abulgasim (Leader)", "Abdelrahman Samir", "Christine Elishaa Hanna", "George Raafat", "Israa Wael Ahmed Fawzy Saied", "Kirollos Nagy Nabih Aziz", "Mai Ahmad Fathy", "Makone Karam Helme", "Mariam Osama Eissa", "Mahmoud Alaa Sayed", "Michael Sami Helmy Hanna", "Mohamed Alaa Eldin Mohamed", "Mohamed Sameh Mansour", "Mohamed Zaky Salah", "Nouran Mostafa Ahmed", "Omar Mahmoud Elsaeid", "Philopataire", "Sandy Talaat Samir", "Shams El-Din Mahmoud", "Youssef Adel Fadl Saeed", "Kerols Mahrous"],
+                supervisors: ["Prof. Mohamed Abdelsalam"],
+                documentationLink: "https://drive.google.com/drive/folders/1KekVwmoY_u4wvKQIwlTv7GKv47r1AGuU?usp=sharing",
+                image: "college images/vice.PNG" 
+            },
+            {
+                id: 'heavy_duty_caster',
+                category: 'manufacturing',
+                title: "Engineered for Endurance: Heavy Duty Caster Design and Fabrication for Industrial Loads",
+                summary: "Designed and fabricated a robust heavy-duty caster from concept to completion, showcasing practical skills in conventional machining, strategic material selection, and critical process optimization for high-load applications.",
+                challenge: "The key challenge was engineering and precisely manufacturing a heavy-duty caster capable of withstanding significant industrial loads and rigorous continuous use. This involved critical aspects like optimal material selection for durability, achieving precise dimensional accuracy and superior surface finish, optimizing complex manufacturing processes, and ensuring seamless assembly for reliable performance.",
+                project: "This comprehensive project navigated the entire lifecycle from design and planning to the meticulous fabrication of a robust heavy-duty caster. It involved custom-fabricated components (Base, Bush, Frame Base, Frame Sides, King Pin, Pin, Tyre, Wheel Flange, Wheel Hub) alongside standard components. Detailed operation sheets were created for each custom part to streamline production. Utilized a wide array of machining processes including precision Turning (Facing, Longitudinal Turning, Centering, Drilling, Parting Off, Grooving, Chamfering, Boring, Automatic Threading), efficient Milling (Peripheral, Angular, Slotting), and accurate Drilling (Marking, Centering, Drilling, Countersinking, Threading).",
+                impact: "Developed comprehensive proficiency in machining techniques and advanced process planning. This project reinforced the critical importance of stringent quality control and achieving precise dimensional accuracy in manufacturing. Applied in-depth material science knowledge to make informed decisions for high-stress components and significantly enhanced practical problem-solving abilities related to complex manufacturing challenges, resulting in a durable, high-performance solution.",
+                tools: "Center Lathe Machine, Horizontal Milling Machine, Vertical Milling Machine, Upright Drilling Machine, Vernier Caliper, Workholding Devices (3-Dependent Jaw Chuck, 4-Independent Jaw Chuck, Vice, Rotary Table, T-clamp), various Cutting Tools (Facing Tools, Turning Tools, Center Drills, Twist Drills, Parting Off Tools, Grooving Tools, Chamfering Tools, End Mills).",
+                skills: "Manufacturing, Design, Fabrication, Machining (Turning, Milling, Drilling), Material Science, Process Planning, Quality Control, Dimensional Accuracy, Problem-Solving (Manufacturing).",
+                teammates: ["Ahmed Abdullah Hassan", "Ahmed Elsayed Khalil Hamed", "Alsedeeq Abd El Hady Mohamed", "Aya Hassan Younes Gad Alla", "Hussain Mahmoud Hussain", "Kirollos Nagy Nabih", "Mohamed Mahmoud Ahmed", "Mohamed Mahmoud Saafan", "Yousef Mohamed Ahmed", "Ziad Adel Mahmoud"],
+                supervisors: ["Eng. Basem Tarek"],
+                documentationLink: "https://drive.google.com/drive/folders/1lkMI4iMvQG9vbvbY29RX-YWHHVGloyFc?usp=sharing",
+                image: "college images/caster.PNG" 
+            },
+            {
+                id: 'die_design',
+                category: 'manufacturing',
+                title: "Die Design Project: Engineering a Progressive Metal Stamping Die for Efficient Production",
+                summary: "Designed a complex progressive die for manufacturing multi-featured metal parts, meticulously balancing precision, optimal material utilization, and advanced force management through detailed calculations and comprehensive technical drawings.",
+                challenge: "The challenge was designing a progressive die capable of manufacturing a specific, multi-featured metal part from a continuous strip of material with high efficiency and precision. This required navigating complex geometry, optimizing material utilization, ensuring accurate force management for press capacity, maintaining dimensional accuracy, and achieving seamless component integration.",
+                project: "This project involved the detailed design and comprehensive calculation for a progressive die. Key components designed included Punches, Dies, Stripper Plate, Strip Guide, Shank, Pilot, and Punch Plate. The die was designed for sequential operations like circular, rectangular, and trapezoidal piercings, culminating in the final blanking. Detailed calculations were performed for critical factors such as sheet utilization (achieving 51.1% scrap rate), cutting forces (199.53 kN total, strategically reduced to 66.51 kN with angular shear), die block & expansion, center of pressure, optimal punch/die diameters, and punch buckling force, and stripper force. Comprehensive sequence layouts and working drawings were produced.",
+                impact: "Gained advanced, practical knowledge in metal forming and developed a keen eye for precision engineering principles in die design. Learned to effectively identify and address critical design challenges, such as potential issues with exceeding press capacity, and implement innovative solutions. Developed a deep understanding of the significance of material optimization for cost-efficiency and successfully produced essential, industry-standard technical documentation.",
+                tools: "CAD Software (implied), Metal Forming Theory, Die Design Formulas and Tables, Engineering Handbooks, Mathematical Calculations.",
+                skills: "Metal Forming, Die Design, Precision Engineering, Manufacturing Processes (Stamping), Force Analysis, Material Optimization, Technical Drawing, Process Planning, Design.",
+                teammates: ["Randa Ahmed Mohamed", "Doaa Ali Abdelkader", "Nour Abdel Raouf Awad", "Mohamed Khaled Hassan", "Rawan Mohamed Abd El-Fattah", "Sandy Talaat Samir", "Mazin Refaat Sayed"],
+                supervisors: ["Prof. Ramadan El-Gamsy"],
+                documentationLink: "https://drive.google.com/drive/folders/1-8y4zXvyOaDFvJUw2pP0S6zZXIegYfaR?usp=sharing",
+                image: "college images/die.avif" 
+            },
+            {
+                id: 'casting_system',
+                category: 'manufacturing',
+                title: "Casting System Design: Ensuring High-Quality Sand Casting with Minimal Defects",
+                summary: "Designed a complete sand casting system for a custom part, rigorously applying fundamental casting principles and advanced calculations to ensure high quality and minimal defects in the final product.",
+                challenge: "The primary challenge was designing a comprehensive casting system that would consistently produce a custom part with exceptional quality, minimal defects, and efficient production. This involved critical considerations such as optimal material selection, precise pattern design with appropriate allowances, an effective feeding system, an optimized gating system, and counteracting metallostatic forces.",
+                project: "This project involved the meticulous design of every element within a sand casting system for a specific custom part (Shape 6). Gray Cast Iron (ASTM A48 Class 30) was selected based on its critical properties. Detailed machining, shrinkage, and draft allowances were precisely applied to the pattern. A split pattern was designed, and specific flask dimensions and molding sand composition were determined. Comprehensive calculations were performed for casting volume, surface area, and modulus. Two cylindrical risers were designed using Chvorinov's Rule for optimal feeding, and a complete gating system (Sprue, Runner, Gates) was established. Crucially, the necessary securing weight to prevent mold buoyancy during pouring was calculated.",
+                impact: "Gained comprehensive and practical knowledge in all aspects of casting, including advanced pattern design, molding techniques, feeding strategies, and gating systems. Learned to proactively design systems that actively reduce common casting defects, leading to higher yield and quality. Applied in-depth material science knowledge to select appropriate casting alloys for specific applications and developed strong skills in precision design, problem-solving in manufacturing, and overall process optimization for cast parts.",
+                tools: "Engineering Principles (solidification theory, fluid flow dynamics, heat transfer), Empirical Rules (Chvorinov's Rule), Material Properties Data, Mathematical Calculations, CAD Software (implied).",
+                skills: "Casting Design, Manufacturing Processes (Sand Casting), Material Science, Defect Analysis, Process Optimization, Precision Design, Design.",
+                teammates: ["Mohamed Osman Elobaid", "Ziad Omar Ahmed", "Khalid Mohamed Ibrahim", "Mahmoud Nasser Mohamed"],
+                supervisors: [], // Not explicitly mentioned in PDF
+                documentationLink: "https://drive.google.com/drive/folders/15E_RvSZYlrdKaq3PBrUVz0CRXZVdIppp?usp=sharing",
+                image: "college images/casting.jpg" 
+            },
+
+            // Section 3: Industrial Operations & Energy Systems
+            {
+                id: 'quality_assurance',
+                category: 'industrial',
+                title: "Quality Assurance in Action: Optimizing a Clothing Manufacturing Process for 20% Faster Delivery",
+                summary: "Developed and implemented a comprehensive quality assurance framework for a clothing factory, strategically addressing interdepartmental misalignment to significantly reduce order delivery time and enhance overall product quality and customer satisfaction.",
+                challenge: "Addressing a chronic problem of interdepartmental misalignment across Production, Inventory Control, and Logistics & Delivery, which continually led to significant delays in fulfilling customer orders. The objective was clear: reduce average order delivery time by an ambitious 20% within 12 months, without compromising on product quality or increasing operational costs.",
+                project: "Proposed and designed a structured, holistic quality assurance framework that spanned the entire process from initial design to final customer delivery. Key elements included establishing a clear Vision, Mission, and Quality Policy. Detailed Strategic Objectives & Procedures were outlined, focusing on automating orders with ERP systems, optimizing inventory with Just-in-Time (JIT) principles, streamlining production workflows, improving logistics efficiency, enhancing inter-departmental coordination with Business Intelligence (BI) dashboards, and implementing continuous improvement via PDCA (Plan-Do-Check-Act) cycles and real-time KPI monitoring. The detailed process flow incorporated integrated quality checks at every critical stage.",
+                impact: "Directly resulted in significant improvements in delivery timeliness and a measurable enhancement in product quality, leading to a substantial boost in operational efficiency and increased customer satisfaction. This initiative fostered a robust culture of continuous improvement throughout the organization and enabled strategic, data-driven decision-making through the implementation of real-time KPIs. The project clearly demonstrated a practical and strategic understanding of complex quality management systems and their tangible impact on business outcomes.",
+                tools: "ERP Software (Shopify Plus, Zoho Inventory, Oracle NetSuite), BI (Business Intelligence) Dashboard (Power BI, Oracle Analytics), Just-in-Time (JIT), PDCA (Plan-Do-Check-Act) Cycle, SOPs (Standard Operating Procedures), Inspection Checklists, Fishbone Diagram (Ishikawa Diagram).",
+                skills: "Quality Management, Process Optimization, Supply Chain Management, Inventory Control, Logistics, ERP Systems, Business Intelligence, Data Analysis, Strategic Planning, Problem-Solving (Root Cause Analysis), Continuous Improvement (PDCA), Industrial Engineering.",
+                teammates: ["Mahmoud Alaa Sayed", "Abdurahman Aziz Mohammed", "Mohamed Magdy Mohamed", "Mohamed Sameh Mansour", "Abdelrahman Mabrouk Mostafa"],
+                supervisors: [], // Not explicitly mentioned in PDF
+                documentationLink: "https://drive.google.com/drive/folders/1SmYyHvzNhQbWIe1i6bzQIFxpm0e_sfVN?usp=sharing",
+                image: "college images/quality.jpg" 
+            },
+            {
+                id: 'maintenance_safety',
+                category: 'industrial',
+                title: "Maintenance Safety: Ensuring a Secure and Efficient Industrial Environment for Enhanced Operational Resilience",
+                summary: "Developed a comprehensive framework for proactive maintenance safety, meticulously identifying high-risk areas, outlining robust mitigation strategies, and leveraging Computerized Maintenance Management Systems (CMMS) for superior operational resilience and asset protection.",
+                challenge: "The inherent challenge was mitigating diverse and critical risks in maintenance operations to safeguard workers, protect expensive machinery, and ensure uninterrupted production schedules. This involved systematically identifying a wide array of hazards, implementing effective accident prevention protocols, ensuring operational continuity, and actively promoting a pervasive safety-first culture throughout the organization.",
+                project: "Provided a comprehensive framework for establishing and rigorously promoting maintenance safety practices. Defined the critical importance of safety, detailed common risks (Electrical, Slips/Trips/Falls, Machinery-Related, Chemical Exposure, Confined Spaces), and outlined proactive mitigation strategies including stringent Lockout/Tagout (LOTO) procedures, mandatory Personal Protective Equipment (PPE) use, effective Machine Guards, readily available Safety Data Sheets (SDS), and real-time Gas Monitors. Highlighted best practices such as rigorous scheduled checks, multi-level authorization keys, anonymous feedback mechanisms, and continuous, mandatory training. Emphasized the strategic leveraging of Computerized Maintenance Management Systems (CMMS) for optimized scheduling, real-time monitoring, in-depth analysis, and seamless integration of safety protocols.",
+                impact: "Directly resulted in significantly enhanced worker safety, demonstrably improved operational efficiency by drastically reducing unscheduled breakdowns, and extended critical equipment lifespan. Ensured stringent compliance with all relevant safety regulations, leading to higher quality products, a boosted employee morale, and a significantly enhanced company image. This project powerfully demonstrated that comprehensive maintenance safety is not just a compliance requirement, but a strategic imperative for achieving peak operational excellence and long-term financial stability.",
+                tools: "Computerized Maintenance Management Systems (CMMS), Lockout/Tagout (LOTO) Procedures, Personal Protective Equipment (PPE), Machine Guards and Barriers, Safety Data Sheets (SDS), Gas Monitors, Emergency Stop Buttons.",
+                skills: "Maintenance Planning, Safety Management, Risk Mitigation, Operational Efficiency, Compliance, CMMS, Industrial Safety Protocols, Training & Development, Industrial Engineering.",
+                teammates: ["Mohamed Magdy Mohamed", "Fares Gomaa Ahmed", "Moataz Mohamed Hassan", "Kyrillos Mohsen Shokery"],
+                supervisors: [], // Not explicitly mentioned in PDF
+                documentationLink: "https://drive.google.com/drive/folders/1e6iUADa2Qs75Sk9p0mqfnCV3zz6SloYa?usp=sharing",
+                image: "college images/maintenance.jpeg" 
+            },
+            {
+                id: 'thermodynamics_optimization',
+                category: 'industrial',
+                title: "Thermodynamics Project: Maximizing Energy Efficiency in a Combined Gas-Steam Power Cycle",
+                summary: "Conducted an in-depth analysis and optimization of a combined gas-steam power cycle, achieving maximum thermal efficiency through advanced computational modeling with EES software for sustainable power generation.",
+                challenge: "Designing and analyzing a combined gas-steam power plant to attain the absolute maximum thermal efficiency possible. This complex challenge involved seamlessly integrating two distinct thermodynamic cycles, rigorously optimizing multiple performance parameters, performing a comprehensive thermodynamic analysis (both First and Second Law), and utilizing advanced computational modeling for precision.",
+                project: "Focused on a combined Brayton (gas turbine) and reheat Rankine (steam) power cycle, a hallmark of modern efficient power generation. Investigated the critical effect of key variables, such as gas turbine exhaust pressure and steam extraction pressure, on overall system performance. Performed detailed First Law (energy balance) and Second Law (exergy analysis) for each individual component and the entire integrated cycle. Crucially, utilized EES (Engineering Equation Solver) software for highly accurate modeling, conducting extensive parametric studies, and visualizing complex thermodynamic interactions. Successfully identified an optimal pressure ratio, leading to calculated net work outputs and impressive efficiencies (Overall Thermal Efficiency: 39%, Second Law Efficiency: 57.03%).",
+                impact: "Gained advanced, practical thermodynamic expertise and a comprehensive, in-depth understanding of combined cycle power plant operations. Developed strong computational modeling proficiency using EES, equipping me to solve complex engineering problems efficiently and accurately. Mastered optimization skills by systematically investigating the effects of various operational variables. This project directly contributed to a deeper understanding of highly efficient power generation technologies, which are vital for the future of sustainable energy landscapes.",
+                tools: "EES (Engineering Equation Solver), Internet Resources, Thermodynamics Principles, Mathematical Calculations.",
+                skills: "Thermodynamics, Energy Systems Analysis, Optimization, Computational Modeling, Data Analysis, First and Second Law Analysis, Sustainable Energy Concepts, Industrial Engineering.",
+                teammates: ["Mohamed Mahmoud Ahmed Haggag", "Kirolos Samy Kedees", "Omar Mahamed Elsayed", "Muhammad Mahmoud Saieed", "Shady Mansour Samy", "Yousef Mohamed Ahmed Mahmoud", "Ziad Ahmed Anter"],
+                supervisors: ["Prof. Nashwa Abbas", "Prof. Ahmed Taher", "Prof. Walid Aboelsoud", "Prof. Ahmed Saber"],
+                documentationLink: "https://drive.google.com/drive/folders/1krD8IcfRn_JvWq53fqB_oB81c-z2a3QN?usp=sharing",
+                image: "college images/thermo.webp" 
+            }
+        ];
+
+        function renderProjects(projects, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = ''; // Clear existing content
+            projects.forEach(project => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'bg-white rounded-2xl p-6 shadow-lg border border-gray-100 flex flex-col justify-between';
+                
+                let teammatesHtml = '';
+                if (project.teammates && project.teammates.length > 0) {
+                    teammatesHtml = `<h6 class="font-semibold text-teal-700 uppercase tracking-wide text-xs mb-1 mt-3">Teammates</h6><p class="text-gray-600 text-sm">`;
+                    project.teammates.forEach((tm, index) => {
+                        // Check if it's a LinkedIn object or just a name string
+                        if (typeof tm === 'object' && tm.linkedin) {
+                            teammatesHtml += `<a href="${tm.linkedin}" target="_blank" class="text-teal-600 hover:underline">${tm.name}</a>`;
+                        } else {
+                            teammatesHtml += tm; // It's just a name string
+                        }
+                        if (index < project.teammates.length - 1) {
+                            teammatesHtml += ', ';
+                        }
+                    });
+                    teammatesHtml += `</p>`;
+                }
+
+                let supervisorsHtml = '';
+                if (project.supervisors && project.supervisors.length > 0) {
+                    supervisorsHtml = `<h6 class="font-semibold text-teal-700 uppercase tracking-wide text-xs mb-1 mt-3">Supervisors</h6><p class="text-gray-600 text-sm">`;
+                    project.supervisors.forEach((sup, index) => {
+                        if (typeof sup === 'object' && sup.linkedin) {
+                            supervisorsHtml += `<a href="${sup.linkedin}" target="_blank" class="text-teal-600 hover:underline">${sup.name}</a>`;
+                        } else {
+                            supervisorsHtml += sup;
+                        }
+                        if (index < project.supervisors.length - 1) {
+                            supervisorsHtml += ', ';
+                        }
+                    });
+                    supervisorsHtml += `</p>`;
+                }
+
+
+                let documentationLinkHtml = '';
+                if (project.documentationLink) {
+                    documentationLinkHtml = `<a href="${project.documentationLink}" target="_blank" class="text-teal-600 hover:underline text-sm font-semibold mt-3 block">View Documentation</a>`;
+                }
+
+                projectCard.innerHTML = `
+                    <div>
+                        <img src="${project.image}" alt="${project.title} Image" class="w-full h-48 object-cover rounded-md mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/E5E7EB/6B7280?text=Image+Not+Found';">
+                        <h5 class="text-lg md:text-xl font-bold text-gray-800 mb-2">${project.title}</h5>
+                        <p class="text-gray-600 text-sm mb-4">${project.summary}</p>
+                        <div id="details-${project.id}" class="project-details-content">
+                            <h6 class="font-semibold text-teal-700 uppercase tracking-wide text-xs mb-1">The Challenge</h6>
+                            <p class="text-gray-600 text-sm mb-3">${project.challenge}</p>
+                            <h6 class="font-semibold text-teal-700 uppercase tracking-wide text-xs mb-1">The Project</h6>
+                            <p class="text-gray-600 text-sm mb-3">${project.project}</p>
+                            <h6 class="font-semibold text-teal-700 uppercase tracking-wide text-xs mb-1">The Impact</h6>
+                            <p class="text-gray-600 text-sm">${project.impact}</p>
+                            ${teammatesHtml}
+                            ${supervisorsHtml}
+                            ${documentationLinkHtml}
+                            <!-- Call to Action within details -->
+                            <p class="text-md font-semibold text-gray-800 mt-6 mb-3">
+                                Want to dive deeper into this project or discuss potential collaborations? Let's connect!
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="https://www.linkedin.com/in/mahmoudseeny" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition duration-300 flex items-center justify-center">
+                                    <i class="fab fa-linkedin mr-2"></i> Connect on LinkedIn
+                                </a>
+                                <a href="tel:+201127961626" class="bg-teal-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-teal-700 transition duration-300 flex items-center justify-center">
+                                    <i class="fas fa-phone-alt mr-2"></i> Call Me
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="view-details-btn mt-4 bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600 transition duration-300 text-sm font-semibold self-start" data-project-id="${project.id}">View Details</button>
+                `;
+                container.appendChild(projectCard);
+            });
+
+            document.querySelectorAll(`#${containerId} .view-details-btn`).forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const projectId = event.target.dataset.projectId;
+                    const detailsDiv = document.getElementById(`details-${projectId}`);
+                    detailsDiv.classList.toggle('expanded');
+                    if (detailsDiv.classList.contains('expanded')) {
+                        event.target.textContent = 'Hide Details';
+                    } else {
+                        event.target.textContent = 'View Details';
+                    }
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const mechatronicsProjects = collegeProjectsData.filter(p => p.category === 'mechatronics');
+            const manufacturingProjects = collegeProjectsData.filter(p => p.category === 'manufacturing');
+            const industrialProjects = collegeProjectsData.filter(p => p.category === 'industrial');
+
+            renderProjects(mechatronicsProjects, 'mechatronics-projects-container');
+            renderProjects(manufacturingProjects, 'manufacturing-projects-container');
+            renderProjects(industrialProjects, 'industrial-projects-container');
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.3 // Adjust threshold as needed
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active-nav');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active-nav');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
+
             font-family: 'Inter', sans-serif;
             background-color: #F8F7F4;
             color: #1a202c;
