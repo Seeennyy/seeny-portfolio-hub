@@ -222,16 +222,22 @@
 
         <section id="hero" class="text-center mb-16 md:mb-24">
             <span class="text-teal-600 font-semibold uppercase tracking-wider">High School Portfolio</span>
-            <h2 class="text-4xl md:text-6xl font-extrabold text-gray-800 mt-2 hero-text-animate">Forging the Foundation of an Industrial Engineer</h2>
-            <p class="max-w-3xl mx-auto mt-6 text-lg text-gray-600">
-                A journey through a transformative high school experience that cultivated deep analytical rigor, high-impact innovation, and proactive leadership—the essential toolkit for a future in engineering and supply chain management.
-            </p>
+            <h2 class="text-4xl md:text-6xl font-extrabold text-gray-800 mt-2 hero-text-animate">Innovation Takes Flight: My High School Journey</h2>
+            <!-- Added a box around the paragraph -->
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 max-w-3xl mx-auto mt-8">
+                <p class="text-lg text-gray-600">
+                    A journey through a transformative high school experience that cultivated deep analytical rigor, high-impact innovation, and proactive leadership—the essential toolkit for a future in engineering and supply chain management.
+                </p>
+            </div>
         </section>
 
         <section id="innovation" class="mb-16 md:mb-24 scroll-mt-20">
             <div class="text-center mb-12">
                 <h3 class="text-3xl md:text-4xl font-bold text-gray-800">Research & Innovation</h3>
-                <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Tackling critical national challenges through the rigorous application of the Engineering Design Process, resulting in nationally recognized, high-impact solutions.</p>
+                <!-- Added a box around the paragraph -->
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 max-w-2xl mx-auto mt-8">
+                    <p class="text-lg text-gray-600">Tackling critical national challenges through the rigorous application of the Engineering Design Process, resulting in nationally recognized, high-impact solutions.</p>
+                </div>
             </div>
 
             <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-12">
@@ -294,7 +300,7 @@
         <div class="bg-gradient-to-r from-teal-500 to-green-500 text-white p-8 rounded-2xl shadow-xl transform rotate-1 transition duration-300 hover:rotate-0 hover:scale-105 mb-16 md:mb-24">
             <h3 class="text-3xl font-extrabold text-center mb-4">💡 Did You Know?</h3>
             <p class="text-lg text-center leading-relaxed max-w-2xl mx-auto">
-                During my high school years, my dedication to problem-solving led to me becoming the sole student chosen from over 10 STEM schools to collaborate directly with the national STEM Unit, fundamentally redesigning the Capstone research system for future generations of students. This experience deeply shaped my approach to impactful system design.
+                During my high school years, my dedication to problem-solving led to me becoming the **sole student chosen from over 10 STEM schools** to collaborate directly with the national STEM Unit, fundamentally redesigning the Capstone research system for future generations of students. This experience deeply shaped my approach to impactful system design.
             </p>
         </div>
 
@@ -355,23 +361,25 @@
 
     <footer class="bg-gray-800 text-white">
         <div class="container mx-auto px-6 py-8 text-center">
+            <!-- Emotional Quote -->
+            <p class="text-gray-400 mt-1 mb-4 text-lg italic">"This school forged my spirit and filled my heart with purpose, leaving an indelible mark on my soul."</p>
             <p>&copy; 2024 Mahmoud Mohamed. All rights reserved.</p>
             <p class="text-gray-400 mt-2">Connecting engineering excellence with digital innovation.</p>
             <div class="flex justify-center space-x-6 mt-4">
                 <a href="https://www.facebook.com/mahmoud.seeny.2025/" target="_blank" class="text-white hover:text-blue-600 transition-colors duration-300">
-                    <i class="fab fa-facebook-f text-2xl"></i>
+                    <i class="fab fa-facebook-f text-2xl" aria-hidden="true"></i>
                 </a>
                 <a href="https://www.instagram.com/s3eny/" target="_blank" class="text-white hover:text-pink-500 transition-colors duration-300">
-                    <i class="fab fa-instagram text-2xl"></i>
+                    <i class="fab fa-instagram text-2xl" aria-hidden="true"></i>
                 </a>
                 <a href="https://www.tiktok.com/@seeny0" target="_blank" class="text-white hover:text-black transition-colors duration-300">
-                    <i class="fab fa-tiktok text-2xl"></i>
+                    <i class="fab fa-tiktok text-2xl" aria-hidden="true"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/mahmoudseeny" target="_blank" class="text-white hover:text-blue-700 transition-colors duration-300">
-                    <i class="fab fa-linkedin-in text-2xl"></i>
+                    <i class="fab fa-linkedin-in text-2xl" aria-hidden="true"></i>
                 </a>
                 <a href="tel:+201127961626" class="text-white hover:text-green-500 transition-colors duration-300">
-                    <i class="fas fa-phone-alt text-2xl"></i>
+                    <i class="fas fa-phone-alt text-2xl" aria-hidden="true"></i>
                 </a>
             </div>
             <p class="text-gray-400 text-sm mt-4">Phone: +20 1127961626</p>
@@ -391,7 +399,8 @@
                 teammates: [
                     { name: "Omar Ayman", linkedin: "https://www.linkedin.com/in/omar-ayman-3a198a178/" }
                 ],
-                documentationLink: "" // Confidential documentation
+                documentationLink: "", // Confidential documentation
+                image: "stem images/isef.png" // Updated image path
             },
             {
                 id: 'energy',
@@ -404,7 +413,8 @@
                     { name: "Tarek Kassab", linkedin: "https://www.linkedin.com/in/tarek-kassab-47b376181/" },
                     { name: "Ahmed Hussein" }
                 ],
-                documentationLink: "https://drive.google.com/drive/folders/1TGEQ4_E9wvHGgW8R0qAWnQralkhZZxwM?usp=sharing"
+                documentationLink: "https://drive.google.com/drive/folders/1TGEQ4_E9wvHGgW8R0qAWnQralkhZZxwM?usp=sharing",
+                image: "stem images/research.PNG" // Updated image path
             },
             {
                 id: 'building_block',
@@ -417,7 +427,8 @@
                     { name: "Kareem El-Shishtawy", linkedin: "https://www.linkedin.com/in/kareem-elshishtawy-64525719a/" },
                     { name: "Marwan Abdelhameed", linkedin: "https://www.linkedin.com/in/marwan-abdelhameed/" }
                 ],
-                documentationLink: "https://drive.google.com/drive/folders/1fcWCMyvL_VpmjImFAcnuQ5M-ZUTFA8Vm?usp=sharing"
+                documentationLink: "https://drive.google.com/drive/folders/1fcWCMyvL_VpmjImFAcnuQ5M-ZUTFA8Vm?usp=sharing",
+                image: "stem images/block.png" // Updated image path
             },
             {
                 id: 'microbial_fuel_cell',
@@ -432,7 +443,8 @@
                     { name: "Philobateer Atef" },
                     { name: "Abdelrahman Hesham" }
                 ],
-                documentationLink: "https://drive.google.com/drive/folders/1Yt5JAHXNLKsfTvgI81fKRapKmaJGxjn0?usp=sharing"
+                documentationLink: "https://drive.google.com/drive/folders/1Yt5JAHXNLKsfTvgI81fKRapKmaJGxjn0?usp=sharing",
+                image: "stem images/micro.PNG" // Updated image path
             },
             {
                 id: 'water_filter',
@@ -446,7 +458,8 @@
                     { name: "Mohamed Rabie" },
                     { name: "Ali El-badry" }
                 ],
-                documentationLink: "https://drive.google.com/drive/folders/1hMcKCOiIYpaPaqnkZPz8zmu9YwrLQE5m?usp=sharing"
+                documentationLink: "https://drive.google.com/drive/folders/1hMcKCOiIYpaPaqnkZPz8zmu9YwrLQE5m?usp=sharing",
+                image: "stem images/filter.PNG" // Updated image path
             },
             {
                 id: 'covid_detection',
@@ -459,7 +472,8 @@
                     { name: "Mohammed Gomaa", linkedin: "https://www.linkedin.com/in/mohamed-gomaa-1a8540287/" },
                     { name: "Abdelrahman Abdelnasser", linkedin: "https://www.linkedin.com/in/abdelrahman18036/" }
                 ],
-                documentationLink: "https://drive.google.com/drive/folders/1xEmluubR3WfSSrGWq9VCwlNhBZHQ3EwB?usp=sharing"
+                documentationLink: "https://drive.google.com/drive/folders/1xEmluubR3WfSSrGWq9VCwlNhBZHQ3EwB?usp=sharing",
+                image: "stem images/covid.PNG" // Updated image path
             }
         ];
 
@@ -471,7 +485,7 @@
             },
             {
                 name: "Research",
-                icon: "�",
+                icon: "🔍", // Changed from '?' to '🔍' (magnifying glass)
                 description: "Gather information and investigate existing solutions or related concepts. This step is crucial for building a strong knowledge base before ideation."
             },
             {
@@ -533,6 +547,7 @@
 
                 projectCard.innerHTML = `
                     <div>
+                        <img src="${project.image}" alt="${project.title} Image" class="w-full h-48 object-cover rounded-md mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/E5E7EB/6B7280?text=Image+Not+Found';">
                         <h5 class="text-lg md:text-xl font-bold text-gray-800 mb-2">${project.title}</h5>
                         <span class="a-plus-badge">A+</span> <!-- The "THAT'S IT" badge -->
                         <p class="text-gray-600 text-sm mb-4">${project.summary}</p>
@@ -609,4 +624,3 @@
     </script>
 </body>
 </html>
-�
