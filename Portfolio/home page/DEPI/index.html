@@ -50,21 +50,32 @@
         .expandable-content.expanded {
             max-height: 1500px; /* Large enough to contain all content */
         }
+        .content-image {
+            width: 100%;
+            max-width: 600px; /* Max width for images */
+            height: auto;
+            border-radius: 0.75rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 2rem auto; /* Centered with spacing */
+            display: block; /* Ensures margin auto works for centering */
+        }
     </style>
 </head>
 <body class="antialiased">
 
     <header class="bg-white/90 backdrop-blur-lg sticky top-0 z-50 shadow-md">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-xl md:text-2xl font-extrabold text-gray-800">
-                Mahmoud Mohamed (Seeny)
-            </h1>
+            <!-- Site Title / Logo with Back to Hub link -->
+            <a href="https://seeny-portfolio-hub.vercel.app" class="text-xl md:text-2xl font-extrabold text-gray-800 hover:text-teal-600 transition duration-300">
+                &larr; Mahmoud Mohamed (Seeny)
+            </a>
             <div class="hidden md:flex space-x-8 text-gray-600 font-medium">
                 <a href="#program-overview" class="hover:text-teal-500 transition duration-300 nav-link">Program Overview</a>
                 <a href="#depi-journey" class="hover:text-teal-500 transition duration-300 nav-link">My DEPI Journey</a>
                 <a href="#technical-mastery" class="hover:text-teal-500 transition duration-300 nav-link">Technical Mastery</a>
                 <a href="#golden-cart-project" class="hover:text-teal-500 transition duration-300 nav-link">Golden Cart Project</a>
                 <a href="#soft-skills-growth" class="hover:text-teal-500 transition duration-300 nav-link">Soft Skills Growth</a>
+                <a href="#depi-impact" class="hover:text-teal-500 transition duration-300 nav-link">DEPI Impact</a>
             </div>
             <a href="https://www.linkedin.com/in/mahmoudseeny" target="_blank" class="bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">
                 View LinkedIn
@@ -99,6 +110,8 @@
                 <p class="mt-5 text-lg text-gray-700 max-w-4xl mx-auto">
                     My 9-month immersive experience in the DEPI program was strategically focused on cultivating deep expertise in Supply Chain Management (SCM) and Enterprise Resource Planning (ERP), specifically utilizing Oracle ERP. This rigorous program equipped me with the critical ability to **identify complex business needs and translate them into effective digital solutions within an ERP framework.** I learned not just how to use Oracle ERP, but how to strategically apply its functionalities to drive operational efficiency and achieve business objectives. The blended learning methodology, combining online and offline sessions, provided a comprehensive and practical educational experience, preparing me to implement and manage transformative digital initiatives.
                 </p>
+                <!-- Image Placeholder for DEPI Journey -->
+                <img src="depi_images/main.png" alt="DEPI Program Learning Journey" class="content-image" onerror="this.onerror=null;this.src='https://placehold.co/600x350/E5E7EB/6B7280?text=DEPI+Journey+Visual';">
             </div>
         </section>
 
@@ -114,6 +127,8 @@
                 <!-- Oracle ERP Modules -->
                 <div class="section-card">
                     <h4 class="text-3xl font-bold text-gray-800 mb-8 text-center text-gradient">Oracle ERP Modules: Configuration & Strategic Application</h4>
+                    <!-- Image Placeholder for Oracle ERP -->
+                    <img src="depi_images/interface.png" alt="Oracle ERP System Interface" class="content-image" onerror="this.onerror=null;this.src='https://placehold.co/600x350/E5E7EB/6B7280?text=Oracle+ERP+Interface';">
                     
                     <div class="space-y-10">
                         <!-- Inventory Module -->
@@ -176,7 +191,7 @@
                                     <li>Integration with Account Receivables: Understanding of the seamless integration between order management and account receivables for accurate invoicing and payment tracking.</li>
                                     <li>Differentiated Sales Order Lines: Ability to differentiate sales orders by creating various sales line types, allowing for flexible order processing.</li>
                                     <li>Sales Order Setup & Creation: Hands-on experience in setting up and creating sales orders, including complex configurations.</li>
-                                    <li>Sales Order Integration & Completion: Proficiency in integrating and completing sales orders through both Order Management and Inventory applications, ensuring end-to-end fulfillment.</li>
+                                    <li>Sales Order Integration & Completion: Proficiency in integrating and and completing sales orders through both Order Management and Inventory applications, ensuring end-to-end fulfillment.</li>
                                 </ul>
                             </div>
                             <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
@@ -202,6 +217,8 @@
                 <div class="section-card">
                     <h4 class="text-3xl font-bold text-gray-800 mb-8 text-center text-gradient">Key Supply Chain Management Concepts & Strategic Application</h4>
                     <p class="text-gray-700 text-base mb-4">A deep understanding of core SCM principles and their strategic application to optimize end-to-end supply chain performance.</p>
+                    <!-- Image Placeholder for SCM Concepts -->
+                    <img src="depi_images/scm.png" alt="Supply Chain Concepts Visual" class="content-image" onerror="this.onerror=null;this.src='https://placehold.co/600x350/E5E7EB/6B7280?text=SCM+Concepts+Visual';">
                     <div class="expandable-content">
                         <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
                             <li>Demand Forecasting: Applied various forecasting techniques to predict future customer demand, enabling optimized inventory planning and production scheduling to meet market needs efficiently.</li>
@@ -209,7 +226,6 @@
                             <li>Supply Chain Network Design: Analyzed and understood the strategic placement of facilities (warehouses, distribution centers, manufacturing plants) and optimized transportation flow paths to enhance supply chain efficiency and responsiveness.</li>
                             <li>Automating Purchasing Workflows: Developed expertise in designing and implementing automated workflows for the purchasing process, significantly reducing manual intervention and enhancing efficiency and accuracy. This includes leveraging system capabilities to automate requisition approvals and purchase order generation.</li>
                             <li>Supply Chain Analytics: Utilized data-driven approaches and analytical tools to evaluate supply chain performance, identify bottlenecks, and uncover opportunities for process improvement and cost reduction.
-                                <!-- Placeholder for a graph/chart if data were available -->
                                 <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
                                     <p><strong>Potential for Visual Data:</strong> This section could be enhanced with a sample graph illustrating supply chain performance trends, bottleneck identification, or efficiency improvements derived from data analysis.</p>
                                 </div>
@@ -229,6 +245,8 @@
                 <p class="mt-5 text-lg text-gray-700 max-w-3xl mx-auto">
                     "Golden Cart" was the culmination of my DEPI training, a comprehensive Oracle ERP implementation project designed to revolutionize a hypermarket chain's operations. This project allowed me to apply all learned SCM and ERP principles to address real-world retail challenges.
                 </p>
+                <!-- Image Placeholder for Golden Cart Project -->
+                <img src="depi_images/gc.png" alt="Golden Cart Project Overview" class="content-image" onerror="this.onerror=null;this.src='https://placehold.co/600x350/E5E7EB/6B7280?text=Golden+Cart+Diagram';">
             </div>
 
             <div class="section-card">
@@ -335,7 +353,7 @@
 
                 <h4 class="text-2xl font-bold text-gray-800 mt-10 mb-6">A Special Acknowledgment</h4>
                 <p class="text-gray-700 text-base mb-4">
-                    This "Golden Cart" project was a monumental effort, and I want to extend my deepest gratitude to my incredible teammate, Mariam Mohamed Kamal Mohamed. We undertook this entire project ourselves, from conceptualization to the detailed Oracle ERP implementation and documentation. Her dedication, expertise, and collaborative spirit were instrumental in bringing this vision to life.
+                    The "Golden Cart" project was a significant undertaking, and I would like to express my sincere appreciation to my teammate, Mariam Mohamed Kamal Mohamed. From initial concept to the complete Oracle ERP implementation and documentation, we handled every aspect of this project together. Her professionalism, insight, and strong sense of teamwork played a key role in bringing our shared vision to completion.
                 </p>
                 <p class="text-gray-700 text-base">
                     Connect with Mariam on LinkedIn: <a href="https://www.linkedin.com/in/mariam-mohamed-kamal25/" target="_blank" class="text-teal-600 hover:underline">Mariam Mohamed Kamal Mohamed</a>
@@ -370,12 +388,26 @@
             </div>
         </section>
 
+        <section id="depi-impact" class="mb-20 md:mb-28 scroll-mt-20">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold text-gray-800">DEPI Impact: The 'That's It' Moment</h3>
+                <p class="mt-5 text-lg text-gray-700 max-w-4xl mx-auto">
+                    The Digital Egypt Pioneers Initiative was more than just a scholarship; it was a transformative experience that profoundly shaped my professional trajectory. From deeply understanding and implementing Oracle ERP to mastering complex Supply Chain Management concepts, and critically, refining my soft skills, DEPI has equipped me to confidently tackle real-world challenges. This program solidified my ability to bridge business needs with technological solutions, turning theoretical knowledge into practical, impactful change. The "Golden Cart" project stands as a testament to this, showcasing my capacity to drive digital transformation from concept to execution.
+                </p>
+                <p class="mt-5 text-lg text-gray-700 max-w-4xl mx-auto font-semibold text-gradient">
+                    "This is not just a portfolio; it's a testament to the journey from aspiration to applied expertise."
+                </p>
+            </div>
+        </section>
+
     </main>
 
     <footer class="bg-gray-900 text-white">
         <div class="container mx-auto px-6 py-8 text-center">
             <p>&copy; 2024 Mahmoud Mohamed. All rights reserved.</p>
-            <p class="text-gray-400 mt-2">This interactive portfolio showcases key contributions and skills gained during the Digital Egypt Pioneers Initiative.</p>
+            <p class="text-gray-400 mt-2">"If you can't understand it, just feel it."</p>
+            <p class="text-gray-400 mt-1">Connecting engineering excellence with digital innovation.</p>
+            <p class="text-gray-400 text-sm mt-4">Phone: +20 1127961626</p>
         </div>
     </footer>
 
@@ -397,6 +429,7 @@
                     if (entry.isIntersecting) {
                         navLinks.forEach(link => {
                             link.classList.remove('active-nav');
+                            // Ensure to check for the correct href attribute to match the section ID
                             if (link.getAttribute('href').substring(1) === entry.target.id) {
                                 link.classList.add('active-nav');
                             }
