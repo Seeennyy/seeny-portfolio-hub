@@ -1,61 +1,69 @@
-/* Custom CSS for Mahmoud Mohamed: Comprehensive Portfolio Hub */
-
+/* Custom styles to enhance the design beyond basic Tailwind */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #F0F4F8; /* Lighter background for fresh feel */
-    color: #2D3748; /* Darker text for better contrast */
-    /* Subtle background pattern */
+    background-color: #F0F4F8; /* Lighter background for a fresh feel */
+    color: #2D3748; /* Darker text for better contrast and readability */
+    /* Subtle background pattern for visual interest */
     background-image: linear-gradient(45deg, #f8fbfd 25%, transparent 25%, transparent 75%, #f8fbfd 75%, #f8fbfd),
                       linear-gradient(45deg, #f8fbfd 25%, transparent 25%, transparent 75%, #f8fbfd 75%, #f8fbfd);
     background-size: 60px 60px;
     background-position: 0 0, 30px 30px;
 }
+/* Styling for section cards: background, rounded corners, shadows, and hover effects */
 .section-card {
     background-color: #FFFFFF;
-    border-radius: 1.5rem; /* More rounded corners */
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Softer shadow */
-    padding: 2.5rem; /* Increased padding */
-    transition: all 0.3s ease-in-out; /* Add transition for hover effects */
+    border-radius: 1.5rem; /* More rounded corners for a modern look */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Softer initial shadow */
+    padding: 2.5rem; /* Generous padding inside cards */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+    border: 1px solid transparent; /* Base border for effect */
 }
 .section-card:hover {
-    transform: translateY(-5px) scale(1.01); /* Slight lift and scale */
-    box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.15), 0 6px 10px -3px rgba(0, 0, 0, 0.08); /* More pronounced shadow */
+    transform: translateY(-5px) scale(1.01); /* Slight lift and scale on hover */
+    box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.15), 0 6px 10px -3px rgba(0, 0, 0, 0.08); /* More pronounced shadow on hover */
+    border-color: #10B981; /* Teal border on hover */
 }
+/* Gradient background for hero section (if applied) */
 .gradient-bg {
     background: linear-gradient(to right, #0F766E, #10B981); /* Teal to green gradient */
 }
+/* Text gradient for headings and special elements */
 .text-gradient {
     background-image: linear-gradient(to right, #0F766E, #10B981);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; /* Clip background to text shape */
+    -webkit-text-fill-color: transparent; /* Make text transparent to show background */
 }
+/* Styling for statistic cards */
 .stat-card {
-    /* Tailwind classes are used directly in HTML for this component for brevity as they are utility classes. */
-    /* @apply bg-white p-6 rounded-xl shadow-md text-center; */
-    transition: all 0.3s ease-in-out; /* Add transition for hover effects */
+    /* Applying Tailwind classes directly within custom CSS for consistency */
+    @apply bg-white p-6 rounded-xl shadow-md text-center;
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+    border: 2px solid #34D399; /* Clearer teal-like border */
 }
 .stat-card:hover {
-    transform: translateY(-3px); /* Slight lift */
-    box-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.1), 0 3px 5px -1px rgba(0, 0, 0, 0.06);
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.1), 0 3px 5px -1px rgba(0, 0, 0, 0.06); /* Subtle shadow on hover */
+    border-color: #0F766E; /* Darker teal border on hover */
 }
 .stat-number {
-    /* Tailwind classes are used directly in HTML for this component for brevity as they are utility classes. */
-    /* @apply text-5xl font-extrabold text-teal-600 mb-2; */
+    /* Applying Tailwind classes directly within custom CSS for consistency */
+    @apply text-5xl font-extrabold text-teal-600 mb-2;
 }
 .stat-description {
-    /* Tailwind classes are used directly in HTML for this component for brevity as they are utility classes. */
-    /* @apply text-gray-700 text-lg; */
+    /* Applying Tailwind classes directly within custom CSS for consistency */
+    @apply text-gray-700 text-lg;
 }
 
-/* Hero text animation */
+/* Hero section text animation (fade in and slide up) */
 .hero-animate-fade-in {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInSlideUp 1s ease-out forwards;
 }
-.hero-animate-fade-in.delay-1 { animation-delay: 0.2s; }
-.hero-animate-fade-in.delay-2 { animation-delay: 0.4s; }
+.hero-animate-fade-in.delay-1 { animation-delay: 0.2s; } /* Add a slight delay for staggered animation */
+.hero-animate-fade-in.delay-2 { animation-delay: 0.4s; } /* Add a more significant delay */
 
+/* Keyframes for the fade in and slide up animation */
 @keyframes fadeInSlideUp {
     from {
         opacity: 0;
@@ -67,7 +75,7 @@ body {
     }
 }
 
-/* Button hover effect */
+/* Button hover effect for primary buttons */
 .btn-primary {
     transition: all 0.3s ease-in-out;
 }
@@ -78,4 +86,40 @@ body {
 .btn-primary:active {
     transform: translateY(0);
     box-shadow: none;
+}
+
+/* Profile image specific styling */
+.profile-img {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #10B981; /* Teal ring/frame */
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.4); /* Subtle outer glow */
+    margin: 0 auto 2rem auto;
+    transition: transform 0.3s ease-in-out;
+}
+.profile-img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Image frames for portfolio cards */
+.portfolio-card-img {
+    border-radius: 0.75rem; /* Rounded corners for image */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: 1px solid #E5E7EB; /* Light border for frame effect */
+    transition: border-color 0.3s ease-in-out; /* Smooth transition for border */
+    height: 250px; /* Increased height for clearer images */
+    width: 100%; /* Ensure it fills the width of its container */
+    object-fit: cover; /* Ensures the image covers the area, cropping if necessary */
+}
+.portfolio-card-img:hover {
+    border-color: #0F766E; /* Darker teal border on hover */
+}
+/* Styling for the skill list items to add a subtle border on hover */
+.skill-list-item {
+    transition: background-color 0.2s ease-in-out;
+}
+.skill-list-item:hover {
+    background-color: #F8FBFD; /* Very light highlight on hover */
 }
