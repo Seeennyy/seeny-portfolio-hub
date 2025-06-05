@@ -1,0 +1,45 @@
+/* Custom styles for the College Projects Portfolio page */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F8F7F4; /* Light background */
+    color: #1a202c; /* Dark text */
+}
+
+/* Navigation link active state */
+.active-nav {
+    color: #0d9488;
+    font-weight: 600;
+    position: relative;
+}
+.active-nav::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #0d9488;
+}
+
+/* Project details content toggle */
+.project-details-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+.project-details-content.expanded {
+    max-height: 1200px; /* Adjusted to ensure all content is visible */
+    transition: max-height 0.5s ease-in;
+}
+
+/* General styles often reused from main site, if not importing */
+/* Consider adding: */
+/* .text-gradient {
+    background-image: linear-gradient(to right, #0F766E, #10B981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} */
+
+/* You might also want to copy over styles like .section-card, .btn-primary etc.
+   from your main style.css to maintain consistent styling for cards and buttons
+   if you're not planning to use @import. */
