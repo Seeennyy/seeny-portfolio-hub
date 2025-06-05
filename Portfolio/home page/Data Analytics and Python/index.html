@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahmoud Mohamed: Data Analytics & Programming Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F4F8; /* Lighter background for fresh feel */
+            color: #2D3748; /* Darker text for better contrast */
+        }
+        .active-nav {
+            color: #10B981; /* Brighter teal for active state */
+            font-weight: 600;
+            position: relative;
+        }
+        .active-nav::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #10B981;
+        }
+        .section-card {
+            background-color: #FFFFFF;
+            border-radius: 1.5rem; /* More rounded corners */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Softer shadow */
+            padding: 2.5rem; /* Increased padding */
+        }
+        .gradient-bg {
+            background: linear-gradient(to right, #0F766E, #10B981); /* Teal to green gradient */
+        }
+        .text-gradient {
+            background-image: linear-gradient(to right, #0F766E, #10B981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s ease-in-out; /* Smooth transition */
+        }
+        .expandable-content.expanded {
+            max-height: 2000px; /* Adjusted to accommodate more content */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/90 backdrop-blur-lg sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl md:text-2xl font-extrabold text-gray-800">
+                Mahmoud Mohamed (Seeny)
+            </h1>
+            <div class="hidden md:flex space-x-8 text-gray-600 font-medium">
+                <a href="#program-overview" class="hover:text-teal-500 transition duration-300 nav-link">Program Overview</a>
+                <a href="#excel-expertise" class="hover:text-teal-500 transition duration-300 nav-link">Excel Analytics</a>
+                <a href="#python-mastery" class="hover:text-teal-500 transition duration-300 nav-link">Python Programming</a>
+                <a href="#key-projects" class="hover:text-teal-500 transition duration-300 nav-link">Key Projects</a>
+                <a href="#skills-tools" class="hover:text-teal-500 transition duration-300 nav-link">Skills & Tools</a>
+            </div>
+            <a href="https://www.linkedin.com/in/mahmoudseeny" target="_blank" class="bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">
+                View LinkedIn
+            </a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8 md:py-16">
+
+        <section id="hero" class="text-center mb-20 md:mb-28 pt-8">
+            <span class="text-teal-600 font-bold uppercase tracking-widest text-sm md:text-base">Data Analytics & Programming Portfolio</span>
+            <h2 class="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight mt-4">
+                <span class="text-gradient">Driving Insights</span> <br> with Python & Advanced Excel
+            </h2>
+            <p class="max-w-4xl mx-auto mt-8 text-xl text-gray-700 leading-relaxed">
+                This portfolio showcases my robust capabilities in data analytics and programming, honed through intensive training in Dr. Angela Yu's "100 Days of Code: The Complete Python Pro Bootcamp" and comprehensive Excel data analysis courses. I leverage these skills to extract actionable insights, automate processes, and build dynamic applications.
+            </p>
+        </section>
+
+        <section id="program-overview" class="mb-20 md:mb-28 scroll-mt-20">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold text-gray-800">Program Overview: 100 Days of Code (Python)</h3>
+                <p class="mt-5 text-lg text-gray-700 max-w-3xl mx-auto">
+                    I have completed a significant portion of Dr. Angela Yu's highly-rated "100 Days of Code: The Complete Python Pro Bootcamp" on Udemy. This immersive course emphasizes hands-on project-based learning, transforming beginners into professional Python developers through daily coding challenges. The curriculum covers a vast array of topics, from foundational programming concepts to advanced web development, data science, and automation.
+                </p>
+                <div class="mt-8">
+                    <a href="https://www.udemy.com/course/100-days-of-code/" target="_blank" class="bg-teal-600 text-white px-6 py-3 rounded-xl hover:bg-teal-700 transition duration-300 text-lg font-semibold shadow-lg">
+                        View Course on Udemy
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="excel-expertise" class="mb-20 md:mb-28 scroll-mt-20">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold text-gray-800">Excel Data Analytics Expertise</h3>
+                <p class="mt-5 text-lg text-gray-700 max-w-3xl mx-auto">
+                    My proficiency in Excel extends beyond basic spreadsheet management to advanced data analysis, visualization, and business intelligence tools. I leverage Excel to perform complex calculations, create insightful reports, and build interactive dashboards.
+                </p>
+            </div>
+
+            <div class="section-card">
+                <h4 class="text-3xl font-bold text-gray-800 mb-8 text-center text-gradient">Core Excel Skills & Advanced Capabilities</h4>
+                
+                <div class="space-y-10">
+                    <!-- Spreadsheets & Fundamentals -->
+                    <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+                        <h5 class="text-2xl font-semibold text-teal-700 mb-4">Spreadsheets & Fundamentals</h5>
+                        <p class="text-gray-700 text-base mb-4">Mastery of Excel's core interface and foundational elements for efficient data organization.</p>
+                        <div class="expandable-content">
+                            <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                <li>Excel Setup & Installation</li>
+                                <li>Understanding Worksheets and Workbooks</li>
+                                <li>Navigating and Utilizing the Ribbon Interface</li>
+                            </ul>
+                        </div>
+                        <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                    </div>
+
+                    <!-- Formulas & Functions -->
+                    <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+                        <h5 class="text-2xl font-semibold text-teal-700 mb-4">Formulas & Functions: Dynamic Data Manipulation</h5>
+                        <p class="text-gray-700 text-base mb-4">Proficiency in a wide array of Excel formulas and functions for complex data calculations and logical operations.</p>
+                        <div class="expandable-content">
+                            <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                <li>Formulas Introduction & Application</li>
+                                <li>Function Introduction & Usage</li>
+                                <li>Logical Functions (e.g., IF, AND, OR)</li>
+                                <li>Math Functions (e.g., SUM, AVERAGE, ROUND)</li>
+                                <li>Statistical Functions (e.g., COUNT, MAX, MIN, STDEV)</li>
+                                <li>Array Formulas (e.g., CSE formulas for multi-cell calculations)</li>
+                                <li>Lookup Functions (e.g., VLOOKUP, HLOOKUP, XLOOKUP)</li>
+                                <li>Text Functions (e.g., CONCATENATE, LEFT, RIGHT, MID)</li>
+                                <li>Date and Time Functions (e.g., TODAY, NOW, DATEDIF)</li>
+                            </ul>
+                            <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                                <p>View Documentation: <a href="https://drive.google.com/drive/folders/1md_bu-WdiRejubfU-JxCwmFLkghZxdHP?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                            </div>
+                        </div>
+                        <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                    </div>
+
+                    <!-- Charts & Visualization -->
+                    <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+                        <h5 class="text-2xl font-semibold text-teal-700 mb-4">Charts & Visualization: Communicating Data Effectively</h5>
+                        <p class="text-gray-700 text-base mb-4">Skill in creating various chart types to visually represent data, identify trends, and communicate insights clearly.</p>
+                        <div class="expandable-content">
+                            <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                <li>Charts Introduction & Basic Chart Types</li>
+                                <li>Advanced Charting Techniques & Customization</li>
+                                <li>Statistical Charts for Data Distribution & Relationships</li>
+                                <li>Sparklines for Compact Data Visualization</li>
+                            </ul>
+                            <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                                <p>View Documentation: <a href="https://drive.google.com/drive/folders/1XyG50lICy7DJepAwDfbSU3NbVMtypfEQ?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                            </div>
+                        </div>
+                        <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                    </div>
+
+                    <!-- Spreadsheet Advanced & Collaboration -->
+                    <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+                        <h5 class="text-2xl font-semibold text-teal-700 mb-4">Advanced Spreadsheets & Collaboration</h5>
+                        <p class="text-gray-700 text-base mb-4">Advanced techniques for data organization, formatting, and collaborative work within Excel environments.</p>
+                        <div class="expandable-content">
+                            <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                <li>Working with Tables for Structured Data</li>
+                                <li>Advanced Formatting Techniques for Readability & Impact</li>
+                                <li>Collaboration Features for Shared Workbooks</li>
+                            </ul>
+                            <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                                <p>View Documentation: <a href="https://drive.google.com/drive/folders/1sEXEXqeZrICwAcB0iV4ceRoSEy535P1j?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                            </div>
+                        </div>
+                        <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                    </div>
+
+                    <!-- PivotTables & PivotCharts -->
+                    <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+                        <h5 class="text-2xl font-semibold text-teal-700 mb-4">PivotTables & PivotCharts: Summarizing & Analyzing Large Datasets</h5>
+                        <p class="text-gray-700 text-base mb-4">Expertise in using PivotTables and PivotCharts for dynamic data summarization, analysis, and interactive reporting.</p>
+                        <div class="expandable-content">
+                            <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                <li>PivotTable Introduction & Basic Usage</li>
+                                <li>Advanced PivotTable Techniques (e.g., calculated fields, grouping)</li>
+                                <li>Creating & Customizing PivotCharts for Visual Summaries</li>
+                            </ul>
+                            <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                                <p>View Documentation: <a href="https://drive.google.com/drive/folders/1jBgUX3jKlWmLLryavGNMb2CvR3JMsNyf?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                            </div>
+                        </div>
+                        <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                    </div>
+
+                    <!-- Advanced Data Analysis Tools -->
+                    <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+                        <h5 class="text-2xl font-semibold text-teal-700 mb-4">Advanced Data Analysis Tools (Add-ins)</h5>
+                        <p class="text-gray-700 text-base mb-4">Utilizing Excel's powerful add-ins for in-depth statistical analysis and scenario modeling.</p>
+                        <div class="expandable-content">
+                            <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                <li>Analysis Add-ins Overview & Usage</li>
+                                <li>Data Tables for What-If Analysis</li>
+                                <li>Utilizing the Analysis ToolPak for Statistical Functions</li>
+                            </ul>
+                            <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                                <p>View Documentation: <a href="https://drive.google.com/drive/folders/1FsFWl8HEmad5d96a0ItenZku_SOlA-Ue?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                            </div>
+                        </div>
+                        <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                    </div>
+
+                    <!-- Power Query -->
+                    <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+                        <h5 class="text-2xl font-semibold text-teal-700 mb-4">Power Query: Data Transformation & Integration</h5>
+                        <p class="text-gray-700 text-base mb-4">Mastery of Power Query for connecting to diverse data sources, cleaning, and transforming data for analysis.</p>
+                        <div class="expandable-content">
+                            <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                <li>Power Query Introduction & Data Import</li>
+                                <li>Power Query Editor for Data Cleaning & Shaping</li>
+                                <li>Advanced Transformations (e.g., unpivoting, custom columns)</li>
+                                <li>Understanding Append vs. Merge Operations</li>
+                                <li>Introduction to M Language for Custom Queries</li>
+                            </ul>
+                            <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                                <p>View Documentation: <a href="https://drive.google.com/drive/folders/1lahgy_7fXUeQFCS3qCzo-RyX8OOo1f4k?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                            </div>
+                        </div>
+                        <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                    </div>
+
+                    <!-- Power Pivot / DAX -->
+                    <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+                        <h5 class="text-2xl font-semibold text-teal-700 mb-4">Power Pivot / DAX: Advanced Data Modeling & Calculations</h5>
+                        <p class="text-gray-700 text-base mb-4">Proficiency in Power Pivot for data modeling and DAX for creating powerful measures and calculated columns.</p>
+                        <div class="expandable-content">
+                            <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                <li>Power Pivot Introduction & Data Model Creation</li>
+                                <li>Working with the Power Pivot Window</li>
+                                <li>DAX (Data Analysis Expressions) Introduction</li>
+                                <li>Advanced DAX Functions & Measures</li>
+                            </ul>
+                            <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                                <p>View Documentation: <a href="https://drive.google.com/drive/folders/1Wue6ZlEXb5JMzyHZ0M4z1tzE2HZwYvUY?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                            </div>
+                        </div>
+                        <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="python-mastery" class="mb-20 md:mb-28 scroll-mt-20">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold text-gray-800">Python Programming Mastery</h3>
+                <p class="mt-5 text-lg text-gray-700 max-w-3xl mx-auto">
+                    My journey through "100 Days of Code" has equipped me with a strong foundation in Python, enabling me to build diverse applications, automate tasks, and work with data effectively.
+                </p>
+            </div>
+
+            <div class="section-card">
+                <h4 class="text-3xl font-bold text-gray-800 mb-8 text-center text-gradient">Core Python Concepts & Development Areas</h4>
+                
+                <div class="space-y-10">
+                    <!-- Python Fundamentals -->
+                    <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+                        <h5 class="text-2xl font-semibold text-teal-700 mb-4">Python Fundamentals & Control Flow</h5>
+                        <p class="text-gray-700 text-base mb-4">Solid understanding of Python's core syntax, data types, and control structures for building robust logic.</p>
+                        <div class="expandable-content">
+                            <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                <li>Variables & Data Types (Integers, Floats, Strings, Booleans)</li>
+                                <li>Mathematical Operations & Type Conversion</li>
+                                <li>Control Flow (If/Else, Elif statements)</li>
+                                <li>Logical Operators (AND, OR, NOT)</li>
+                                <li>Loops (For loops with lists, ranges; While loops)</li>
+                                <li>Functions (Defining, Calling, Arguments, Return Values, Multiple Return Values)</li>
+                                <li>Scope (Local vs. Global) & Constants</li>
+                            </ul>
+                        </div>
+                        <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                    </div>
+
+                    <!-- Data Structures & Comprehensions -->
+                    <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+                        <h5 class="text-2xl font-semibold text-teal-700 mb-4">Data Structures & Comprehensions</h5>
+                        <p class="text-gray-700 text-base mb-4">Proficiency in organizing and manipulating data using Python's built-in structures and efficient comprehension techniques.</p>
+                        <div class="expandable-content">
+                            <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                <li>Lists (Creation, Manipulation, Nested Lists, Slicing)</li>
+                                <li>Dictionaries (Deep Dive, Nesting Lists and Dictionaries)</li>
+                                <li>Tuples</li>
+                                <li>List Comprehension (Squaring Numbers, Filtering Even Numbers, Data Overlap)</li>
+                                <li>Dictionary Comprehension</li>
+                            </ul>
+                        </div>
+                        <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                    </div>
+
+                    <!-- Object-Oriented Programming (OOP) -->
+                    <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+                        <h5 class="text-2xl font-semibold text-teal-700 mb-4">Object-Oriented Programming (OOP)</h5>
+                        <p class="text-gray-700 text-base mb-4">Foundational understanding and practical application of OOP principles for building structured and reusable code.</p>
+                        <div class="expandable-content">
+                            <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                <li>Classes & Objects (Creating Classes, Attributes, Methods)</li>
+                                <li>Constructors (`__init__()` function)</li>
+                                <li>Inheritance</li>
+                            </ul>
+                        </div>
+                        <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                    </div>
+
+                    <!-- Error Handling & Debugging -->
+                    <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+                        <h5 class="text-2xl font-semibold text-teal-700 mb-4">Error Handling & Debugging</h5>
+                        <p class="text-gray-700 text-base mb-4">Proficiency in identifying, handling, and debugging errors to ensure robust and reliable code.</p>
+                        <div class="expandable-content">
+                            <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                <li>Catching Exceptions (`try-except-finally` pattern)</li>
+                                <li>Raising Custom Exceptions</li>
+                                <li>Handling Specific Errors (IndexError, KeyError)</li>
+                                <li>Debugging Techniques (using `print()` statements, debuggers)</li>
+                            </ul>
+                        </div>
+                        <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                    </div>
+
+                    <!-- File Handling & JSON -->
+                    <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+                        <h5 class="text-2xl font-semibold text-teal-700 mb-4">File Handling & JSON Data</h5>
+                        <p class="text-gray-700 text-base mb-4">Skills in reading from, writing to, and updating files, including working with JSON data for structured storage.</p>
+                        <div class="expandable-content">
+                            <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                <li>Opening, Reading, and Writing to Files (`with` keyword)</li>
+                                <li>Understanding Relative and Absolute File Paths</li>
+                                <li>Working with JSON Data (Write, Read, Update)</li>
+                            </ul>
+                        </div>
+                        <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                    </div>
+
+                    <!-- APIs & Web Requests -->
+                    <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+                        <h5 class="text-2xl font-semibold text-teal-700 mb-4">APIs & Web Requests: Connecting to External Services</h5>
+                        <p class="text-gray-700 text-base mb-4">Proficiency in interacting with Application Programming Interfaces (APIs) to fetch and send data, enabling integration with various web services.</p>
+                        <div class="expandable-content">
+                            <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                <li>Understanding APIs, Endpoints, and API Calls</li>
+                                <li>Working with HTTP Codes, Exceptions, and JSON Data from API Responses</li>
+                                <li>API Parameters & Authentication (API Keys, HTTP Headers)</li>
+                                <li>HTTP Methods (GET, POST, PUT, DELETE)</li>
+                                <li>Utilizing Environment Variables for Secure API Key Management</li>
+                            </ul>
+                        </div>
+                        <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                    </div>
+
+                    <!-- GUI Development (Tkinter) -->
+                    <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+                        <h5 class="text-2xl font-semibold text-teal-700 mb-4">GUI Development with Tkinter</h5>
+                        <p class="text-gray-700 text-base mb-4">Skills in building graphical user interfaces (GUIs) for desktop applications using Python's Tkinter library.</p>
+                        <div class="expandable-content">
+                            <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                <li>Introduction to Tkinter & Creating Windows/Labels</li>
+                                <li>Working with Widgets (Buttons, Entry, Radiobuttons, Scales, Checkbuttons)</li>
+                                <li>Layout Managers (`pack()`, `place()`, `grid()`)</li>
+                                <li>Canvas Widget & Image Integration</li>
+                                <li>Dynamic Typing & Timer Mechanisms</li>
+                            </ul>
+                        </div>
+                        <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                    </div>
+
+                    <!-- Web Foundations (HTML/CSS) -->
+                    <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+                        <h5 class="text-2xl font-semibold text-teal-700 mb-4">Web Foundations: HTML & CSS</h5>
+                        <p class="text-700 text-base mb-4">Fundamental knowledge of front-end web development, essential for understanding web-based data interactions and applications.</p>
+                        <div class="expandable-content">
+                            <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                <li>Introduction to HTML (Elements, Boilerplate, Lists, Anchors, Images)</li>
+                                <li>Introduction to CSS (Adding CSS, Selectors, Colors, Font Properties, Box Model)</li>
+                                <li>Understanding How the Internet & Websites Work</li>
+                            </ul>
+                        </div>
+                        <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="key-projects" class="mb-20 md:mb-28 scroll-mt-20">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold text-gray-800">Key Projects & Applications</h3>
+                <p class="mt-5 text-lg text-gray-700 max-w-3xl mx-auto">
+                    Practical application of my skills through diverse projects, demonstrating problem-solving, data manipulation, and application development.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Excel Project 1: Salary Dashboard -->
+                <div class="section-card p-6">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">Excel Project #1: Salary Dashboard</h4>
+                    <p class="text-gray-700 text-base mb-4">Developed a comprehensive and interactive salary dashboard using advanced Excel features to visualize and analyze salary data effectively.</p>
+                    <div class="expandable-content">
+                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                            <li><strong>Problem:</strong> Need for a clear, concise, and interactive way to present salary data for quick insights and decision-making.</li>
+                            <li><strong>Solution:</strong> Built a dynamic dashboard leveraging various Excel functionalities.</li>
+                            <li><strong>Tools Used:</strong> Excel (Formulas, Functions, Charts, Tables, Formatting).</li>
+                            <li><strong>Outcome:</strong> Enabled stakeholders to easily explore salary trends, distributions, and comparisons through a user-friendly interface.</li>
+                        </ul>
+                        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                            <p>View Documentation: <a href="https://drive.google.com/drive/folders/1lLcfMOTIDLj7H3TTrDFSRYfX1TT4vEQL?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                        </div>
+                    </div>
+                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                </div>
+
+                <!-- Excel Project 2: Salary Analysis -->
+                <div class="section-card p-6">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">Excel Project #2: Salary Analysis</h4>
+                    <p class="text-gray-700 text-base mb-4">Conducted in-depth salary analysis using advanced Excel tools, including PivotTables, Power Query, and DAX, to derive actionable insights.</p>
+                    <div class="expandable-content">
+                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                            <li><strong>Problem:</strong> Extracting meaningful insights from raw salary datasets to understand underlying patterns and inform compensation strategies.</li>
+                            <li><strong>Solution:</strong> Performed comprehensive data analysis and modeling.</li>
+                            <li><strong>Tools Used:</strong> Excel (PivotTables, Power Query, Power Pivot, DAX, Analysis ToolPak).</li>
+                            <li><strong>Outcome:</strong> Identified key factors influencing salaries, summarized data efficiently, and prepared the data for further reporting, ready for sharing via Git & GitHub.</li>
+                        </ul>
+                        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                            <p>View Documentation: <a href="https://drive.google.com/drive/folders/1IgMl48ucxZsHw5xkukKRwmVyXoehnyhV?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                        </div>
+                    </div>
+                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                </div>
+
+                <!-- Python Project 1: Flight Deal Finder Capstone -->
+                <div class="section-card p-6">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">Python Project: Flight Deal Finder Capstone</h4>
+                    <p class="text-gray-700 text-base mb-4">Developed an automated flight deal notification system, demonstrating API integration, data comparison, and automated communication.</p>
+                    <div class="expandable-content">
+                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                            <li><strong>Problem:</strong> Manually tracking cheap flight deals is time-consuming and inefficient for travelers.</li>
+                            <li><strong>Solution:</strong> Built a Python application that fetches flight prices from an API (Amadeus), compares them against desired prices in a Google Sheet (via Sheety API), and sends notifications (e.g., SMS/email) if a deal is found.</li>
+                            <li><strong>Tools Used:</strong> Python, Requests library, Sheety API, Amadeus API, Google Sheets.</li>
+                            <li><strong>Outcome:</strong> Created a proactive system to alert users to significant flight price drops, saving time and potentially money.</li>
+                        </ul>
+                        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                            <p>View Documentation (Days 39 & 40): <a href="https://drive.google.com/drive/folders/1rgsIBDjjniMgYLpyze5ypJa19J9UcA_y?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                        </div>
+                    </div>
+                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                </div>
+
+                <!-- Python Project 2: Password Manager GUI App -->
+                <div class="section-card p-6">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">Python Project: Password Manager GUI App</h4>
+                    <p class="text-gray-700 text-base mb-4">Designed and implemented a secure desktop password manager with a graphical user interface, demonstrating GUI development, file handling, and error management.</p>
+                    <div class="expandable-content">
+                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                            <li><strong>Problem:</strong> Users need a secure and convenient way to store and retrieve website credentials.</li>
+                            <li><strong>Solution:</strong> Developed a Tkinter-based GUI application that allows users to generate, save (to JSON), and search for passwords, incorporating robust error handling.</li>
+                            <li><strong>Tools Used:</strong> Python, Tkinter, JSON module.</li>
+                            <li><strong>Outcome:</strong> Created a functional and user-friendly desktop application for secure password management, showcasing skills in GUI design, file I/O, and exception handling.</li>
+                        </ul>
+                        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                            <p>View Documentation (Day 29): <a href="https://drive.google.com/drive/folders/1s-Ur8AW-CtVfRQflm1X2y_gZjOhBGBm0?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                        </div>
+                    </div>
+                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                </div>
+
+                <!-- Python Project 3: Classic Arcade Games (Snake / Pong) -->
+                <div class="section-card p-6">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">Python Project: Classic Arcade Games (Snake / Pong)</h4>
+                    <p class="text-gray-700 text-base mb-4">Built classic arcade games like Snake and Pong, demonstrating object-oriented programming, game logic, and graphical rendering with Python's Turtle module.</p>
+                    <div class="expandable-content">
+                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                            <li><strong>Problem:</strong> Learning core programming concepts and OOP through engaging, visual projects.</li>
+                            <li><strong>Solution:</strong> Developed fully functional versions of Snake and Pong, implementing game mechanics, collision detection, scoring, and user input handling.</li>
+                            <li><strong>Tools Used:</strong> Python, Turtle module.</li>
+                            <li><strong>Outcome:</strong> Solidified understanding of OOP principles, game loop design, and basic graphics programming, resulting in playable applications.</li>
+                        </ul>
+                        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                            <p>View Documentation (Day 20 - Snake, Day 22 - Pong): Access Snake Game files: <a href="https://drive.google.com/drive/folders/1Bc1ov0dWPqHNlKvtMtbpmfOetOBV_9F9?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder (Snake)</a> | Access Pong Game files: <a href="https://drive.google.com/drive/folders/1dq6xeWpnSyQs8w-_RucDjJ-5r6DVsGwi?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder (Pong)</a></p>
+                        </div>
+                    </div>
+                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                </div>
+
+                <!-- Python Project: Pomodoro App GUI -->
+                <div class="section-card p-6">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">Python Project: Pomodoro App GUI</h4>
+                    <p class="text-gray-700 text-base mb-4">Developed a Pomodoro timer application with a graphical user interface, demonstrating GUI development, timer logic, and visual feedback.</p>
+                    <div class="expandable-content">
+                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                            <li><strong>Problem:</strong> Users need a productivity tool to manage work and break intervals.</li>
+                            <li><strong>Solution:</strong> Built a Tkinter-based GUI application that implements the Pomodoro technique with customizable timings and visual cues.</li>
+                            <li><strong>Tools Used:</strong> Python, Tkinter, `time` module.</li>
+                            <li><strong>Outcome:</strong> A functional desktop application for time management, showcasing GUI design and event handling.</li>
+                        </ul>
+                        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                            <p>View Documentation (Day 28): <a href="https://drive.google.com/drive/folders/1Nvnlg2j4VMKjvJJG1gxtyQs8Jvkyo0d-?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                        </div>
+                    </div>
+                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                </div>
+
+                <!-- Python Project: Flash Card App -->
+                <div class="section-card p-6">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">Python Project: Flash Card App</h4>
+                    <p class="text-gray-700 text-base mb-4">Designed and implemented a flash card application with a GUI, enabling users to learn new vocabulary or concepts interactively through CSV file handling.</p>
+                    <div class="expandable-content">
+                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                            <li><strong>Problem:</strong> Creating an interactive tool for language learning or memorization.</li>
+                            <li><strong>Solution:</strong> Developed a Tkinter-based GUI application that displays flashcards, tracks known/unknown words, and allows users to progress through a word list loaded from a CSV file.</li>
+                            <li><strong>Tools Used:</strong> Python, Tkinter, Pandas (or CSV module for file handling).</li>
+                            <li><strong>Outcome:</strong> A practical learning application demonstrating GUI development, file I/O, and basic data management.</li>
+                        </ul>
+                        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                            <p>View Documentation (Day 31): <a href="https://drive.google.com/drive/folders/1czIsJEUBW6UhhqIbnpBsuONIUkc4yTtV?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                        </div>
+                    </div>
+                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                </div>
+
+                <!-- Python Project: Quizzler App (GUI with API) -->
+                <div class="section-card p-6">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">Python Project: Quizzler App (GUI with API)</h4>
+                    <p class="text-gray-700 text-base mb-4">Developed a dynamic quiz application with a graphical user interface that fetches questions from an external API, demonstrating advanced GUI design and API integration.</p>
+                    <div class="expandable-content">
+                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                            <li><strong>Problem:</strong> Creating a quiz app with fresh, dynamic content.</li>
+                            <li><strong>Solution:</strong> Built a Tkinter GUI that interacts with a trivia API (e.g., Open Trivia DB) to display questions, handle user input, and provide real-time feedback.</li>
+                            <li><strong>Tools Used:</strong> Python, Tkinter, Requests library (for API calls).</li>
+                            <li><strong>Outcome:</strong> An engaging and interactive quiz application showcasing complex GUI development and seamless external data integration.</li>
+                        </ul>
+                        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                            <p>View Documentation (Day 34): <a href="https://drive.google.com/drive/folders/1LI9NsVD5si9TSbfd4n8J0qmj3jSE8vSv?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                        </div>
+                    </div>
+                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                </div>
+
+                <!-- Python Project: Habit Tracker (API + Pixela) -->
+                <div class="section-card p-6">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">Python Project: Habit Tracker (API + Pixela)</h4>
+                    <p class="text-gray-700 text-base mb-4">Created a personal habit tracking system that interacts with the Pixela API to log daily progress, demonstrating advanced API interaction (POST, PUT, DELETE requests) and data visualization through an external service.</p>
+                    <div class="expandable-content">
+                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                            <li><strong>Problem:</strong> Tracking personal habits and visualizing progress over time.</li>
+                            <li><strong>Solution:</strong> Developed a Python script that uses the Pixela API to create user graphs, post daily pixel data, update entries, and delete data, effectively building a digital habit tracker.</li>
+                            <li><strong>Tools Used:</strong> Python, Requests library, Pixela API.</li>
+                            <li><strong>Outcome:</strong> A functional backend for a habit tracking system, showcasing robust API communication and data management.</li>
+                        </ul>
+                        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                            <p>View Documentation (Day 37): <a href="https://drive.google.com/drive/folders/1zTreu13kGFimECCxwuVW14SBWOBa_I6s?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                        </div>
+                    </div>
+                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                </div>
+
+                <!-- Python Project: Workout Tracking (Google Sheets + NLP) -->
+                <div class="section-card p-6">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-gradient">Python Project: Workout Tracking (Google Sheets + NLP)</h4>
+                    <p class="text-gray-700 text-base mb-4">Developed an intelligent workout tracker that takes natural language input, processes it using Natural Language Processing (NLP), and logs workout data to Google Sheets via APIs, demonstrating advanced data integration and text processing.</p>
+                    <div class="expandable-content">
+                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                            <li><strong>Problem:</strong> Manually logging workout details can be cumbersome; desire for a more intuitive input method.</li>
+                            <li><strong>Solution:</strong> Built a Python application that uses a Natural Language Processing API (e.g., Nutritionix as per course) to parse user-entered workout descriptions, then sends the structured data to a Google Sheet via the Sheety API.</li>
+                            <li><strong>Tools Used:</strong> Python, Requests library, Google Sheets API (via Sheety), NLP API.</li>
+                            <li><strong>Outcome:</strong> A smart, automated workout logging system that simplifies data entry and provides a structured record of fitness activities.</li>
+                        </ul>
+                        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                            <p>View Documentation (Day 38): <a href="https://drive.google.com/drive/folders/1j94szA3OFZcUFac20tRdVZashGMCjYfZ?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Google Drive Folder</a></p>
+                        </div>
+                    </div>
+                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="skills-tools" class="mb-20 md:mb-28 scroll-mt-20">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold text-gray-800">Skills & Technologies</h3>
+                <p class="mt-5 text-lg text-gray-700 max-w-3xl mx-auto">
+                    A comprehensive overview of the programming languages, tools, libraries, and analytical concepts mastered during my data analytics and programming journey.
+                </p>
+            </div>
+
+            <div class="section-card">
+                <h4 class="text-3xl font-bold text-gray-800 mb-8 text-center text-gradient">Core Competencies & Technical Stack</h4>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h5 class="text-xl font-semibold text-gray-800 mb-3">Programming Languages</h5>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                            <li>Python (Proficient)</li>
+                            <li>SQL (Foundational)</li>
+                            <li>M Language (Power Query)</li>
+                            <li>DAX (Power Pivot)</li>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h5 class="text-xl font-semibold text-gray-800 mb-3">Python Libraries & Frameworks</h5>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                            <li><strong>Data Manipulation:</strong> Pandas, NumPy</li>
+                            <li><strong>GUI Development:</strong> Tkinter, Turtle</li>
+                            <li><strong>Web Requests/APIs:</strong> Requests</li>
+                            <li><strong>Automation/Scripting:</strong> Smtplib, Datetime</li>
+                            <li><strong>Web Scraping (Intro):</strong> BeautifulSoup (Course mention, but beyond Day 44)</li>
+                            <li><strong>Machine Learning (Intro):</strong> Scikit-learn (Course mention, but beyond Day 44)</li>
+                            <li><strong>Web Frameworks (Intro):</strong> Flask (Course mention, but beyond Day 44)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h5 class="text-xl font-semibold text-gray-800 mb-3">Data Analytics Tools & Concepts</h5>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                            <li>Microsoft Excel (Advanced)</li>
+                            <li>Formulas & Functions (Logical, Math, Statistical, Array, Lookup, Text, Date/Time)</li>
+                            <li>Charts & Data Visualization</li>
+                            <li>PivotTables & PivotCharts</li>
+                            <li>Analysis Add-ins & ToolPak</li>
+                            <li>Power Query (Data Transformation)</li>
+                            <li>Power Pivot (Data Modeling)</li>
+                            <li>Demand Forecasting (Conceptual)</li>
+                            <li>Data Cleaning & Preprocessing (Excel, Python)</li>
+                            <li>Exploratory Data Analysis (Excel, Python)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h5 class="text-xl font-semibold text-gray-800 mb-3">Development Environments & Version Control</h5>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                            <li>PyCharm</li>
+                            <li>Jupyter Notebooks</li>
+                            <li>Google Colab</li>
+                            <li>Git (Basic)</li>
+                            <li>GitHub (Basic for project sharing)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h5 class="text-xl font-semibold text-gray-800 mb-3">Core Programming Concepts</h5>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                            <li>Object-Oriented Programming (OOP)</li>
+                            <li>Error Handling & Exception Management</li>
+                            <li>Debugging Techniques</li>
+                            <li>File I/O</li>
+                            <li>API Integration</li>
+                            <li>Modular Programming</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="growth-approach" class="mb-20 md:mb-28 scroll-mt-20">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold text-gray-800">Growth & Learning Approach</h3>
+                <p class="mt-5 text-lg text-gray-700 max-w-3xl mx-auto">
+                    My approach to mastering data analytics and programming is rooted in continuous learning, practical application, and a problem-solving mindset.
+                </p>
+            </div>
+
+            <div class="section-card">
+                <h4 class="text-3xl font-bold text-gray-800 mb-8 text-center text-gradient">Key Learning & Professional Development Traits</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                    <li><strong>Problem Structuring:</strong> Ability to break down complex data problems into manageable components and design effective analytical solutions.</li>
+                    <li><strong>Logical Reasoning:</strong> Strong capacity for analytical and logical thinking, crucial for debugging code and interpreting data insights.</li>
+                    <li><strong>Debugging Proficiency:</strong> Developed systematic approaches to identify and resolve issues in code and data processes.</li>
+                    <li><strong>Attention to Detail:</strong> Meticulous approach to data cleaning, coding, and analysis to ensure accuracy and reliability.</li>
+                    <li><strong>Self-Learning & Adaptability:</strong> Proactive engagement with new tools and concepts in a rapidly evolving technological landscape.</li>
+                    <li><strong>Project Management (Self-Directed):</strong> Ability to manage multi-day coding projects, breaking them into daily tasks and ensuring completion.</li>
+                    <li><strong>Data Storytelling (Emerging):</strong> Developing the skill to translate complex data findings into clear, compelling narratives and visualizations.</li>
+                    <li><strong>Persistence & Resilience:</strong> Commitment to overcoming coding challenges and complex analytical problems through iterative refinement.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2024 Mahmoud Mohamed. All rights reserved.</p>
+            <p class="text-gray-400 mt-2">This interactive portfolio showcases my data analytics and programming expertise.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+            const expandButtons = document.querySelectorAll('.expand-button');
+
+            // Smooth scroll and active nav link logic
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.3 // Adjust threshold as needed
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active-nav');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active-nav');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Expand/Collapse functionality for content sections
+            expandButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.previousElementSibling; // The div containing the expandable content
+                    content.classList.toggle('expanded');
+                    if (content.classList.contains('expanded')) {
+                        button.textContent = 'Hide Details';
+                    } else {
+                        button.textContent = 'View Details';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
