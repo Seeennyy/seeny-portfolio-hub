@@ -4,24 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahmoud Mohamed: College Projects Portfolio</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Link to this page's specific CSS file -->
-    <link rel="stylesheet" href="college_projects.css"> 
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F7F4;
+            color: #1a202c;
+        }
+        .active-nav {
+            color: #0d9488;
+            font-weight: 600;
+            position: relative;
+        }
+        .active-nav::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #0d9488;
+        }
+        .project-details-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .project-details-content.expanded {
+            max-height: 1200px; /* Adjusted to ensure all content is visible */
+            transition: max-height 0.5s ease-in;
+        }
+    </style>
 </head>
 <body class="antialiased">
 
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Link back to the main homepage -->
-            <a href="../../home_page/index.html" class="text-xl md:text-2xl font-extrabold text-gray-800 hover:text-teal-600 transition duration-300">
-                &larr; Mahmoud Mohamed (Seeny)
-            </a>
+            <h1 class="text-xl md:text-2xl font-extrabold text-gray-800">
+                Mahmoud Mohamed (Seeny)
+            </h1>
             <div class="hidden md:flex space-x-8 text-gray-500 font-medium">
                 <a href="#mechatronics" class="hover:text-teal-600 transition duration-300 nav-link">Mechatronics & Control</a>
                 <a href="#manufacturing" class="hover:text-teal-600 transition duration-300 nav-link">Manufacturing & Design</a>
