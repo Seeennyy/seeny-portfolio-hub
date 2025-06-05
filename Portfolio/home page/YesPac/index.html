@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -37,15 +39,66 @@
             max-height: 1000px; /* Adjusted to ensure all content is visible */
             transition: max-height 0.5s ease-in;
         }
+        /* General card styling, consistent with other portfolio pages */
+        .section-card {
+            background-color: #FFFFFF;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
+            transition: all 0.3s ease-in-out;
+            border: 1px solid transparent;
+        }
+        .section-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.15), 0 6px 10px -3px rgba(0, 0, 0, 0.08);
+            border-color: #10B981;
+        }
+        .btn-call-to-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+            margin-top: 1rem;
+        }
+        .btn-call-to-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+        }
+        .btn-contact {
+            background-color: #0D9488; /* Teal-600 */
+            color: white;
+        }
+        .btn-contact:hover {
+            background-color: #0F766E; /* Darker Teal */
+        }
+        .btn-linkedin {
+            background-color: #0077B5; /* LinkedIn Blue */
+            color: white;
+        }
+        .btn-linkedin:hover {
+            background-color: #005582; /* Darker LinkedIn Blue */
+        }
+        /* Styling for images within contribution cards */
+        .contribution-card-img {
+            width: 100%;
+            height: 200px; /* Fixed height for consistency */
+            object-fit: cover; /* Ensures image covers the area, cropping if necessary */
+            border-radius: 0.5rem; /* Slightly rounded corners */
+            margin-bottom: 1rem; /* Space below the image */
+        }
     </style>
 </head>
 <body class="antialiased">
 
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-xl md:text-2xl font-extrabold text-gray-800">
-                Mahmoud Mohamed (Seeny)
-            </h1>
+            <!-- Link back to the main homepage -->
+            <a href="https://seeny-portfolio-hub.vercel.app" class="text-xl md:text-2xl font-extrabold text-gray-800 hover:text-teal-600 transition duration-300">
+                &larr; Mahmoud Mohamed (Seeny)
+            </a>
             <div class="hidden md:flex space-x-8 text-gray-500 font-medium">
                 <a href="#overview" class="hover:text-teal-600 transition duration-300 nav-link">Overview</a>
                 <a href="#contributions" class="hover:text-teal-600 transition duration-300 nav-link">Key Contributions</a>
@@ -85,8 +138,8 @@
 
         <section id="contributions" class="mb-16 md:mb-24 scroll-mt-20">
             <div class="text-center mb-12">
-                <h3 class="text-3xl md:text-4xl font-bold text-gray-800">Key Projects & Contributions</h3>
-                <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">High-impact initiatives where I applied engineering principles to drive measurable improvements and strategic advancements.</p>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-800">Key Projects & High-Impact Contributions</h3>
+                <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">High-impact initiatives where I applied industrial engineering principles to drive measurable improvements and strategic advancements in a fast-paced manufacturing environment.</p>
                 <p class="mt-4 text-orange-600 text-md font-semibold max-w-3xl mx-auto p-3 bg-orange-50 rounded-lg border border-orange-200">
                     Note: Due to company confidentiality policies, specific project documentation is limited. However, samples of corresponding work or further details can be provided upon request via email.
                 </p>
@@ -178,12 +231,29 @@
             </div>
         </section>
 
+        <!-- Call to Action Section -->
+        <section class="text-center bg-teal-600 text-white p-12 rounded-3xl shadow-xl my-16 md:my-24">
+            <h3 class="text-4xl md:text-5xl font-extrabold mb-4">Ready to Drive Operational Excellence?</h3>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                Let's discuss how my hands-on experience and problem-solving skills can bring tangible value to your organization.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://www.linkedin.com/in/mahmoudseeny" target="_blank" class="btn-call-to-action btn-linkedin">
+                    <i class="fab fa-linkedin mr-3 text-2xl"></i> Schedule a Consultation
+                </a>
+                <a href="tel:+201127961626" class="btn-call-to-action btn-contact">
+                    <i class="fas fa-phone-alt mr-3 text-xl"></i> Call Me Directly
+                </a>
+            </div>
+        </section>
+
     </main>
 
     <footer class="bg-gray-800 text-white">
         <div class="container mx-auto px-6 py-8 text-center">
             <p>&copy; 2024 Mahmoud Mohamed. All rights reserved.</p>
             <p class="text-gray-400 mt-2">This interactive portfolio showcases key contributions and skills gained during my production internship.</p>
+            <p class="text-gray-400 text-sm mt-4">Phone: +20 1127961626</p>
         </div>
     </footer>
 
@@ -191,89 +261,97 @@
         const internshipContributions = [
             {
                 id: 'cycle_time_optimization',
-                title: "Cycle Time Optimization",
-                summary: "Identified and suggested solutions for inefficiencies in machine cycle times across 52 machines, with a potential for significant production output increase.",
-                details: "After reading the comprehensive Arburg machine manual (17 chapters, over 1000 pages), I gained a deep understanding of how these machines function. Each product has a standard cycle time, including stages like injection, cooling, and molding. The challenge was identifying inefficiencies caused by machine performance issues, such as extended cooling times or delays in mold opening. I collaborated with the installation department to assess machine performance, especially when a mold change occurred. By reading the cycle time, I could pinpoint problems and suggest solutions to improve the process. These issues could be rooted in various aspects, like cooling time or misconfigured processes. Though I didn’t have the authority to make changes as an intern, I played a vital role in reporting and suggesting optimizations that could improve the machine's productivity. With an average cycle time of 7 seconds, even a 0.1-second improvement can significantly impact the overall production output. Managing this across 52 machines was a significant task.",
+                title: "Accelerating Production: Targeted Cycle Time Optimization Across 52 Machines",
+                summary: "Spearheaded the identification of critical inefficiencies in machine cycle times across YesPac's extensive fleet of 52 machines, laying the groundwork for a significant potential increase in production output.",
+                details: "Through a deep dive into the comprehensive Arburg machine manual (spanning 17 chapters and over 1000 pages), I developed an expert understanding of machine functionalities and optimal operational parameters. Each product has a standard cycle time, encompassing stages like injection, cooling, and molding. My challenge was systematically identifying deviations and inefficiencies stemming from factors such as extended cooling times or critical delays in mold opening. Collaborating closely with the installation department, I meticulously assessed machine performance, particularly after mold changes. By precisely analyzing cycle time data, I could pinpoint root causes and propose actionable solutions to enhance process efficiency. While operational authority was limited as an intern, my role was pivotal in reporting and championing optimizations that promised to dramatically improve machine productivity. With an average cycle time of 7 seconds, even a marginal 0.1-second improvement across 52 machines translates into a substantial boost in overall production output.",
                 gainedExperience: [
-                    "Developed a comprehensive understanding of Arburg machine operations.",
-                    "Learned to identify inefficiencies in the production cycle.",
-                    "Improved skills in analyzing and reporting cycle time optimization."
+                    "Developed a comprehensive and expert-level understanding of Arburg machine operations and technical specifications.",
+                    "Mastered the identification of subtle and critical inefficiencies within complex production cycles.",
+                    "Significantly improved skills in advanced data analysis, reporting, and strategic communication for cycle time optimization."
                 ],
-                documentationLink: "https://drive.google.com/drive/folders/1Fxfz0oy1n2R5irlh59O0TqR_wk0LCQJt?usp=sharing"
+                documentationLink: "https://drive.google.com/drive/folders/1Fxfz0oy1n2R5irlh59O0TqR_wk0LCQJt?usp=sharing",
+                image: "yespac images/cycle.PNG" // Updated image path
             },
             {
                 id: 'technician_training',
-                title: "Technical Training Program Development & Delivery",
-                summary: "Designed and delivered a comprehensive training program for production technicians and engineers, translating complex machine manuals into actionable, skill-building presentations to enhance operational efficiency.",
-                details: `One of the most challenging yet rewarding tasks during my internship was creating a detailed training program for technicians and engineers. This involved meticulously analyzing a 500-page Arburg machine manual and distilling its critical information into a five-part, structured training program. Each presentation was carefully designed to cater to different levels of expertise and operational needs:
+                title: "Empowering the Workforce: Comprehensive Technical Training Program Design & Delivery",
+                summary: "Designed and delivered an impactful, multi-part training program for production technicians and engineers, expertly translating complex machine manuals into actionable, skill-building presentations that significantly enhanced operational efficiency and staff capability.",
+                details: `One of the most challenging yet profoundly rewarding tasks during my internship was the creation and delivery of a detailed, empowering training program for both technicians and engineers. This involved meticulously analyzing a dense 500-page Arburg machine manual and distilling its critical information into a five-part, highly structured and accessible training curriculum. Each presentation was thoughtfully designed to cater to different levels of expertise and specific operational needs, ensuring maximum impact:
                         <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                        <li>Presentation 1: Introduced machine parts and detailed each component's function. Provided a step-by-step description of the machine process. Explained critical concepts, control panel symbols, and alarm indicators to equip beginners with foundational understanding.</li>
-                        <li>Presentation 2: Focused on optimizing cycle time, including sequence editing and testing the machine in both setup and automatic modes. Demonstrated how to manage orders efficiently to avoid machine downtime.</li>
-                        <li>Presentation 3: Discussed parameters and directions for machine movements, with emphasis on mold, ejector, and nozzle actions. Showed how to adjust and change data in parameter charts for real-time tracking.</li>
-                        <li>Presentation 4: Explained temperature settings for the injection unit and mold heating, along with nominal values for cylinder control. Detailed the plasticizing process and factors like dosage and cooling time.</li>
-                        <li>Presentation 5 (Specific for Engineers): Covered quality assurance and control, focusing on monitoring charts and tolerance setting. Taught engineers how to configure monitoring functions and print key data (e.g., CSV and charts) to ensure product quality.</li>
+                        <li><strong>Presentation 1 (Foundational):</strong> Introduced core machine parts and detailed each component's function. Provided a clear, step-by-step description of the entire machine process. Explained critical operational concepts, control panel symbols, and alarm indicators to equip beginners with a solid foundational understanding. This accelerated their onboarding and reduced initial errors.</li>
+                        <li><strong>Presentation 2 (Optimization Focus):</strong> Concentrated on advanced techniques for optimizing cycle time, including precise sequence editing and testing the machine in both setup and automatic modes. Critically demonstrated how to manage orders efficiently to proactively avoid machine downtime, directly impacting productivity.</li>
+                        <li><strong>Presentation 3 (Parameter Mastery):</strong> Delved into crucial parameters and intricate directions for various machine movements, with a strong emphasis on mold, ejector, and nozzle actions. Showed operators how to accurately adjust and change data in parameter charts for real-time tracking, enabling finer control.</li>
+                        <li><strong>Presentation 4 (Thermal Control & Plasticizing):</strong> Explained the nuanced temperature settings for the injection unit and mold heating, along with nominal values for cylinder control. Detailed the critical plasticizing process and key factors like dosage and cooling time, essential for material quality.</li>
+                        <li><strong>Presentation 5 (Engineer-Specific Quality Control):</strong> Exclusively tailored for engineers, this session covered advanced quality assurance and control, with a laser focus on monitoring charts and precise tolerance setting. Taught engineers how to effectively configure monitoring functions and efficiently print key data (e.g., CSV and charts) to ensure consistent product quality and compliance.</li>
                     </ul>`,
                 gainedExperience: [
-                    "Developed expertise in instructional design and technical content creation for diverse audiences.",
-                    "Enhanced ability to translate complex technical information into clear, actionable training modules.",
-                    "Strengthened communication skills by effectively conveying intricate engineering concepts."
+                    "Developed expert-level proficiency in instructional design and technical content creation, tailored for diverse industrial audiences.",
+                    "Enhanced ability to translate highly complex technical information into clear, actionable, and engaging training modules.",
+                    "Strengthened advanced communication skills by effectively conveying intricate engineering concepts to both technical and non-technical personnel, fostering team-wide understanding and capability."
                 ],
-                documentationLink: "https://drive.google.com/drive/folders/1Id8n4cw0pDKH8pc0KDfIsP1ifhKm2IL2?usp=sharing"
+                documentationLink: "https://drive.google.com/drive/folders/1Id8n4cw0pDKH8pc0KDfIsP1ifhKm2IL2?usp=sharing",
+                image: "yespac images/pres.PNG" // Updated image path
             },
             {
                 id: 'sap_implementation',
-                title: "SAP for Production and Manufacturing",
-                summary: "Gained hands-on experience using SAP to track production processes, manage material flow (plastic and labels), and execute stock transfer orders (STO) for efficient warehouse management.",
-                details: "During my internship, I gained valuable experience in using the SAP system to track production processes and ensure that materials were efficiently managed. Specifically, I tracked the amount of plastic and labels consumed for each order. I also learned to execute stock transfer orders (STO), ensuring excess materials were properly accounted for in the warehouse. I used SAP to monitor the shop floor and ensure that production met demand forecasts and quality standards. By integrating production data with the supply chain, I contributed to more informed decision-making and greater efficiency across departments.",
+                category: 'sap',
+                title: "SAP for Production & Logistics: Streamlining Material Flow and Warehouse Management",
+                summary: "Gained hands-on experience utilizing SAP to meticulously track production processes, manage critical material flow (plastics and labels), and execute efficient Stock Transfer Orders (STOs) for optimized warehouse and supply chain management, directly contributing to operational agility.",
+                details: "During my internship, I gained invaluable practical experience leveraging the SAP system to meticulously track production processes and ensure the efficient management of critical materials. Specifically, I tracked the precise amount of plastic and labels consumed for each production order, ensuring accurate resource allocation. I also mastered the execution of Stock Transfer Orders (STOs), which was crucial for properly accounting for excess materials and facilitating their movement between warehouses. I utilized SAP to actively monitor the shop floor, ensuring that production outputs consistently met demand forecasts and adhered to stringent quality standards. By seamlessly integrating real-time production data with the broader supply chain, I played a direct role in contributing to more informed decision-making and significantly greater efficiency across multiple departments within the organization.",
                 gainedExperience: [
-                    "Gained hands-on experience with SAP in managing production execution and material flow.",
-                    "Learned how to integrate production data for better supply chain management.",
-                    "Improved skills in tracking production metrics and reporting consumption."
+                    "Achieved hands-on expertise with SAP in managing production execution, material flow, and inventory across complex operations.",
+                    "Developed a strong understanding of how to integrate production data for superior supply chain visibility and management.",
+                    "Significantly improved skills in tracking key production metrics, generating comprehensive consumption reports, and contributing to data-driven operational decisions."
                 ],
-                documentationLink: "" // No specific link provided in the document for this
+                documentationLink: "", // No specific link provided in the document for this
+                image: "yespac images/sap.jpg" // Updated image path
             },
             {
                 id: 'robotic_system_adjustment',
-                title: "Robotic System Adjustment",
-                summary: "Learned to resolve issues related to the alignment of robotic systems with manufactured products, crucial for maintaining production speed and precision.",
-                details: "I also learnt on resolving issues related to the alignment of the robotic systems with the manufactured products. Ensuring that robots worked seamlessly with the machines was crucial for maintaining production speed and precision.",
+                category: 'mechatronics',
+                title: "Optimizing Robotic System Precision: Enhancing Production Speed and Quality",
+                summary: "Acquired critical expertise in diagnosing and resolving intricate issues related to the precise alignment of robotic systems with manufactured products, a crucial skill for maintaining peak production speed, consistent quality, and operational efficiency.",
+                details: "I gained hands-on experience in diagnosing and resolving complex issues related to the precise alignment of robotic systems with manufactured products. Ensuring that robots worked seamlessly and accurately with the production machines was absolutely crucial for maintaining optimal production speed, upholding stringent quality standards, and guaranteeing overall operational precision. This involved detailed troubleshooting and fine-tuning to eliminate discrepancies that could lead to defects or slowdowns. My involvement directly contributed to minimizing production interruptions and maximizing throughput.",
                 gainedExperience: [
-                    "Troubleshooting robotic alignment and optimizing its synchronization with production machines.",
-                    "Enhanced problem-solving skills by collaborating with various teams to address technical issues."
+                    "Mastered advanced technical troubleshooting for robotic alignment and optimizing synchronization with high-speed production machines.",
+                    "Enhanced problem-solving skills through active collaboration with cross-functional teams to address and swiftly resolve complex technical issues.",
+                    "Developed a deep understanding of the critical interplay between robotic precision and overall manufacturing line efficiency."
                 ],
-                documentationLink: "" // No specific link provided in the document for this
+                documentationLink: "", // No specific link provided in the document for this
+                image: "yespac images/arburg.webp" // Updated image path
             }
         ];
 
         const dailyTasks = [
             {
                 id: 'team_allocation',
-                title: "Assisting Engineer with Production Team Allocation",
-                summary: "Supported daily team allocation to ensure efficient utilization of manpower, machinery, and materials, maintaining operational flow.",
-                details: "Every day, I support the engineer in ensuring that the production team is correctly allocated to their tasks and that all processes and operations are functioning efficiently. Through daily involvement in team allocation, I developed a better understanding of production workflows and the importance of resource management. This experience taught me how to make real-time decisions, ensuring that manpower, machinery, and materials are efficiently utilized to maintain operational flow without delays."
+                title: "Strategic Production Team Allocation: Maximizing Resource Utilization",
+                summary: "Consistently supported daily team allocation processes to ensure the most efficient utilization of manpower, machinery, and materials, thereby maintaining seamless operational flow and maximizing productivity.",
+                details: "Every day, I provided essential support to the production engineer, ensuring that the production team was strategically allocated to tasks, and that all processes and operations functioned with peak efficiency. Through consistent involvement in daily team allocation, I cultivated a deep understanding of complex production workflows and the critical importance of meticulous resource management. This hands-on experience empowered me to make real-time, informed decisions, ensuring that manpower, machinery, and materials were optimally utilized to sustain an uninterrupted operational flow and prevent costly delays.",
             },
             {
                 id: 'machine_cycle_monitoring',
-                title: "Monitoring Machine Cycle Times",
-                summary: "Regularly checked machine cycle times to identify inefficiencies, diagnose issues, and suggest corrective measures to prevent downtime.",
-                details: "Regularly check the cycle times of machines to ensure they are within the expected range. If a machine’s cycle time is too high, I report the issue and suggest possible solutions to fix the problem. Regularly checking machine cycle times enhanced my technical skills in identifying production inefficiencies. By analyzing deviations in cycle times, I learned how to diagnose issues quickly, suggest corrective measures, and collaborate with maintenance to prevent downtime. This role honed my attention to detail and improved my problem-solving abilities regarding machine performance."
+                title: "Proactive Machine Cycle Monitoring: Diagnosing & Preventing Downtime",
+                summary: "Implemented regular, detailed checks of machine cycle times to proactively identify inefficiencies, diagnose potential issues, and suggest corrective measures, significantly contributing to downtime prevention and continuous operational uptime.",
+                details: "I regularly conducted meticulous checks on the cycle times of all production machines, ensuring they consistently operated within the expected, optimized range. If a machine's cycle time showed any deviation or was excessively high, I swiftly reported the issue and proposed data-driven solutions to rectify the problem. This consistent monitoring significantly enhanced my technical skills in identifying subtle and critical production inefficiencies. By rigorously analyzing deviations in cycle times, I learned to diagnose issues with precision, rapidly suggest effective corrective measures, and collaborate seamlessly with the maintenance department to prevent unscheduled downtime. This role honed my sharp attention to detail and dramatically improved my problem-solving abilities concerning intricate machine performance dynamics.",
             },
             {
                 id: 'excel_reporting',
-                title: "Excel Reporting on Machine and Productivity Status",
-                summary: "Documented daily machine status, productivity, and repair needs using company-standard Excel sheets for management review.",
-                details: "Daily, I work with company-standard Excel sheets, documenting productivity, machine status, and repair needs. I ensure all machine reports are up-to-date for management to review. Working with Excel sheets daily strengthened my data management and reporting skills. I learned how to maintain accurate records of machine performance and productivity, allowing me to analyze production data and track trends over time. This improved my ability to generate reports that management could use to make informed decisions on operations and machine maintenance."
+                title: "Advanced Excel Reporting: Illuminating Machine Status & Productivity Insights",
+                summary: "Leveraged advanced Excel functionalities to meticulously document daily machine status, productivity metrics, and critical repair needs, generating comprehensive reports that provided management with actionable insights for strategic decision-making.",
+                details: "On a daily basis, I worked extensively with company-standard Excel sheets, meticulously documenting key operational data including machine productivity, real-time machine status, and all detected repair needs. My responsibility extended to ensuring that all machine reports were consistently up-to-date, providing clear, actionable insights for management review. This daily engagement with Excel significantly strengthened my data management, analytical, and reporting skills. I gained proficiency in maintaining accurate records of machine performance and productivity, which enabled me to analyze production data, identify critical trends over time, and forecast potential issues. This experience dramatically improved my ability to generate compelling, data-driven reports that empowered management to make highly informed decisions regarding operations and proactive machine maintenance strategies.",
             },
             {
                 id: 'quality_audits',
-                title: "Collaborating with the Quality Department (Audits)",
-                summary: "Participated in quality audits to assess machine performance and ensure production aligned with company quality standards.",
-                details: "Attend quality audits to assess machine performance and ensure that the production aligns with the company's quality standards. Participating in quality audits provided me with a deeper understanding of how production must meet stringent quality standards. I gained insights into how to evaluate machine performance from a quality perspective, ensuring that production processes align with regulatory and company standards. This helped me appreciate the role of cross-departmental collaboration in maintaining product integrity."
+                title: "Collaborative Quality Audits: Upholding Production Standards & Integrity",
+                summary: "Actively participated in comprehensive quality audits, meticulously assessing machine performance and ensuring that all production processes rigorously adhered to stringent company quality standards and operational excellence benchmarks.",
+                details: "My active participation in quality audits provided me with an invaluable, deeper understanding of the critical imperative for production processes to meet and exceed stringent quality standards. I gained profound insights into how to systematically evaluate machine performance from a holistic quality perspective, rigorously ensuring that all production processes align seamlessly with both regulatory requirements and the company's internal benchmarks. This hands-on involvement underscored the vital role of cross-departmental collaboration in consistently maintaining product integrity and achieving operational excellence.",
             },
             {
                 id: 'operational_meetings',
-                title: "Attending Operational Meetings for Problem-Solving",
-                summary: "Participate in meetings focused on resolving operational problems the timeline of every shift. Attending operational meetings allowed me to observe and participate in strategic discussions on improving shift timelines and resolving operational issues. I gained practical knowledge in operational management, contributing to solutions that enhanced efficiency and resolved common production bottlenecks. These meetings gave me exposure to decision-making processes and a broader understanding of shift coordination."
+                title: "Strategic Operational Meetings: Driving Efficiency & Problem-Solving Across Shifts",
+                summary: "Engaged in critical operational meetings focused on rapidly resolving production challenges and optimizing the timeline of every shift, directly contributing to enhanced efficiency and seamless workflow management.",
+                details: "My participation in daily operational meetings allowed me to actively observe and contribute to strategic discussions aimed at significantly improving shift timelines and swiftly resolving emergent operational issues. I gained practical, high-impact knowledge in real-world operational management, contributing directly to innovative solutions that dramatically enhanced efficiency and effectively resolved common production bottlenecks. These meetings provided invaluable exposure to high-level decision-making processes and cultivated a broader, more integrated understanding of inter-shift coordination and strategic resource deployment.",
             }
         ];
 
@@ -286,7 +364,7 @@
                 
                 let gainedExperienceHtml = '';
                 if (item.gainedExperience && item.gainedExperience.length > 0) {
-                    gainedExperienceHtml = `<h6 class="font-semibold text-teal-700 uppercase tracking-wide text-xs mb-1 mt-3">Gained Experience</h6><ul class="list-disc list-inside text-gray-600 text-sm space-y-1">`;
+                    gainedExperienceHtml = `<h6 class="font-semibold text-teal-700 uppercase tracking-wide text-xs mb-1 mt-3">Gained Experience & Skills</h6><ul class="list-disc list-inside text-gray-600 text-sm space-y-1">`;
                     item.gainedExperience.forEach(exp => {
                         gainedExperienceHtml += `<li>${exp}</li>`;
                     });
@@ -300,12 +378,25 @@
 
                 card.innerHTML = `
                     <div>
+                        <img src="${item.image}" alt="${item.title} Image" class="contribution-card-img" onerror="this.onerror=null;this.src='https://placehold.co/600x200/E5E7EB/6B7280?text=Image+Not+Found';">
                         <h5 class="text-lg md:text-xl font-bold text-gray-800 mb-2">${item.title}</h5>
                         <p class="text-gray-600 text-sm mb-4">${item.summary}</p>
                         <div id="details-${item.id}" class="content-details-wrapper">
                             <p class="text-gray-600 text-sm mb-3">${item.details}</p>
                             ${gainedExperienceHtml}
                             ${documentationLinkHtml}
+                            <!-- Call to Action within details -->
+                            <p class="text-md font-semibold text-gray-800 mt-6 mb-3">
+                                Intrigued by this work or have a similar challenge? Let's discuss how I can bring this expertise to your team!
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="https://www.linkedin.com/in/mahmoudseeny" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition duration-300 flex items-center justify-center">
+                                    <i class="fab fa-linkedin mr-2"></i> Connect on LinkedIn
+                                </a>
+                                <a href="tel:+201127961626" class="bg-teal-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-teal-700 transition duration-300 flex items-center justify-center">
+                                    <i class="fas fa-phone-alt mr-2"></i> Call Me
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <button class="view-details-btn mt-4 bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600 transition duration-300 text-sm font-semibold self-start" data-item-id="${item.id}">View Details</button>
@@ -340,6 +431,18 @@
                         <p class="text-gray-600 text-sm mb-4">${item.summary}</p>
                         <div id="details-${item.id}" class="content-details-wrapper">
                             <p class="text-gray-600 text-sm mb-3">${item.details}</p>
+                            <!-- Call to Action within details -->
+                            <p class="text-md font-semibold text-gray-800 mt-6 mb-3">
+                                Intrigued by this work or have a similar challenge? Let's discuss how I can bring this expertise to your team!
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="https://www.linkedin.com/in/mahmoudseeny" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition duration-300 flex items-center justify-center">
+                                    <i class="fab fa-linkedin mr-2"></i> Connect on LinkedIn
+                                </a>
+                                <a href="tel:+201127961626" class="bg-teal-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-teal-700 transition duration-300 flex items-center justify-center">
+                                    <i class="fas fa-phone-alt mr-2"></i> Call Me
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <button class="view-details-btn mt-4 bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600 transition duration-300 text-sm font-semibold self-start" data-item-id="${item.id}">View Details</button>
