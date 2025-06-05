@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahmoud Mohamed: DEPI Program Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F4F8; /* Lighter background for fresh feel */
+            color: #2D3748; /* Darker text for better contrast */
+        }
+        .active-nav {
+            color: #10B981; /* Brighter teal for active state */
+            font-weight: 600;
+            position: relative;
+        }
+        .active-nav::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #10B981;
+        }
+        .section-card {
+            background-color: #FFFFFF;
+            border-radius: 1.5rem; /* More rounded corners */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Softer shadow */
+            padding: 2.5rem; /* Increased padding */
+        }
+        .gradient-bg {
+            background: linear-gradient(to right, #0F766E, #10B981); /* Teal to green gradient */
+        }
+        .text-gradient {
+            background-image: linear-gradient(to right, #0F766E, #10B981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s ease-in-out; /* Smooth transition */
+        }
+        .expandable-content.expanded {
+            max-height: 1500px; /* Large enough to contain all content */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/90 backdrop-blur-lg sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl md:text-2xl font-extrabold text-gray-800">
+                Mahmoud Mohamed (Seeny)
+            </h1>
+            <div class="hidden md:flex space-x-8 text-gray-600 font-medium">
+                <a href="#program-overview" class="hover:text-teal-500 transition duration-300 nav-link">Program Overview</a>
+                <a href="#depi-journey" class="hover:text-teal-500 transition duration-300 nav-link">My DEPI Journey</a>
+                <a href="#technical-mastery" class="hover:text-teal-500 transition duration-300 nav-link">Technical Mastery</a>
+                <a href="#golden-cart-project" class="hover:text-teal-500 transition duration-300 nav-link">Golden Cart Project</a>
+                <a href="#soft-skills-growth" class="hover:text-teal-500 transition duration-300 nav-link">Soft Skills Growth</a>
+            </div>
+            <a href="https://www.linkedin.com/in/mahmoudseeny" target="_blank" class="bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">
+                View LinkedIn
+            </a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8 md:py-16">
+
+        <section id="hero" class="text-center mb-20 md:mb-28 pt-8">
+            <span class="text-teal-600 font-bold uppercase tracking-widest text-sm md:text-base">Digital Egypt Pioneers Initiative</span>
+            <h2 class="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight mt-4">
+                <span class="text-gradient">9 Months of Intensive</span> <br> Supply Chain & Oracle ERP Expertise
+            </h2>
+            <p class="max-w-4xl mx-auto mt-8 text-xl text-gray-700 leading-relaxed">
+                This portfolio highlights my comprehensive journey through the Digital Egypt Pioneers Initiative (DEPI), a prestigious 9-month scholarship program by the Egyptian Ministry of Communications and Information Technology. My specialization in Supply Chain Management and Oracle ERP, coupled with robust soft skills development, prepared me to drive digital transformation in industrial sectors.
+            </p>
+        </section>
+
+        <section id="program-overview" class="mb-20 md:mb-28 scroll-mt-20">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold text-gray-800">About the DEPI Program</h3>
+                <p class="mt-5 text-lg text-gray-700 max-w-3xl mx-auto">
+                    The Digital Egypt Pioneers Initiative (DEPI) is a flagship program by the Egyptian Ministry of Communications and Information Technology (MCIT). It aims to build skilled and creative cadres capable of leading the digital transformation locally and regionally. DEPI provides free scholarships to outstanding Egyptian students and graduates, offering intensive training in highly demanded technological fields and essential professional skills. The program's core objectives include bridging academic learning with industry needs, fostering employability, and preparing a new generation of leaders for Egypt's digital future.
+                </p>
+            </div>
+        </section>
+
+        <section id="depi-journey" class="mb-20 md:mb-28 scroll-mt-20">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold text-gray-800">My DEPI Journey: Bridging Business Needs with Digital Transformation</h3>
+                <p class="mt-5 text-lg text-gray-700 max-w-4xl mx-auto">
+                    My 9-month immersive experience in the DEPI program was strategically focused on cultivating deep expertise in Supply Chain Management (SCM) and Enterprise Resource Planning (ERP), specifically utilizing Oracle ERP. This rigorous program equipped me with the critical ability to **identify complex business needs and translate them into effective digital solutions within an ERP framework.** I learned not just how to use Oracle ERP, but how to strategically apply its functionalities to drive operational efficiency and achieve business objectives. The blended learning methodology, combining online and offline sessions, provided a comprehensive and practical educational experience, preparing me to implement and manage transformative digital initiatives.
+                </p>
+            </div>
+        </section>
+
+        <section id="technical-mastery" class="mb-20 md:mb-28 scroll-mt-20">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold text-gray-800">Technical Mastery: Oracle ERP & Advanced SCM Concepts</h3>
+                <p class="mt-5 text-lg text-gray-700 max-w-3xl mx-auto">
+                    Through extensive hands-on practice and in-depth theoretical study, I developed a robust command of Oracle ERP functionalities and critical Supply Chain Management principles, preparing me for data-driven operational excellence.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-1 lg:grid-cols-1 gap-12">
+                <!-- Oracle ERP Modules -->
+                <div class="section-card">
+                    <h4 class="text-3xl font-bold text-gray-800 mb-8 text-center text-gradient">Oracle ERP Modules: Configuration & Strategic Application</h4>
+                    
+                    <div class="space-y-10">
+                        <!-- Inventory Module -->
+                        <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+                            <h5 class="text-2xl font-semibold text-teal-700 mb-4">Inventory Module: Mastering Stock & Asset Control</h5>
+                            <p class="text-gray-700 text-base mb-4">Comprehensive skills in defining, configuring, and managing inventory within Oracle ERP to ensure accurate stock levels and efficient asset control.</p>
+                            <div class="expandable-content">
+                                <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                    <li>Organizational Structure Definition: Ability to define and configure complex organizational hierarchies within Oracle ERP, including Operating Units, Master Organizations, and Inventory Organizations, to mirror diverse business structures.</li>
+                                    <li>Inventory Parameter Configuration: Expertise in adjusting critical inventory parameters, costing information, revision, lot, serial, and LPN controls, as well as Available-to-Promise (ATP) and picking rules, to align with specific business requirements.</li>
+                                    <li>Subinventory and Locator Design: Proficiency in designing and implementing subinventories and locators for precise inventory segmentation and tracking within warehouses.</li>
+                                    <li>Units of Measure (UOM) Management: Skill in defining various Units of Measure and establishing accurate conversion rules to support diverse product handling and reporting needs.</li>
+                                    <li>Item Master Definition & Customization: Comprehensive understanding of defining items and customizing their attribute groups (Inventory, Order Management, Purchasing, Receiving, Costing, Work In Process, General Planning, Invoicing) to capture essential business data.</li>
+                                    <li>Item Attribute Control & Categorization: Capability to control item attributes at various levels and define/assign item categories for effective classification and reporting.</li>
+                                    <li>Transaction Management: Hands-on experience with core inventory transaction actions, including issuing from stores, subinventory transfers, direct organization transfers, and receiving into stores.</li>
+                                    <li>Account Alias & Shorthand Alias Setup: Expertise in defining account aliases and shorthand aliases to streamline financial transactions and data entry based on business needs.</li>
+                                    <li>Lot and Serial Control Implementation: Proficiency in setting up and adjusting lot control and serial number control for specific items, ensuring granular traceability and compliance.</li>
+                                    <li>Subinventory Assignment & Picking Rules: Ability to assign subinventories to items and set up optimized picking rules to enhance warehouse efficiency.</li>
+                                    <li>Move Order Management: Skill in setting up and managing move orders for internal material transfers within and between organizations.</li>
+                                    <li>Inter-Organization Transfer & Shipping Network: Understanding of inter-organization transfers and defining robust shipping networks for seamless material movement across different business units.</li>
+                                    <li>Cycle Count & Physical Inventory Execution: Competence in performing cycle counts and physical inventories to reconcile system records with actual stock, ensuring data accuracy.</li>
+                                    <li>ATP Rules Configuration: Ability to configure Available-to-Promise (ATP) rules to provide accurate commitment dates to customers based on available inventory and supply.</li>
+                                    <li>Inventory Planning & Replenishment: Expertise in implementing inventory planning and replenishment strategies, including Min-Max planning and Safety Stock calculations, to optimize stock levels and prevent disruptions.</li>
+                                </ul>
+                            </div>
+                            <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                        </div>
+
+                        <!-- Purchasing Module -->
+                        <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+                            <h5 class="text-2xl font-semibold text-teal-700 mb-4">Purchasing Module: Streamlining Procure-to-Pay</h5>
+                            <p class="text-gray-700 text-base mb-4">Expertise in managing the entire procure-to-pay lifecycle within Oracle ERP, from requisitioning to supplier management and automated purchasing workflows.</p>
+                            <div class="expandable-content">
+                                <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                    <li>Procure-to-Pay Lifecycle Mastery: In-depth understanding of the entire procure-to-pay lifecycle, from requisitioning to payment.</li>
+                                    <li>Financial & Purchasing Options Configuration: Proficiency in defining financial and purchasing options to align the system with specific business needs and policies.</li>
+                                    <li>Receiving Options Definition: Expertise in configuring receiving options to control how goods are received and put away within the system.</li>
+                                    <li>Document Type Management: Ability to define and manage various document types (e.g., Purchase Requisitions, Purchase Orders) to standardize purchasing processes.</li>
+                                    <li>Buyer & Supplier Definition: Skill in defining buyers and managing comprehensive supplier information within the system.</li>
+                                    <li>Purchase Requisition Creation & Modification: Hands-on experience in creating purchase requisitions and modifying their lines as per business requirements.</li>
+                                    <li>Automated Purchase Order Creation: Proficiency in auto-creating purchase orders from requisitions, enhancing efficiency and reducing manual effort.</li>
+                                    <li>Approved Supplier Status Management: Ability to define and manage approved supplier statuses to ensure compliance and quality in sourcing.</li>
+                                    <li>Internal Requisition Processing: Understanding and practical application of internal requisitions for inter-organizational material requests.</li>
+                                    <li>Blanket Purchase Agreement (BPA) Utilization: Expertise in creating and managing Blanket Purchase Agreements for long-term supplier relationships and simplified recurring purchases.</li>
+                                    <li>Automated PO from Quotation: Skill in automating the purchase order process based on quotations, streamlining the sourcing and ordering workflow.</li>
+                                    <li>Sourcing Rule for BPA: Ability to define sourcing rules for Blanket Purchase Agreements to optimize supplier selection.</li>
+                                </ul>
+                            </div>
+                            <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                        </div>
+
+                        <!-- Order Management Module -->
+                        <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+                            <h5 class="text-2xl font-semibold text-teal-700 mb-4">Order Management Module: Optimizing Order-to-Cash</h5>
+                            <p class="text-gray-700 text-base mb-4">Proficiency in configuring and managing Oracle ERP's order management functionalities to optimize the entire order-to-cash process.</p>
+                            <div class="expandable-content">
+                                <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                    <li>Order-to-Cash Lifecycle Mastery: Comprehensive understanding of the entire order-to-cash process, from customer order to revenue recognition.</li>
+                                    <li>System Parameters Configuration: Expertise in setting up system parameters for order management to control order processing behavior.</li>
+                                    <li>Integration with Account Receivables: Understanding of the seamless integration between order management and account receivables for accurate invoicing and payment tracking.</li>
+                                    <li>Differentiated Sales Order Lines: Ability to differentiate sales orders by creating various sales line types, allowing for flexible order processing.</li>
+                                    <li>Sales Order Setup & Creation: Hands-on experience in setting up and creating sales orders, including complex configurations.</li>
+                                    <li>Sales Order Integration & Completion: Proficiency in integrating and completing sales orders through both Order Management and Inventory applications, ensuring end-to-end fulfillment.</li>
+                                </ul>
+                            </div>
+                            <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                        </div>
+
+                        <!-- Additional ERP Experience -->
+                        <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
+                            <h5 class="text-2xl font-semibold text-teal-700 mb-4">Additional ERP Experience: HR, Pricing, & System Administration</h5>
+                            <p class="text-gray-700 text-base mb-4">Valuable exposure and practical experience in configuring and managing key aspects of other Oracle ERP modules, broadening my system administration capabilities.</p>
+                            <div class="expandable-content">
+                                <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                                    <li>HR Module: Defining Locations, Jobs, and creating Employee records; understanding Position Hierarchy for organizational structure.</li>
+                                    <li>Pricing Module: Creating customized Price Lists to manage complex pricing rules and discounts for various products and customer segments.</li>
+                                    <li>System Administration: Designing flexible fields (flex fields) and utilizing default ones to extend data capture; defining responsibilities and understanding access eligibility based on business needs; enabling and disabling specific profile options to control system behavior.</li>
+                                </ul>
+                            </div>
+                            <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Supply Chain Management Concepts -->
+                <div class="section-card">
+                    <h4 class="text-3xl font-bold text-gray-800 mb-8 text-center text-gradient">Key Supply Chain Management Concepts & Strategic Application</h4>
+                    <p class="text-gray-700 text-base mb-4">A deep understanding of core SCM principles and their strategic application to optimize end-to-end supply chain performance.</p>
+                    <div class="expandable-content">
+                        <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                            <li>Demand Forecasting: Applied various forecasting techniques to predict future customer demand, enabling optimized inventory planning and production scheduling to meet market needs efficiently.</li>
+                            <li>Inventory Management: Min Max Planning: Implemented advanced inventory control strategies, specifically Min-Max planning, to automate replenishment, reduce holding costs, and prevent stockouts by dynamically managing inventory levels.</li>
+                            <li>Supply Chain Network Design: Analyzed and understood the strategic placement of facilities (warehouses, distribution centers, manufacturing plants) and optimized transportation flow paths to enhance supply chain efficiency and responsiveness.</li>
+                            <li>Automating Purchasing Workflows: Developed expertise in designing and implementing automated workflows for the purchasing process, significantly reducing manual intervention and enhancing efficiency and accuracy. This includes leveraging system capabilities to automate requisition approvals and purchase order generation.</li>
+                            <li>Supply Chain Analytics: Utilized data-driven approaches and analytical tools to evaluate supply chain performance, identify bottlenecks, and uncover opportunities for process improvement and cost reduction.
+                                <!-- Placeholder for a graph/chart if data were available -->
+                                <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-blue-800 text-sm italic">
+                                    <p><strong>Potential for Visual Data:</strong> This section could be enhanced with a sample graph illustrating supply chain performance trends, bottleneck identification, or efficiency improvements derived from data analysis.</p>
+                                </div>
+                            </li>
+                            <li>Order Fulfillment: Developed a comprehensive understanding of the entire order fulfillment process, from the moment a customer places an order to its final delivery, ensuring accuracy, speed, and customer satisfaction.</li>
+                            <li>Sales: Integrated Business Management Process: Explored how sales processes are seamlessly integrated into the broader ERP and SCM frameworks, emphasizing cross-functional collaboration to align sales targets with inventory, procurement, and production capabilities.</li>
+                        </ul>
+                    </div>
+                    <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="golden-cart-project" class="mb-20 md:mb-28 scroll-mt-20">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold text-gray-800">Capstone Project: Golden Cart - Oracle ERP for Hypermarket Transformation</h3>
+                <p class="mt-5 text-lg text-gray-700 max-w-3xl mx-auto">
+                    "Golden Cart" was the culmination of my DEPI training, a comprehensive Oracle ERP implementation project designed to revolutionize a hypermarket chain's operations. This project allowed me to apply all learned SCM and ERP principles to address real-world retail challenges.
+                </p>
+            </div>
+
+            <div class="section-card">
+                <h4 class="text-3xl font-bold text-gray-800 mb-8 text-center text-gradient">Project Vision, Mission & Core Departments</h4>
+                <p class="text-gray-700 text-base mb-4">
+                    <strong>Vision:</strong> Digitally transforming the retail experience using data-driven operations. <br>
+                    <strong>Mission:</strong> Delivering convenience, quality, and affordability to Egyptian consumers.
+                </p>
+                <p class="text-gray-700 text-base mb-6">
+                    The project focused on a hypermarket with its main branch in Cairo, supported by dedicated warehouses in each city for efficient logistics. The core departments targeted for transformation included Inventory, Order Management, Procurement, and HR.
+                </p>
+
+                <h4 class="text-2xl font-bold text-gray-800 mt-10 mb-6">Problem Statement: Addressing Traditional Retail Pain Points</h4>
+                <p class="text-gray-700 text-base mb-4">
+                    We identified critical challenges prevalent in traditional retail operations that hindered efficiency and profitability:
+                </p>
+                <ul class="list-disc list-inside text-gray-700 space-y-2 text-base mb-6">
+                    <li>Inventory Nightmares: Inaccurate stock levels, poor visibility, and inefficient warehouse processes leading to losses and missed sales opportunities.</li>
+                    <li>Procurement Pain: Complex and manual supplier management, inconsistent pricing, and lack of streamlined purchasing workflows.</li>
+                    <li>Sales Blind Spots: Issues with order fulfillment, limited insight into customer behavior, and a fragmented view of sales data.</li>
+                    <li>High Cost of Inaction: The significant financial and operational consequences of failing to embrace digital transformation in a competitive market.</li>
+                    <li>Lack of Digital Core: The absence of an integrated digital backbone to support scalable growth and data-driven decision-making.</li>
+                </ul>
+
+                <h4 class="text-2xl font-bold text-gray-800 mt-10 mb-6">Our Approach: Oracle EBS as the Digital Core</h4>
+                <p class="text-gray-700 text-base mb-6">
+                    Our strategic approach centered on implementing Oracle E-Business Suite (EBS) as the robust digital core to fulfill key objectives: **Scalability, Integration, Reliability, Efficiency, and Growth.** This comprehensive ERP solution was chosen to provide a unified platform for managing all critical hypermarket operations.
+                </p>
+
+                <h4 class="text-2xl font-bold text-gray-800 mt-10 mb-6">Applied Oracle ERP & SCM Features in Golden Cart</h4>
+                <p class="text-gray-700 text-base mb-4">
+                    We meticulously configured and implemented various Oracle ERP features, directly applying the skills learned in the DEPI program to address the hypermarket's specific needs:
+                </p>
+                <div class="grid md:grid-cols-1 lg:grid-cols-1 gap-8">
+                    <!-- Foundational Setup & Inventory Management -->
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h5 class="text-xl font-semibold text-gray-800 mb-3">Foundational Setup & Inventory Management:</h5>
+                        <p class="text-gray-700 text-base mb-4">Core configurations and inventory controls implemented to establish a robust and accurate system for the hypermarket.</p>
+                        <div class="expandable-content">
+                            <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                                <li>Multi-Organizational Structure: Defined Legal Entities, Operating Units ('GC Operating Unit'), Inventory Organizations ('Cairo - Alex'), Subinventories ('ELC', 'Clothes', etc.), and Locators to reflect the hypermarket's physical and operational structure.</li>
+                                <li>Working Calendars: Established specific working calendars with exception lists for accurate planning and transaction processing.</li>
+                                <li>Centralized Item Master: Implemented a single definition for all items, utilizing templates (e.g., for electronics, apparel) for faster setup and consistency.</li>
+                                <li>Granular Tracking: Configured Lot Control and Serial Number Control for precise item identification and traceability.</li>
+                                <li>Real-time Quantity Tracking: Ensured the system accurately tracks on-hand balances across all locations.</li>
+                                <li>Units of Measure (UOM): Handled different units (Each, Case, KG) with accurate conversion rules.</li>
+                                <li>Customized Transaction Types: Defined specific business transaction types to align with hypermarket operations.</li>
+                                <li>Min-Max Planning: Implemented internal requisition and replenishment strategies based on Min-Max planning for inventory optimization.</li>
+                                <li>Physical Inventories: Established processes to match system quantities with real on-hand quantities, ensuring inventory accuracy.</li>
+                            </ul>
+                        </div>
+                        <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                    </div>
+
+                    <!-- Procurement & Order Management -->
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h5 class="text-xl font-semibold text-gray-800 mb-3">Procurement & Order Management:</h5>
+                        <p class="text-gray-700 text-base mb-4">Streamlined purchasing and sales processes through strategic Oracle ERP configurations, enhancing efficiency and customer satisfaction.</p>
+                        <div class="expandable-content">
+                            <ul class="list-disc list-inside text-gray-700 space-y-1.5 text-sm">
+                                <li>Supplier Definition: Created a central repository for comprehensive supplier information.</li>
+                                <li>Purchase Orders (PO) & Requisitions: Configured formal Purchase Orders and system-controlled Purchase Requisitions, linked to approvals and business rules.</li>
+                                <li>Approval Hierarchy: Designed and linked Job/Position hierarchies to Purchasing Approval Groups and Assignments, enforcing spending limits and accountability.</li>
+                                <li>Configurable Approval Workflows: Implemented automated workflows for purchasing, ensuring compliance and efficiency.</li>
+                                <li>Controlled Receiving, Purchasing, and Financial Options: Adjusted system options to suit the specific business needs of the hypermarket.</li>
+                                <li>Sales Order Types & Line Types: Configured Sales Order Types with specific line types (Sales, Return) to capture all sales order details efficiently.</li>
+                                <li>Price List Management: Managed complex pricing rules and discounts through customized Price Lists.</li>
+                                <li>Picking Rules Integration: Connected picking rules with the Inventory module to streamline pick, pack, and ship processes from order booking to fulfillment.</li>
+                                <li>Customer Visibility: Provided a unified view of customer orders by linking customer accounts to sales order types.</li>
+                            </ul>
+                        </div>
+                        <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+                    </div>
+                </div>
+
+                <h4 class="text-2xl font-bold text-gray-800 mt-10 mb-6">Innovative Solutions & Business Impact</h4>
+                <p class="text-gray-700 text-base mb-4">
+                    Beyond standard ERP implementation, the "Golden Cart" project included innovative solutions to maximize profitability and operational efficiency:
+                </p>
+                <div class="expandable-content">
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 text-base mb-6">
+                        <li>Automated Demand-Supply Workflow: Developed an automated workflow to adjust supply based on market demand and consumption rates, utilizing Min-Max planning. This innovative solution **eliminated 90% of human interaction** in the process, significantly boosting efficiency and responsiveness.</li>
+                        <li>Profitability Maximization through Costing: Strategically linked business concepts to maximize profitability by:
+                            <ul class="list-disc list-inside ml-5 text-gray-700 space-y-1.5 text-sm">
+                                <li>Utilizing Average Costing for inventory valuation, which is ideal for hypermarkets with fluctuating purchase prices and frequent stock replenishment. This approach smooths price variations over time, avoiding swings in inventory valuation.</li>
+                                <li>Configuring items with Costing Enabled to ensure all relevant stock contributes accurately to inventory value and Cost of Goods Sold (COGS).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+
+                <h4 class="text-2xl font-bold text-gray-800 mt-10 mb-6">Project Documentation & Artifacts</h4>
+                <p class="text-gray-700 text-base mb-4">
+                    The following documents provide further insight into the "Golden Cart" project's scope, implementation, and outcomes:
+                </p>
+                <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                    <li><a href="https://drive.google.com/drive/folders/11hEF4UWqnOQ1785aOwl0ckn_wuhm_klP?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Golden Cart Presentation</a>: Overview of the project vision, challenges, and proposed solution.</li>
+                    <li><a href="https://drive.google.com/drive/folders/1taEcmjgTCytqFrj7odbhRpFwA_FB07QK?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Golden Cart Setup Document</a>: Detailed technical documentation of the Oracle ERP system configurations.</li>
+                    <li><a href="https://drive.google.com/drive/folders/10e5j8vYHNbjfpFdoiikp8FCPxNn8waAh?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Golden Cart User Guide</a>: Comprehensive guide for end-users on navigating and utilizing the implemented ERP system.</li>
+                    <li><a href="https://drive.google.com/drive/folders/1jRfgznjHH9zKFHtq9za5UbLFYhD3Xx5f?usp=sharing" target="_blank" class="text-teal-600 hover:underline">EBS SCM Material (Reference)</a>: Supplemental material related to Oracle E-Business Suite Supply Chain Management.</li>
+                    <li><a href="https://drive.google.com/drive/folders/1UtRWJ-GpjMi3lcZpXuxZ3_2P8DLuwzG_?usp=sharing" target="_blank" class="text-teal-600 hover:underline">BRD.xlsx - Sheet1.csv (Business Requirements Document)</a>: The foundational document outlining the business requirements for the project.</li>
+                </ul>
+
+                <h4 class="text-2xl font-bold text-gray-800 mt-10 mb-6">A Special Acknowledgment</h4>
+                <p class="text-gray-700 text-base mb-4">
+                    This "Golden Cart" project was a monumental effort, and I want to extend my deepest gratitude to my incredible teammate, Mariam Mohamed Kamal Mohamed. We undertook this entire project ourselves, from conceptualization to the detailed Oracle ERP implementation and documentation. Her dedication, expertise, and collaborative spirit were instrumental in bringing this vision to life.
+                </p>
+                <p class="text-gray-700 text-base">
+                    Connect with Mariam on LinkedIn: <a href="https://www.linkedin.com/in/mariam-mohamed-kamal25/" target="_blank" class="text-teal-600 hover:underline">Mariam Mohamed Kamal Mohamed</a>
+                </p>
+            </div>
+        </section>
+
+        <section id="soft-skills-growth" class="mb-20 md:mb-28 scroll-mt-20">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold text-gray-800">Soft Skills Growth & Professional Development</h3>
+                <p class="mt-5 text-lg text-gray-700 max-w-3xl mx-auto">
+                    The DEPI program's holistic approach extended beyond technical training, fostering a robust set of soft skills crucial for effective leadership, collaboration, and career advancement in any professional environment.
+                </p>
+            </div>
+
+            <div class="section-card">
+                <h4 class="text-3xl font-bold text-gray-800 mb-8 text-center text-gradient">Key Soft Skills Acquired & Enhanced</h4>
+                <p class="text-gray-700 text-base mb-4">A comprehensive set of interpersonal and professional competencies developed throughout the DEPI program.</p>
+                <div class="expandable-content">
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+                        <li>Career Planning: Developed strategic frameworks for setting professional goals, identifying growth pathways, and navigating career transitions effectively.</li>
+                        <li>Personality Types: Gained insights into various personality frameworks, enhancing self-awareness and improving interpersonal communication and team dynamics.</li>
+                        <li>Personal Branding and LinkedIn: Learned to cultivate a strong professional online presence, articulate unique value propositions, and leverage LinkedIn for networking and career opportunities.</li>
+                        <li>Emotional Intelligence: Enhanced capabilities in recognizing and managing one's own emotions, as well as understanding and influencing the emotions of others, fostering healthier and more productive relationships.</li>
+                        <li>CV and Interview Skills: Mastered the art of crafting compelling resumes and cover letters, along with advanced techniques for successful job interviews, including behavioral and technical questioning.</li>
+                        <li>Presentation Skills: Significantly improved abilities to structure, design, and deliver impactful presentations, effectively conveying complex information to diverse audiences with clarity and confidence.</li>
+                        <li>Employment Coaching: Received personalized guidance and mentorship on navigating the job market, identifying suitable roles, and optimizing job search strategies.</li>
+                        <li>Communication Skills: Refined both verbal and written communication techniques, focusing on active listening, clear articulation, and persuasive messaging for professional interactions and collaborations.</li>
+                    </ul>
+                </div>
+                <button class="expand-button mt-4 bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">View Details</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2024 Mahmoud Mohamed. All rights reserved.</p>
+            <p class="text-gray-400 mt-2">This interactive portfolio showcases key contributions and skills gained during the Digital Egypt Pioneers Initiative.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+            const expandButtons = document.querySelectorAll('.expand-button');
+
+            // Smooth scroll and active nav link logic
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.3 // Adjust threshold as needed
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active-nav');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active-nav');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Expand/Collapse functionality for content sections
+            expandButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.previousElementSibling; // The div containing the expandable content
+                    content.classList.toggle('expanded');
+                    if (content.classList.contains('expanded')) {
+                        button.textContent = 'Hide Details';
+                    } else {
+                        button.textContent = 'View Details';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
