@@ -4,17 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahmoud Mohamed: High School Portfolio</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN for interactive charts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <!-- Inline CSS for this page -->
     <style>
+        /* Custom styles for the High School Portfolio page */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F8F7F4;
-            color: #1a202c;
+            background-color: #F8F7F4; /* Light background */
+            color: #1a202c; /* Dark text */
         }
+
+        /* Common styling for headings and special elements (reusing gradient from main site) */
+        .text-gradient {
+            background-image: linear-gradient(to right, #0F766E, #10B981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+        }
+        /* Enhanced hover for text gradient - slight scale/shift */
+        .text-gradient:hover {
+            transform: scale(1.01);
+            text-shadow: 0 0 5px rgba(16, 185, 129, 0.3); /* Subtle glow */
+        }
+
+        /* Navigation link active state */
         .active-nav {
             color: #0d9488;
             font-weight: 600;
@@ -29,20 +52,24 @@
             height: 2px;
             background-color: #0d9488;
         }
+
+        /* Chart container styling for responsiveness */
         .chart-container {
             position: relative;
             width: 100%;
-            max-width: 600px;
+            max-width: 600px; /* Max width for larger screens */
             margin-left: auto;
             margin-right: auto;
-            height: 300px;
-            max-height: 400px;
+            height: 300px; /* Base height */
+            max-height: 400px; /* Max height for larger screens */
         }
         @media (min-width: 768px) {
             .chart-container {
-                height: 350px;
+                height: 350px; /* Adjust height for medium screens */
             }
         }
+
+        /* Fade-in animation for elements */
         .fade-in {
             animation: fadeIn 0.5s ease-in-out;
         }
@@ -50,30 +77,125 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* Hero section text animation (subtle scale on load) */
+        .hero-text-animate {
+            animation: scaleIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            opacity: 0;
+        }
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Project details content toggle */
         .project-details-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s ease-out;
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+            opacity: 0;
         }
         .project-details-content.expanded {
-            max-height: 500px; /* Adjust based on max content height */
-            transition: max-height 0.5s ease-in;
+            max-height: 1200px; /* Adjusted to ensure all content is visible */
+            opacity: 1;
+            transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
         }
+
+        /* Engineering Design Process (EDP) step header - NO TOGGLE, just visual */
         .edp-step-header {
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+            /* Removed cursor: pointer and hover background as it's not interactive anymore */
+            border-radius: 0.5rem; /* Rounded corners for the header */
+            background-color: #f8f7f4; /* Subtle background */
+            border: 1px solid #e2e8f0; /* Light border */
         }
-        .edp-step-header:hover {
-            background-color: #f0fdfa;
-        }
+        /* Removed .edp-step-header i styles as chevrons are gone */
+        /* EDP icon hover effect - Removed as it's not interactive anymore */
+
+        /* EDP step content - always expanded */
         .edp-step-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out;
+            max-height: none; /* Always show content */
+            overflow: visible; /* Allow content to overflow if needed */
+            opacity: 1; /* Always visible */
+            padding-top: 1rem; /* Consistent padding */
+            padding-bottom: 1rem; /* Consistent padding */
         }
-        .edp-step-content.expanded {
-            max-height: 300px; /* Adjust based on max content height */
-            transition: max-height 0.5s ease-in;
+        /* Removed .edp-step-content.expanded as it's always expanded */
+
+        /* "A+" Badge for Capstone Projects */
+        .a-plus-badge {
+            display: inline-block;
+            background-color: #10B981; /* Greenish teal */
+            color: white;
+            font-weight: bold;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+            margin-bottom: 0.75rem; /* Space below the badge */
+            animation: popIn 0.5s ease-out; /* Subtle animation for the badge */
+        }
+        @keyframes popIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Reused general card styles (if not importing main.css) */
+        .section-card {
+            background-color: #FFFFFF;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
+            transition: all 0.3s ease-in-out;
+            border: 1px solid transparent;
+        }
+        .section-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.15), 0 6px 10px -3px rgba(0, 0, 0, 0.08);
+            border-color: #10B981;
+        }
+
+        /* Academic Stat Card Hover Effect */
+        .stat-card-hover {
+            transform: translateY(0);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .stat-card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .portfolio-card-img {
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #E5E7EB;
+            transition: border-color 0.3s ease-in-out;
+        }
+        .portfolio-card-img:hover {
+            border-color: #0F766E;
+        }
+
+        .btn-primary {
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(16, 185, 129, 0.3);
+        }
+        .btn-primary:active {
+            transform: translateY(0);
+            box-shadow: none;
         }
     </style>
 </head>
@@ -81,9 +203,10 @@
 
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-xl md:text-2xl font-extrabold text-gray-800">
-                Mahmoud Mohamed (Seeny)
-            </h1>
+            <!-- Link back to the main homepage -->
+            <a href="https://seeny-portfolio-hub.vercel.app" class="text-xl md:text-2xl font-extrabold text-gray-800 hover:text-teal-600 transition duration-300">
+                &larr; Mahmoud Mohamed (Seeny)
+            </a>
             <div class="hidden md:flex space-x-8 text-gray-500 font-medium">
                 <a href="#innovation" class="hover:text-teal-600 transition duration-300 nav-link">Innovation</a>
                 <a href="#academics" class="hover:text-teal-600 transition duration-300 nav-link">Academics</a>
@@ -99,7 +222,7 @@
 
         <section id="hero" class="text-center mb-16 md:mb-24">
             <span class="text-teal-600 font-semibold uppercase tracking-wider">High School Portfolio</span>
-            <h2 class="text-4xl md:text-6xl font-extrabold text-gray-800 mt-2">Forging the Foundation of an Industrial Engineer</h2>
+            <h2 class="text-4xl md:text-6xl font-extrabold text-gray-800 mt-2 hero-text-animate">Forging the Foundation of an Industrial Engineer</h2>
             <p class="max-w-3xl mx-auto mt-6 text-lg text-gray-600">
                 A journey through a transformative high school experience that cultivated deep analytical rigor, high-impact innovation, and proactive leadership—the essential toolkit for a future in engineering and supply chain management.
             </p>
@@ -116,23 +239,17 @@
                 <p class="text-center text-gray-500 mb-8">Each of these science-based projects earned the highest possible grade (A+) and demonstrates mastery of interdisciplinary problem-solving and the engineering design process.</p>
                 
                 <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    </div>
+                    <!-- Projects will be dynamically loaded here by JavaScript -->
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="grid md:grid-cols-1 gap-8 items-center">
                 <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
-                     <h4 class="text-xl md:text-2xl font-bold text-center mb-4 text-gray-800">Consistent Capstone Excellence</h4>
-                     <p class="text-center text-gray-500 mb-6">This chart visually confirms the consistent A+ grade achieved across all five demanding capstone projects, highlighting a track record of top-tier performance.</p>
-                    <div class="chart-container">
-                        <canvas id="capstoneChart"></canvas>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
-                    <h4 class="text-xl md:text-2xl font-bold text-center mb-4 text-gray-800">Interactive: The Engineering Design Process</h4>
-                    <p class="text-center text-gray-500 mb-8">Explore the systematic, iterative process that guided each project from concept to impactful solution. Click on each step to learn more.</p>
+                    <h4 class="text-xl md:text-2xl font-bold text-center mb-4 text-gray-800">The Engineering Design Process</h4>
+                    <p class="text-center text-gray-500 mb-8">Explore the systematic, iterative process that guided each project from concept to impactful solution.</p>
                     <div id="edp-process-container" class="flex flex-col gap-4">
-                        </div>
+                        <!-- EDP Steps will be dynamically loaded here by JavaScript -->
+                    </div>
                 </div>
             </div>
         </section>
@@ -144,46 +261,42 @@
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-12">
-                <div class="bg-white rounded-2xl shadow-lg p-6 text-center transform hover:-translate-y-1 transition duration-300">
+                <div class="bg-white rounded-2xl shadow-lg p-6 text-center stat-card-hover">
                     <span class="text-4xl md:text-5xl font-extrabold text-teal-600">4.0</span>
                     <p class="mt-2 font-semibold text-gray-700">Unweighted GPA</p>
                 </div>
-                <div class="bg-white rounded-2xl shadow-lg p-6 text-center transform hover:-translate-y-1 transition duration-300">
+                <div class="bg-white rounded-2xl shadow-lg p-6 text-center stat-card-hover">
                     <span class="text-4xl md:text-5xl font-extrabold text-teal-600">1st</span>
                     <p class="mt-2 font-semibold text-gray-700">National Research Paper</p>
                 </div>
-                <div class="bg-white rounded-2xl shadow-lg p-6 text-center transform hover:-translate-y-1 transition duration-300">
+                <div class="bg-white rounded-2xl shadow-lg p-6 text-center stat-card-hover">
                     <span class="text-4xl md:text-5xl font-extrabold text-teal-600">Gold</span>
                     <p class="mt-2 font-semibold text-gray-700"><a href="https://drive.google.com/drive/folders/12oFKlAvU1JzIVNXipTShSilQlPSBS_5I?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Math Kangaroo Medal</a></p>
                 </div>
-                <div class="bg-white rounded-2xl shadow-lg p-6 text-center transform hover:-translate-y-1 transition duration-300">
+                <div class="bg-white rounded-2xl shadow-lg p-6 text-center stat-card-hover">
                     <span class="text-4xl md:text-5xl font-extrabold text-teal-600">174th</span>
                     <p class="mt-2 font-semibold text-gray-700"><a href="https://drive.google.com/drive/folders/1iB0ixFIblBZDvJwZGOQtYLVJQWmyiIxv?usp=sharing" target="_blank" class="text-teal-600 hover:underline">Worldwide Chemistry</a></p>
                 </div>
             </div>
-             <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-8">
-                 <h4 class="text-xl md:text-2xl font-bold text-center mb-2 text-gray-800">Exceptional Self-Learning Ability</h4>
-                 <p class="text-center text-gray-500 mb-8">Demonstrated a remarkable capacity for self-directed learning by independently completing advanced math courses far ahead of the school curriculum, a skill critical for mastering new domains.</p>
-                 <div class="flex flex-wrap justify-center gap-3">
-                     <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Algebra I & II</span>
-                     <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Geometry</span>
-                     <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Trigonometry</span>
-                     <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Pre-Calculus</span>
-                     <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Multivariable Calculus</span>
-                     <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Differential Equations</span>
-                     <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Number Theory</span>
-                 </div>
-             </div>
-             <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
-                <h4 class="text-xl md:text-2xl font-bold text-center mb-4 text-gray-800">Memberships & Additional Recognition</h4>
-                <p class="text-center text-gray-500 mb-6">Beyond core academics, I actively engaged with scientific communities and received further accolades, broadening my perspective and validating my capabilities.</p>
-                <ul class="list-disc list-inside space-y-2 text-gray-600 max-w-xl mx-auto">
-                    <li>Selected as a young member of the <span class="font-semibold text-teal-700">Junior Academy – The New York Academy of Sciences.</span></li>
-                    <li>Received a <span class="font-semibold text-teal-700">Successful Ambassador certificate</span> from the International Astronomy and Astrophysics Competition.</li>
-                    <li>Participated in a workshop certified by the <a href="https://drive.google.com/drive/folders/1mvQFOKbIKWYQ7Z7J6CrpbTM-PRCsNKxu?usp=sharing" target="_blank" class="text-teal-600 hover:underline font-semibold">Egyptian Space Agency</a>.</li>
-                </ul>
-            </div>
+               <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                   <h4 class="text-xl md:text-2xl font-bold text-center mb-4 text-gray-800">Memberships & Additional Recognition</h4>
+                   <!-- Align to left -->
+                   <ul class="list-disc list-inside space-y-2 text-gray-600 max-w-xl text-left">
+                       <li>Selected as a young member of the <span class="font-semibold text-teal-700">Junior Academy – The New York Academy of Sciences.</span></li>
+                       <li>Received a <span class="font-semibold text-teal-700">Successful Ambassador certificate</span> from the International Astronomy and Astrophysics Competition.</li>
+                       <li>Participated in a workshop certified by the <a href="https://drive.google.com/drive/folders/1mvQFOKbIKWYQ7Z7J6CrpbTM-PRCsNKxu?usp=sharing" target="_blank" class="text-teal-600 hover:underline font-semibold">Egyptian Space Agency</a>.</li>
+                       <li>Learn more about my school: <a href="https://www.stemegypt.net" target="_blank" class="text-teal-600 hover:underline font-semibold">STEM Egypt Official Website</a></li>
+                   </ul>
+               </div>
         </section>
+
+        <!-- "Did You Know?" Callout -->
+        <div class="bg-gradient-to-r from-teal-500 to-green-500 text-white p-8 rounded-2xl shadow-xl transform rotate-1 transition duration-300 hover:rotate-0 hover:scale-105 mb-16 md:mb-24">
+            <h3 class="text-3xl font-extrabold text-center mb-4">💡 Did You Know?</h3>
+            <p class="text-lg text-center leading-relaxed max-w-2xl mx-auto">
+                During my high school years, my dedication to problem-solving led to me becoming the **sole student chosen from over 10 STEM schools** to collaborate directly with the national STEM Unit, fundamentally redesigning the Capstone research system for future generations of students. This experience deeply shaped my approach to impactful system design.
+            </p>
+        </div>
 
         <section id="leadership" class="mb-16 md:mb-24 scroll-mt-20">
             <div class="text-center mb-12">
@@ -191,10 +304,10 @@
                 <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Proactively creating value beyond academics by mentoring peers, improving curricula on a national level, and leading community-focused initiatives.</p>
             </div>
             
-            <div class="grid md:grid-cols-5 gap-8">
-                <div class="md:col-span-3 bg-white rounded-2xl shadow-lg p-6 md:p-8">
+            <div class="grid grid-cols-1 gap-8"> <!-- Simplified to a single column -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
                     <h4 class="text-xl md:text-2xl font-bold text-gray-800">Architect of Curricular Improvement</h4>
-                    <span class="text-teal-600 font-semibold">Only High School Student Selected</span>
+                    <span class="text-teal-600 font-semibold">Sole Student Chosen from over 10 STEM Schools</span> <!-- Removed extra asterisks -->
                     <p class="mt-4 text-gray-600">As the sole student chosen from over 10 STEM schools, I collaborated with the national STEM Unit to significantly modify the Capstone research system. This involved enhancing teacher guidebooks, standardizing project challenges, developing feedback systems, and improving evaluation criteria, leaving a tangible, lasting mark on the national curriculum.</p>
                     <p class="mt-2 text-gray-600 text-sm italic">Supervisors: Doaa Ragab (STEM October's School Counselor), Ahmed Ramadan (Social Advisor, STEM October)</p>
                     <hr class="my-6">
@@ -223,23 +336,16 @@
                     <hr class="my-6">
                     <h4 class="text-xl md:text-2xl font-bold text-gray-800">Contribution to Student Resources</h4>
                     <span class="text-teal-600 font-semibold">Empowering Peers & Supporting Initiatives</span>
-                    <p class="mt-4 text-gray-600">Co-authored "The Ultimate Guide to STEM Students," sharing best practices and opportunity insights. Additionally, collected data on private universities to support the STEM Unit's scholarship initiatives, demonstrating a commitment to peer support and institutional improvement.</p>
+                    <p class="mt-4 text-600">Co-authored "The Ultimate Guide to STEM Students," sharing best practices and opportunity insights. Additionally, collected data on private universities to support the STEM Unit's scholarship initiatives, demonstrating a commitment to peer support and institutional improvement.</p>
                     <p class="mt-2 text-gray-600 text-sm italic">Supervisors: Doaa Ragab (STEM October's School Counselor), Ahmed Ramadan (Social Advisor, STEM October)</p>
-                </div>
-
-                <div class="md:col-span-2 bg-white rounded-2xl shadow-lg p-6 md:p-8">
-                    <h4 class="text-xl md:text-2xl font-bold text-center mb-4 text-gray-800">Mentorship & Knowledge Transfer</h4>
-                    <p class="text-center text-gray-500 mb-6">As a Capstone Teacher Assistant, I guided a class of 25 sophomores through the entire research process. The donut chart below shows the successful outcome: every student team achieved the highest possible grade (A+).</p>
-                    <div class="chart-container" style="height: 280px; max-height: 280px;">
-                        <canvas id="mentorshipChart"></canvas>
-                    </div>
-                    <hr class="my-6">
-                    <h4 class="text-xl md:text-2xl font-bold text-center mb-4 text-gray-800">Mentoring & Knowledge Transfer (Pi Club VP & STEM Seekers)</h4>
-                    <p class="text-center text-gray-500 mb-6">Beyond formal roles, I actively contributed to peer development through various initiatives.</p>
-                    <ul class="list-disc list-inside space-y-2 text-gray-600 max-w-xl mx-auto">
-                        <li>As Vice President of the STEM Pi Club, I delivered <span class="font-semibold text-teal-700">12 online sessions</span> on advanced topics, preparing juniors for AP Calculus and Physics exams and international physics competitions.</li>
-                        <li>Mentored over <span class="font-semibold text-teal-700">30 students</span> through STEM Seekers, providing resources, sessions, and guidance for aspiring STEM school applicants.</li>
-                    </ul>
+                     <hr class="my-6">
+                     <!-- Mentorship & Knowledge Transfer (Moved and simplified) -->
+                     <h4 class="text-xl md:text-2xl font-bold text-gray-800">Mentoring & Knowledge Transfer</h4>
+                     <!-- Added pl-5 for left alignment of list items -->
+                     <ul class="list-disc list-inside space-y-2 text-gray-600 max-w-xl text-left mt-4">
+                         <li>As Vice President of the STEM Pi Club, I delivered <span class="font-semibold text-teal-700">12 online sessions</span> on advanced topics, preparing juniors for AP Calculus and Physics exams and international physics competitions.</li>
+                         <li>Mentored over <span class="font-semibold text-teal-700">30 students</span> through STEM Seekers, providing resources, sessions, and guidance for aspiring STEM school applicants.</li>
+                     </ul>
                 </div>
             </div>
 
@@ -250,17 +356,36 @@
     <footer class="bg-gray-800 text-white">
         <div class="container mx-auto px-6 py-8 text-center">
             <p>&copy; 2024 Mahmoud Mohamed. All rights reserved.</p>
-            <p class="text-gray-400 mt-2">This interactive portfolio was built to showcase foundational skills and achievements.</p>
+            <p class="text-gray-400 mt-2">Connecting engineering excellence with digital innovation.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="https://www.facebook.com/mahmoud.seeny.2025/" target="_blank" class="text-white hover:text-blue-600 transition-colors duration-300">
+                    <i class="fab fa-facebook-f text-2xl"></i>
+                </a>
+                <a href="https://www.instagram.com/s3eny/" target="_blank" class="text-white hover:text-pink-500 transition-colors duration-300">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+                <a href="https://www.tiktok.com/@seeny0" target="_blank" class="text-white hover:text-black transition-colors duration-300">
+                    <i class="fab fa-tiktok text-2xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mahmoudseeny" target="_blank" class="text-white hover:text-blue-700 transition-colors duration-300">
+                    <i class="fab fa-linkedin-in text-2xl"></i>
+                </a>
+                <a href="tel:+201127961626" class="text-white hover:text-green-500 transition-colors duration-300">
+                    <i class="fas fa-phone-alt text-2xl"></i>
+                </a>
+            </div>
+            <p class="text-gray-400 text-sm mt-4">Phone: +20 1127961626</p>
         </div>
     </footer>
 
     <script>
+        // Data for Capstone Projects
         const allProjectData = [
             {
                 id: 'ai_system',
                 title: "AI-Powered System for Communication (ISEF National Finalist)",
                 summary: "Developed an innovative AI software system integrated into glasses with 93% accuracy to interpret emotional states and convert them into communicative cues for individuals with autism and visual impairments.",
-                challenge: "Addressing communication barriers for individuals with autism and visual impairments.",
+                challenge: "Creating a functional and responsive motion control solution for automotive service applications that combined the robust force of hydraulics with intelligent electronic control, ensuring precise motion, seamless system integration, intuitive user interface, reliability, safety, and troubleshooting complex interactions.",
                 project: "Developed an innovative AI software system integrated into glasses. This system used camera input to analyze facial expressions, interpreting emotional states and converting them into audio messages or other communicative cues with 93% accuracy.",
                 impact: "Selected for the national phase of ISEF, earning an Honorable Mention. Presented to a distinguished audience of USAID, US & Egyptian experts, who were highly impressed by the research and creativity.",
                 teammates: [
@@ -346,7 +471,7 @@
             },
             {
                 name: "Research",
-                icon: "📚",
+                icon: "�",
                 description: "Gather information and investigate existing solutions or related concepts. This step is crucial for building a strong knowledge base before ideation."
             },
             {
@@ -378,6 +503,8 @@
 
         function renderProjects() {
             const projectsContainer = document.getElementById('projects-container');
+            if (!projectsContainer) return;
+
             projectsContainer.innerHTML = ''; // Clear existing content
             allProjectData.forEach(project => {
                 const projectCard = document.createElement('div');
@@ -407,6 +534,7 @@
                 projectCard.innerHTML = `
                     <div>
                         <h5 class="text-lg md:text-xl font-bold text-gray-800 mb-2">${project.title}</h5>
+                        <span class="a-plus-badge">A+</span> <!-- The "THAT'S IT" badge -->
                         <p class="text-gray-600 text-sm mb-4">${project.summary}</p>
                         <div id="details-${project.id}" class="project-details-content">
                             <h6 class="font-semibold text-teal-700 uppercase tracking-wide text-xs mb-1">The Challenge</h6>
@@ -419,166 +547,66 @@
                             ${documentationLinkHtml}
                         </div>
                     </div>
-                    <button class="view-details-btn mt-4 bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600 transition duration-300 text-sm font-semibold self-start" data-project-id="${project.id}">View Details</button>
+                    <button class="view-details-btn mt-4 text-teal-600 hover:text-teal-800 text-sm font-semibold self-start" data-target="details-${project.id}">
+                        View Details <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-300"></i>
+                    </button>
                 `;
                 projectsContainer.appendChild(projectCard);
             });
 
+            // Add event listeners for project detail toggles
             document.querySelectorAll('.view-details-btn').forEach(button => {
-                button.addEventListener('click', (event) => {
-                    const projectId = event.target.dataset.projectId;
-                    const detailsDiv = document.getElementById(`details-${projectId}`);
-                    detailsDiv.classList.toggle('expanded');
-                    if (detailsDiv.classList.contains('expanded')) {
-                        event.target.textContent = 'Hide Details';
+                button.addEventListener('click', function() {
+                    const targetId = this.dataset.target;
+                    const content = document.getElementById(targetId);
+                    const icon = this.querySelector('i'); // Get the icon element
+
+                    content.classList.toggle('expanded');
+                    icon.classList.toggle('rotate-180'); // Rotate the icon
+
+                    if (content.classList.contains('expanded')) {
+                        this.innerHTML = `Hide Details <i class="fas fa-chevron-up ml-1 text-xs transition-transform duration-300 rotate-180"></i>`; // Update text and ensure icon state
                     } else {
-                        event.target.textContent = 'View Details';
+                        this.innerHTML = `View Details <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-300"></i>`; // Update text and ensure icon state
                     }
                 });
             });
         }
 
+        // Function to render EDP Steps dynamically (now flattened)
         function renderEdpProcess() {
             const edpContainer = document.getElementById('edp-process-container');
+            if (!edpContainer) return;
+
             edpContainer.innerHTML = ''; // Clear existing content
-            edpSteps.forEach((step, index) => {
+            edpSteps.forEach(step => {
                 const stepElement = document.createElement('div');
-                stepElement.className = 'bg-gray-50 rounded-xl shadow-sm border border-gray-100';
+                stepElement.className = 'bg-gray-50 rounded-lg shadow-sm border border-gray-100'; // Apply consistent styling
                 stepElement.innerHTML = `
-                    <div class="edp-step-header p-4 flex items-center gap-4">
-                        <span class="text-3xl">${step.icon}</span>
-                        <h5 class="text-lg font-bold text-gray-800">${index + 1}. ${step.name}</h5>
+                    <div class="edp-step-header p-4 flex items-center justify-start"> <!-- Removed justify-between as no chevron -->
+                        <h4 class="font-semibold text-gray-800 text-lg"><span class="text-2xl mr-2">${step.icon}</span> ${step.name}</h4>
+                        <!-- Removed <i> element for chevron as it's no longer collapsible -->
                     </div>
-                    <div id="edp-content-${index}" class="edp-step-content p-4 pt-0">
-                        <p class="text-gray-600">${step.description}</p>
+                    <div class="edp-step-content p-4 pt-0 text-gray-600 text-sm"> <!-- Always visible -->
+                        ${step.description}
                     </div>
                 `;
                 edpContainer.appendChild(stepElement);
             });
 
-            document.querySelectorAll('.edp-step-header').forEach((header, index) => {
-                header.addEventListener('click', () => {
-                    const contentDiv = document.getElementById(`edp-content-${index}`);
-                    contentDiv.classList.toggle('expanded');
-                });
-            });
+            // No event listeners needed for EDP steps as they are no longer collapsible
         }
 
+        // Removed initCapstoneChart() as the section is removed.
+        // Removed initMentorshipChart() as the section is removed.
+
+        // Render all dynamic content on page load
         document.addEventListener('DOMContentLoaded', () => {
             renderProjects();
             renderEdpProcess();
-
-            const capstoneCtx = document.getElementById('capstoneChart').getContext('2d');
-            new Chart(capstoneCtx, {
-                type: 'bar',
-                data: {
-                    labels: ['AI System', 'Energy Research', 'Recycled Block', 'Microbial Cell', 'Water Filter', 'COVID AI'],
-                    datasets: [{
-                        label: 'All Projects Achieved A+ Grade',
-                        data: [100, 100, 100, 100, 100, 100],
-                        backgroundColor: '#0d9488',
-                        borderColor: '#047857',
-                        borderWidth: 1,
-                        borderRadius: 5
-                    }]
-                },
-                options: {
-                    indexAxis: 'y',
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        x: {
-                            display: false,
-                            max: 100
-                        },
-                        y: {
-                            ticks: {
-                                font: {
-                                    size: 14,
-                                    weight: '500'
-                                },
-                                color: '#374151'
-                            },
-                             grid: {
-                                display: false
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            enabled: false
-                        }
-                    }
-                }
-            });
-
-            const mentorshipCtx = document.getElementById('mentorshipChart').getContext('2d');
-            new Chart(mentorshipCtx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['A+ Grade Achieved'],
-                    datasets: [{
-                        label: 'Students Mentored',
-                        data: [100],
-                        backgroundColor: ['#0d9488'],
-                        borderColor: ['#F8F7F4'],
-                        borderWidth: 4,
-                        hoverOffset: 4
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    cutout: '70%',
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: () => '100% Success Rate'
-                            }
-                        },
-                        title: {
-                            display: true,
-                            text: '25 Students Mentored',
-                            font: { size: 16, weight: 'bold' },
-                            color: '#1a202c',
-                            position: 'bottom'
-                        }
-                    }
-                }
-            });
-
-            const navLinks = document.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('section');
-
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.4
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        navLinks.forEach(link => {
-                            link.classList.remove('active-nav');
-                            if (link.getAttribute('href').substring(1) === entry.target.id) {
-                                link.classList.add('active-nav');
-                            }
-                        });
-                    }
-                });
-            }, observerOptions);
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
+            // Removed chart initializations as sections are removed
         });
     </script>
 </body>
 </html>
+�
