@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahmoud Mohamed (Seeny): Foundational Portfolio</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Chart.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Google Fonts - Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+
+<script src="https://cdn.tailwindcss.com"></script>
+    
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
@@ -97,24 +101,40 @@
         .btn-secondary { padding: 0.5rem 1rem; border-radius: 0.5rem; font-weight: 600; transition: all 0.3s ease; border: 1px solid var(--primary); color: var(--primary); background-color: transparent; }
         .btn-secondary:hover { background-color: var(--primary); color: white !important; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(15, 118, 110, 0.2); }
         .btn-secondary:hover i { color: white; }
+        
+        @keyframes glow-animation {
+            0% { box-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent), 0 0 15px var(--primary); }
+            50% { box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 30px var(--primary); }
+            100% { box-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent), 0 0 15px var(--primary); }
+        }
 
-        .btn-documentation {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            background-color: var(--background-tint);
-            color: var(--primary);
-            border: 1px solid var(--border-light);
-            padding: 0.5rem 1rem; border-radius: 0.5rem; font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        .btn-documentation:hover {
-            background-color: var(--primary);
+        .btn-glow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
             color: white;
-            border-color: var(--primary);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(15, 118, 110, 0.2);
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            animation: glow-animation 3s infinite ease-in-out;
+            text-decoration: none; /* For 'a' tags */
         }
-        .btn-documentation i { transition: transform 0.3s ease; }
-        .btn-documentation:hover i { transform: translateX(2px) scale(1.1); }
+
+        .btn-glow:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 0 15px var(--accent), 0 0 25px var(--accent), 0 0 40px var(--primary);
+        }
+
+        .btn-glow i {
+            transition: transform 0.3s ease;
+        }
+        .btn-glow:hover i {
+            transform: translateX(3px);
+        }
 
         .link-subtle { color: var(--primary); font-weight: 600; text-decoration: none; position: relative; padding-bottom: 2px; }
         .link-subtle::after { content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 2px; bottom: 0; left: 0; background-color: var(--accent); transform-origin: bottom right; transition: transform 0.3s ease-out; }
@@ -159,7 +179,7 @@
             <div class="container mx-auto px-6 relative reveal">
                 <span class="font-semibold text-primary uppercase tracking-wider">Foundational Portfolio</span>
                 <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mt-4" style="line-height: 1.2;">
-                    <span class="hero-text-gradient">Forging an Engineer's Mindset</span>
+                    <span class="hero-text-gradient">My HighSchool Journey</span>
                 </h1>
                 <p class="mt-6 text-base text-gray-600 max-w-3xl mx-auto">
                     This is a showcase of the transformative high school journey that cultivated my analytical rigor, high-impact innovation, and proactive leadership—the essential toolkit for a future in engineering.
@@ -171,7 +191,7 @@
             <div class="bg-white rounded-2xl p-6 md:p-8 reveal card-primary interactive-card -mt-24 relative z-10">
                 <div class="grid md:grid-cols-5 gap-8 items-center">
                     <div class="md:col-span-2">
-                        <img src="https://placehold.co/400x400/E0F2F1/0F766E?text=Seeny" alt="Mahmoud Mohamed (Seeny)" class="rounded-full shadow-xl mx-auto border-4 border-white ring-4 ring-primary">
+                        <img src="stem images/seeny.png" alt="Mahmoud Mohamed (Seeny)" class="rounded-full shadow-xl mx-auto border-4 border-white ring-4 ring-primary">
                     </div>
                     <div class="md:col-span-3">
                         <h2 class="text-3xl font-semibold text-gray-800 mb-4" style="line-height: 1.3;">A Foundation of First Principles</h2>
@@ -191,15 +211,17 @@
             </div>
             <div class="reveal">
                 <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Projects are dynamically loaded here -->
-                </div>
+                    
+
+</div>
             </div>
             <div class="bg-white rounded-2xl p-6 md:p-8 mt-12 reveal card-secondary">
                 <h3 class="text-2xl font-semibold text-center mb-4 text-gray-800" style="line-height: 1.3;">The Engineering Design Process</h3>
                 <p class="text-center text-gray-500 mb-8">This systematic, iterative process guided each project from concept to impactful solution.</p>
                 <div id="edp-process-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- EDP Steps will be dynamically loaded here -->
-                </div>
+                    
+
+</div>
             </div>
         </section>
 
@@ -299,7 +321,7 @@
 
     <script>
         // --- DATA ---
-        const allProjectData = [ { id: 'ai_system', title: "AI-Powered System for Communication (ISEF National Finalist)", summary: "Developed an innovative AI software system integrated into glasses with 93% accuracy to interpret emotional states and convert them into communicative cues.", image: "https://placehold.co/600x400/0F766E/FFFFFF?text=ISEF+Project", details: "Selected for the national phase of ISEF, earning an Honorable Mention. Presented to a distinguished audience of USAID, US & Egyptian experts. Teammate: Omar Ayman." }, { id: 'energy', title: "National Winning Research", summary: "Led a team in authoring the 1st Place-winning research paper in a national competition, analyzing five alternative energy sources.", image: "https://placehold.co/600x400/10B981/FFFFFF?text=Research+Paper", documentationLink: "https://drive.google.com/drive/folders/1TGEQ4_E9wvHGgW8R0qAWnQralkhZZxwM?usp=sharing", details: "The paper's analytical depth was praised as 'fascinating' by instructors and reached the national STEM Unit. Teammates: Tarek Kassab, Ahmed Hussein." }, { id: 'building_block', title: "A+ Capstone: Recycled Building Block", summary: "Designed and prototyped a building block using recycled paper and polystyrene to address urban waste and housing material costs.", image: "https://placehold.co/600x400/0F766E/FFFFFF?text=Building+Block", documentationLink: "https://drive.google.com/drive/folders/1fcWCMyvL_VpmjImFAcnuQ5M-ZUTFA8Vm?usp=sharing", details: "Praised by instructors for its significant contribution and potential real-world application. Teammates: Kareem El-Shishtawy, Marwan Abdelhameed." }, { id: 'microbial_fuel_cell', title: "A+ Capstone: Microbial Fuel Cell", summary: "Explored bio-energy by developing a system to generate electricity from soil bacteria, earning an A+ grade.", image: "https://placehold.co/600x400/10B981/FFFFFF?text=Microbial+Cell", documentationLink: "https://drive.google.com/drive/folders/1Yt5JAHXNLKsfTvgI81fKRapKmaJGxjn0?usp=sharing", details: "Gained wide admiration for its scientific inquiry and practical application of biological principles. Teammates: Abdelrahman Sadek, Abdelrahman Khater, and more." }, { id: 'water_filter', title: "A+ Capstone: 4-Stage Water Filter", summary: "Developed a low-cost, multi-stage system combining electrocoagulation and sand filtration for effective water purification.", image: "https://placehold.co/600x400/0F766E/FFFFFF?text=Water+Filter", documentationLink: "https://drive.google.com/drive/folders/1hMcKCOiIYpaPaqnkZPz8zmu9YwrLQE5m?usp=sharing", details: "Demonstrated practical engineering skills and a commitment to solving real-world environmental challenges. Teammates: Ahmed Haithem, Mohamed Rabie, Ali El-badry." }, { id: 'covid_detection', title: "A+ Capstone: COVID-19 AI Detection", summary: "Applied AI to develop a project capable of calculating the probability of a person having Covid-19 based on medical data models.", image: "https://placehold.co/600x400/10B981/FFFFFF?text=COVID-19+AI", documentationLink: "https://drive.google.com/drive/folders/1xEmluubR3WfSSrGWq9VCwlNhBZHQ3EwB?usp=sharing", details: "Showcased foundational AI/ML application skills and an ability to contribute to public health challenges through technology. Teammates: Mohammed Gomaa, Abdelrahman Abdelnasser." } ];
+        const allProjectData = [ { id: 'ai_system', title: "AI-Powered System for Communication (ISEF National Finalist)", summary: "Developed an innovative AI software system integrated into glasses with 93% accuracy to interpret emotional states and convert them into communicative cues.", image: "stem images/isef.png", details: "Selected for the national phase of ISEF, earning an Honorable Mention. Presented to a distinguished audience of USAID, US & Egyptian experts. Teammate: Omar Ayman." }, { id: 'energy', title: "National Winning Research", summary: "Led a team in authoring the 1st Place-winning research paper in a national competition, analyzing five alternative energy sources.", image: "stem images/research.PNG", documentationLink: "https://drive.google.com/drive/folders/1TGEQ4_E9wvHGgW8R0qAWnQralkhZZxwM?usp=sharing", details: "The paper's analytical depth was praised as 'fascinating' by instructors and reached the national STEM Unit. Teammates: Tarek Kassab, Ahmed Hussein." }, { id: 'building_block', title: "A+ Capstone: Recycled Building Block", summary: "Designed and prototyped a building block using recycled paper and polystyrene to address urban waste and housing material costs.", image: "stem images/block.png", documentationLink: "https://drive.google.com/drive/folders/1fcWCMyvL_VpmjImFAcnuQ5M-ZUTFA8Vm?usp=sharing", details: "Praised by instructors for its significant contribution and potential real-world application. Teammates: Kareem El-Shishtawy, Marwan Abdelhameed." }, { id: 'microbial_fuel_cell', title: "A+ Capstone: Microbial Fuel Cell", summary: "Explored bio-energy by developing a system to generate electricity from soil bacteria, earning an A+ grade.", image: "stem images/micro.PNG", documentationLink: "https://drive.google.com/drive/folders/1Yt5JAHXNLKsfTvgI81fKRapKmaJGxjn0?usp=sharing", details: "Gained wide admiration for its scientific inquiry and practical application of biological principles. Teammates: Abdelrahman Sadek, Abdelrahman Khater, and more." }, { id: 'water_filter', title: "A+ Capstone: 4-Stage Water Filter", summary: "Developed a low-cost, multi-stage system combining electrocoagulation and sand filtration for effective water purification.", image: "stem images/filter.PNG", documentationLink: "https://drive.google.com/drive/folders/1hMcKCOiIYpaPaqnkZPz8zmu9YwrLQE5m?usp=sharing", details: "Demonstrated practical engineering skills and a commitment to solving real-world environmental challenges. Teammates: Ahmed Haithem, Mohamed Rabie, Ali El-badry." }, { id: 'covid_detection', title: "A+ Capstone: COVID-19 AI Detection", summary: "Applied AI to develop a project capable of calculating the probability of a person having Covid-19 based on medical data models.", image: "stem images/covid.PNG", documentationLink: "https://drive.google.com/drive/folders/1xEmluubR3WfSSrGWq9VCwlNhBZHQ3EwB?usp=sharing", details: "Showcased foundational AI/ML application skills and an ability to contribute to public health challenges through technology. Teammates: Mohammed Gomaa, Abdelrahman Abdelnasser." } ];
         
         const edpSteps = [ { name: "Ask", icon: "💡", description: "Identify the problem, define needs, and determine constraints through thorough research." }, { name: "Research", icon: "🔬", description: "Gather information and investigate existing solutions to build a strong knowledge base." }, { name: "Imagine", icon: "🧠", description: "Brainstorm multiple creative solutions without judgment to generate a wide range of possibilities." }, { name: "Plan", icon: "📝", description: "Select the most promising idea, draw diagrams, and outline the steps for implementation." }, { name: "Create", icon: "🛠️", description: "Build a prototype or model based on the plan, bringing the theoretical design to life." }, { name: "Test", icon: "🧪", description: "Evaluate the prototype against defined criteria, collect data, and identify areas for improvement." }, { name: "Improve", icon: "🔄", description: "Refine the design based on testing results in an iterative cycle until the optimal solution is achieved." } ];
 
@@ -329,7 +351,7 @@
                         </div>
                         <div class="mt-4 flex items-center gap-4">
                             <button class="btn-secondary" data-target="details-${project.id}">Expand Details <i class="fas fa-chevron-down ml-1 text-xs"></i></button>
-                            ${project.documentationLink ? `<a href="${project.documentationLink}" target="_blank" class="btn-documentation"><i class="fa-solid fa-file-arrow-down"></i> View Docs</a>` : ''}
+                            ${project.documentationLink ? `<a href="${project.documentationLink}" target="_blank" class="btn-glow"><i class="fa-solid fa-file-arrow-down"></i> View Docs</a>` : ''}
                         </div>
                     </div>`).join('');
             }
