@@ -144,7 +144,7 @@
 
         .section-header .sub-title { color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; font-size: 0.875rem; }
         .section-header .title { font-size: 2rem; line-height: 1.3; font-weight: 700; color: var(--text-dark); animation: title-glow 3s ease-in-out infinite; }
-        .section-header .description { margin-top: 1rem; font-size: 1.125rem; max-w: 42rem; margin-left: auto; margin-right: auto; color: var(--text-muted); line-height: 1.7; }
+        .section-header .description { margin-top: 1rem; font-size: 1.125rem; max-width: 42rem; margin-left: auto; margin-right: auto; color: var(--text-muted); line-height: 1.7; }
 
         .hero-bg-pattern { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230F766E' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); z-index: -1; }
     </style>
@@ -155,7 +155,7 @@
 
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-200">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-gray-800 hover:text-teal-600 transition duration-300">
+            <a href="https://seeny-portfolio-hub.vercel.app" class="text-xl font-bold text-gray-800 hover:text-teal-600 transition duration-300">
                 Mahmoud Mohamed (Seeny)
             </a>
             <div class="hidden md:flex space-x-8 text-gray-500">
@@ -280,9 +280,8 @@
                 <div class="bg-white rounded-2xl p-6 md:p-10 card-secondary reveal">
                     <div id="horizontal-timeline-container">
                         <div class="relative mb-8">
-                            <div id="timeline-track">
-                                <div id="timeline-progress"></div>
-                            </div>
+                            <div id="timeline-track"></div>
+                            <div id="timeline-progress"></div>
                             <div id="timeline-milestones"></div>
                         </div>
                         <div id="timeline-content-container"></div>
@@ -380,9 +379,9 @@
                     contentContainer.innerHTML = itemsForYear.map(item => `
                         <div class="mb-6 reveal visible">
                             <h3 class="text-xl font-semibold" style="line-height: 1.4;">
-                                <i class="${item.icon} text-primary mr-3 w-6 text-center"></i>${item.title}
+                                <i class="${item.icon} text-primary-light mr-3 w-6 text-center"></i>${item.title}
                             </h3>
-                            <span class="text-primary font-semibold text-sm mb-2 block ml-10">${item.subtitle}</span>
+                            <span class="text-primary-light font-semibold text-sm mb-2 block ml-10">${item.subtitle}</span>
                             <p class="text-base text-gray-600 ml-10">${item.description}</p>
                             ${item.docLink ? `
                                 <div class="ml-10 mt-4">
@@ -404,10 +403,40 @@
                 updateTimeline(0);
             }
 
+            let chartInstance = null;
+            const initRadarChart = () => {
+                const chartElement = document.getElementById('skillsRadarChart');
+                if (!chartElement) return;
+                if (chartInstance) { chartInstance.destroy(); }
+                const isLightMode = document.body.classList.contains('light-mode');
+                const gridColor = 'rgba(0, 0, 0, 0.1)';
+                const pointLabelColor = 'var(--text-dark)';
+                const borderColor = 'var(--primary-light)';
+                const pointBgColor = 'var(--primary-light)';
+
+                const ctx = chartElement.getContext('2d');
+                chartInstance = new Chart(ctx, {
+                    type: 'radar',
+                    data: { labels: ['Research & Analysis', 'AI & Prototyping', 'Leadership', 'Strategic Planning', 'Problem Solving', 'Communication'], datasets: [{ label: 'Competency', data: [95, 90, 88, 90, 98, 85], backgroundColor: 'rgba(15, 118, 110, 0.2)', borderColor: borderColor, pointBackgroundColor: pointBgColor, pointBorderColor: '#fff', borderWidth: 2 }] },
+                    options: { 
+                        animation: { duration: 2000, easing: 'easeInOutQuint' }, 
+                        scales: { r: { 
+                            beginAtZero: true, max: 100, 
+                            angleLines: { color: gridColor }, 
+                            grid: { color: gridColor }, 
+                            pointLabels: { font: { size: 12, weight: '600', family: "'Inter', sans-serif" }, color: pointLabelColor }, 
+                            ticks: { display: false, stepSize: 20, backdropColor: 'transparent' } 
+                        }}, 
+                        plugins: { legend: { display: false } } 
+                    }
+                });
+            };
+            
             // Initial Renders
             renderProjects();
             renderEdpProcess();
             initHorizontalTimeline();
+            initRadarChart();
 
             document.body.addEventListener('click', function(e) {
                 const detailsButton = e.target.closest('.btn-secondary[data-target]');
@@ -453,28 +482,11 @@
                 }, stepTime);
             };
 
-            let chartAnimated = false;
-            const initRadarChart = (chartElement) => {
-                if (!chartElement || chartAnimated) return;
-                const ctx = chartElement.getContext('2d');
-                const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-                gradient.addColorStop(0, 'rgba(15, 118, 110, 0.6)');
-                gradient.addColorStop(1, 'rgba(16, 185, 129, 0.4)');
-                new Chart(ctx, {
-                    type: 'radar',
-                    data: { labels: ['Research & Analysis', 'AI & Prototyping', 'Leadership', 'Strategic Planning', 'Problem Solving', 'Communication'], datasets: [{ label: 'Competency', data: [95, 90, 88, 90, 98, 85], backgroundColor: gradient, borderColor: 'var(--primary)', pointBackgroundColor: '#FFFFFF', pointBorderColor: 'var(--primary)', borderWidth: 2 }] },
-                    options: { animation: { duration: 2000, easing: 'easeInOutQuint' }, scales: { r: { beginAtZero: true, max: 100, angleLines: { color: '#e2e8f0' }, grid: { color: '#e2e8f0' }, pointLabels: { font: { size: 12, weight: '600', family: "'Inter', sans-serif" }, color: '#4a5568' }, ticks: { display: false, stepSize: 20 } } }, plugins: { legend: { display: false } } }
-                });
-                chartAnimated = true;
-            };
-
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         if (entry.target.classList.contains('reveal')) { entry.target.classList.add('visible'); }
                         entry.target.querySelectorAll('[data-count]').forEach(counter => { if (!counter.dataset.animated) { animateCount(counter); counter.dataset.animated = "true"; } });
-                        const chartCanvas = entry.target.querySelector('#skillsRadarChart');
-                        if(chartCanvas) { initRadarChart(chartCanvas); }
                     }
                 });
             }, { threshold: 0.1 });
