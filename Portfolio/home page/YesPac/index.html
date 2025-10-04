@@ -7,51 +7,96 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --bg-light: #F8F7F4;
+            --bg-white: #FFFFFF;
+            --text-dark: #1F2937;
+            --text-muted: #6B7280;
+            --primary: #0F766E;
+            --accent: #10B981;
+            --border-light: #E5E7EB;
+        }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F8F7F4;
-            color: #1a202c;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
         }
-        .active-nav {
-            color: #0d9488;
-            font-weight: 600;
-            position: relative;
-        }
-        .active-nav::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #0d9488;
-        }
-        .content-details-wrapper {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out;
-        }
-        .content-details-wrapper.expanded {
-            max-height: 1000px; /* Adjusted to ensure all content is visible */
-            transition: max-height 0.5s ease-in;
-        }
-        /* General card styling, consistent with other portfolio pages */
         .section-card {
-            background-color: #FFFFFF;
+            background-color: var(--bg-white);
             border-radius: 1.5rem;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             padding: 2.5rem;
-            transition: all 0.3s ease-in-out;
-            border: 1px solid transparent;
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
         }
         .section-card:hover {
-            transform: translateY(-5px) scale(1.01);
-            box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.15), 0 6px 10px -3px rgba(0, 0, 0, 0.08);
-            border-color: #10B981;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.04);
+        }
+        .text-gradient {
+            background-image: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s ease-in-out, margin-top 0.7s ease-in-out, padding-top 0.7s ease-in-out;
+        }
+        .expandable-content.expanded {
+            max-height: 2000px;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-light);
+        }
+        .contribution-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        @keyframes glow-animation {
+            0%, 100% { box-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent), 0 0 15px var(--primary); }
+            50% { box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 30px var(--primary); }
+        }
+        .btn-glow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            animation: glow-animation 3s infinite ease-in-out;
+            text-decoration: none;
+        }
+        .btn-glow:hover {
+            transform: translateY(-2px) scale(1.05);
+        }
+        
+        @keyframes title-glow {
+            0%, 100% { text-shadow: 0 0 8px rgba(16, 185, 129, 0.4), 0 0 16px rgba(15, 118, 110, 0.4); }
+            50% { text-shadow: 0 0 16px rgba(16, 185, 129, 0.6), 0 0 32px rgba(15, 118, 110, 0.6); }
+        }
+        .glowing-title {
+            animation: title-glow 4s ease-in-out infinite;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .btn-call-to-action {
             display: inline-flex;
@@ -63,49 +108,22 @@
             transition: all 0.3s ease-in-out;
             margin-top: 1rem;
         }
-        .btn-call-to-action:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
-        }
-        .btn-contact {
-            background-color: #0D9488; /* Teal-600 */
-            color: white;
-        }
-        .btn-contact:hover {
-            background-color: #0F766E; /* Darker Teal */
-        }
-        .btn-linkedin {
-            background-color: #0077B5; /* LinkedIn Blue */
-            color: white;
-        }
-        .btn-linkedin:hover {
-            background-color: #005582; /* Darker LinkedIn Blue */
-        }
-        /* Styling for images within contribution cards */
-        .contribution-card-img {
-            width: 100%;
-            height: 200px; /* Fixed height for consistency */
-            object-fit: cover; /* Ensures image covers the area, cropping if necessary */
-            border-radius: 0.5rem; /* Slightly rounded corners */
-            margin-bottom: 1rem; /* Space below the image */
-        }
     </style>
 </head>
 <body class="antialiased">
 
-    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+    <header class="bg-white/90 backdrop-blur-lg sticky top-0 z-50 shadow-md">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Link back to the main homepage -->
             <a href="https://seeny-portfolio-hub.vercel.app" class="text-xl md:text-2xl font-extrabold text-gray-800 hover:text-teal-600 transition duration-300">
                 &larr; Mahmoud Mohamed (Seeny)
             </a>
-            <div class="hidden md:flex space-x-8 text-gray-500 font-medium">
-                <a href="#overview" class="hover:text-teal-600 transition duration-300 nav-link">Overview</a>
-                <a href="#contributions" class="hover:text-teal-600 transition duration-300 nav-link">Key Contributions</a>
-                <a href="#daily-tasks" class="hover:text-teal-600 transition duration-300 nav-link">Daily Responsibilities</a>
-                <a href="#skills" class="hover:text-teal-600 transition duration-300 nav-link">Skills & Tools</a>
+            <div class="hidden md:flex space-x-8 text-gray-600 font-medium">
+                <a href="#overview" class="hover:text-teal-500 transition duration-300">Overview</a>
+                <a href="#contributions" class="hover:text-teal-500 transition duration-300">Contributions</a>
+                <a href="#daily-tasks" class="hover:text-teal-500 transition duration-300">Daily Responsibilities</a>
+                <a href="#skills" class="hover:text-teal-500 transition duration-300">Skills</a>
             </div>
-            <a href="https://www.linkedin.com/in/mahmoudseeny" target="_blank" class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-md">
+            <a href="https://www.linkedin.com/in/mahmoudseeny" target="_blank" class="bg-teal-600 text-white px-5 py-2.5 rounded-xl hover:bg-teal-700 transition duration-300 text-sm font-semibold shadow-lg">
                 View LinkedIn
             </a>
         </nav>
@@ -113,135 +131,129 @@
 
     <main class="container mx-auto px-6 py-8 md:py-16">
 
-        <section id="hero" class="text-center mb-16 md:mb-24">
-            <span class="text-teal-600 font-semibold uppercase tracking-wider">Internship Portfolio</span>
-            <h2 class="text-4xl md:text-6xl font-extrabold text-gray-800 mt-2">Driving Efficiency as a Production Intern at YesPac</h2>
-            <p class="max-w-3xl mx-auto mt-6 text-lg text-gray-600">
-                A two-month intensive internship at YesPac, a leader in packaging solutions, where I applied industrial and production engineering principles to optimize manufacturing processes, enhance operational efficiency, and contribute to tangible productivity improvements.
-            </p>
-        </section>
-
-        <section id="overview" class="mb-16 md:mb-24 scroll-mt-20">
-            <div class="text-center mb-12">
-                <h3 class="text-3xl md:text-4xl font-bold text-gray-800">Company Overview: YesPac Solutions</h3>
-                <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">YesPac is a prominent packaging solutions provider, recognized as one of the leading IML (In-Mold Labeling) plastic manufacturers in Egypt, Africa, and the Middle East. Established in 1999 (with the YesPac brand name since 2015), the company is known for its premium quality, innovative ideas, efficient processes, and hygienic manufacturing conditions. YesPac exports a wide range of products to over 18 countries across Africa, Asia, and Europe, serving diverse sectors including food processing, pharmaceutical, healthcare, and chemical industries. Their commitment to eco-friendliness, efficiency, integrity, and customer satisfaction drives their business, supported by a strong R&D department and rapid development from concept to market.</p>
-            </div>
-
-            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
-                <h4 class="text-xl md:text-2xl font-bold text-center mb-4 text-gray-800">My Role: Production Intern</h4>
-                <p class="text-gray-600 text-center max-w-3xl mx-auto">During my two-month tenure, I served as a Production Intern, directly contributing to operational excellence under the guidance of the Production Manager, Khaled Naguib. My role involved a blend of hands-on technical problem-solving, process optimization, and strategic data analysis, providing me with invaluable insights into large-scale manufacturing operations.</p>
-                <hr class="my-6">
-                <h4 class="text-xl md:text-2xl font-bold text-center mb-4 text-gray-800">Overall Impact & Key Learnings</h4>
-                <p class="text-gray-600 text-center max-w-3xl mx-auto">This internship provided a comprehensive understanding of real-world production challenges and solutions. I gained practical knowledge in operational management, contributed to efficiency improvements, and developed critical skills in data analysis, technical communication, and cross-functional collaboration. The experience significantly deepened my understanding of how academic principles translate into tangible improvements in a manufacturing environment.</p>
-            </div>
-        </section>
-
-        <section id="contributions" class="mb-16 md:mb-24 scroll-mt-20">
-            <div class="text-center mb-12">
-                <h3 class="text-3xl md:text-4xl font-bold text-gray-800">Key Projects & High-Impact Contributions</h3>
-                <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">High-impact initiatives where I applied industrial engineering principles to drive measurable improvements and strategic advancements in a fast-paced manufacturing environment.</p>
-                <p class="mt-4 text-orange-600 text-md font-semibold max-w-3xl mx-auto p-3 bg-orange-50 rounded-lg border border-orange-200">
-                    Note: Due to company confidentiality policies, specific project documentation is limited. However, samples of corresponding work or further details can be provided upon request via email.
+        <section id="hero" class="text-center mb-20 md:mb-24 pt-8">
+            <div class="reveal">
+                <span class="text-teal-600 font-bold uppercase tracking-widest text-lg md:text-xl">Internship Portfolio</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight mt-4 glowing-title">
+                    <span class="text-gradient">Production Intern at YesPac</span>
+                </h1>
+                <p class="max-w-4xl mx-auto mt-8 text-xl text-gray-700 leading-relaxed">
+                    A two-month intensive internship at YesPac, a leader in packaging solutions, where I applied industrial and production engineering principles to optimize manufacturing processes, enhance operational efficiency, and contribute to tangible productivity improvements.
                 </p>
             </div>
+        </section>
 
-            <div id="project-contributions-container" class="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
-                <!-- Project Contributions will be injected here by JavaScript -->
+        <section id="overview" class="mb-20 md:mb-28 scroll-mt-20 reveal">
+             <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 glowing-title">Internship Overview</h2>
+            </div>
+            <div class="section-card">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">About YesPac Solutions</h3>
+                        <p class="text-gray-600 mb-4">YesPac is a prominent packaging solutions provider, recognized as one of the leading IML (In-Mold Labeling) plastic manufacturers in Egypt, Africa, and the Middle East. They are known for premium quality, innovative ideas, and hygienic manufacturing, exporting to over 18 countries.</p>
+                        <h3 class="text-2xl font-bold text-gray-800 mt-8 mb-4">My Role: Production Intern</h3>
+                        <p class="text-gray-600">During my two-month tenure, I served as a Production Intern, directly contributing to operational excellence. My role involved a blend of hands-on technical problem-solving, process optimization, and strategic data analysis, providing invaluable insights into large-scale manufacturing operations.</p>
+                    </div>
+                    <div>
+                         <img src="yespac images/arburg.webp" alt="Arburg Machine at YesPac" class="rounded-xl shadow-lg w-full h-auto object-cover">
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="daily-tasks" class="mb-16 md:mb-24 scroll-mt-20">
-            <div class="text-center mb-12">
-                <h3 class="text-3xl md:text-4xl font-bold text-gray-800">Daily Responsibilities & Applied Skills</h3>
-                <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">A snapshot of my routine tasks and the essential skills honed through consistent application in a dynamic production environment.</p>
+        <section id="contributions" class="mb-20 md:mb-28 scroll-mt-20 reveal">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 glowing-title">Key Projects & Contributions</h2>
+                <p class="mt-5 text-lg text-gray-700 max-w-3xl mx-auto">
+                    High-impact initiatives where I applied industrial engineering principles to drive measurable improvements in a fast-paced manufacturing environment.
+                </p>
             </div>
-
-            <div id="daily-tasks-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Daily Tasks will be injected here by JavaScript -->
+            <div id="project-contributions-container" class="grid md:grid-cols-2 gap-8">
+                <!-- Contributions will be dynamically injected here -->
             </div>
         </section>
 
-        <section id="skills" class="mb-16 md:mb-24 scroll-mt-20">
-            <div class="text-center mb-12">
-                <h3 class="text-3xl md:text-4xl font-bold text-gray-800">Skills & Tools Gained</h3>
-                <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Key competencies and software proficiency acquired and enhanced during my internship at YesPac.</p>
+        <section id="daily-tasks" class="mb-20 md:mb-28 scroll-mt-20 reveal">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 glowing-title">Daily Responsibilities</h2>
+                <p class="mt-5 text-lg text-gray-700 max-w-3xl mx-auto">
+                    A snapshot of my routine tasks and the essential skills honed through consistent application in a dynamic production environment.
+                </p>
             </div>
+            <div id="daily-tasks-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Daily tasks will be dynamically injected here -->
+            </div>
+        </section>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white rounded-2xl shadow-lg p-6">
-                    <h4 class="text-xl font-bold text-gray-800 mb-4">Production & Operations Management</h4>
-                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+        <section id="skills" class="mb-16 md:mb-24 scroll-mt-20 reveal">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 glowing-title">Skills & Tools Acquired</h2>
+                <p class="mt-5 text-lg text-gray-700 max-w-3xl mx-auto">
+                    Key competencies and software proficiency acquired and enhanced during my internship at YesPac.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="section-card">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4"><i class="fas fa-cogs text-primary mr-2"></i>Production & Operations</h3>
+                    <ul class="text-gray-600 text-sm list-disc list-inside space-y-1">
                         <li>Cycle Time Optimization</li>
-                        <li>Production Monitoring</li>
-                        <li>Resource Allocation</li>
                         <li>Process Improvement</li>
                         <li>Machine Performance Analysis</li>
                         <li>Downtime Prevention</li>
-                        <li>Order Management</li>
-                        <li>Shop Floor Monitoring</li>
+                        <li>Resource Allocation</li>
                     </ul>
                 </div>
-                <div class="bg-white rounded-2xl shadow-lg p-6">
-                    <h4 class="text-xl font-bold text-gray-800 mb-4">Quality & Systems Integration</h4>
-                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                 <div class="section-card">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4"><i class="fas fa-check-double text-primary mr-2"></i>Quality & Systems</h3>
+                    <ul class="text-gray-600 text-sm list-disc list-inside space-y-1">
                         <li>Quality Audits</li>
-                        <li>Quality Standards Alignment</li>
                         <li>SAP (MM, PP Modules)</li>
                         <li>Material Flow Management</li>
-                        <li>Stock Transfer Orders (STO)</li>
-                        <li>Supply Chain Integration</li>
+                        <li>Stock Transfer Orders</li>
                     </ul>
                 </div>
-                <div class="bg-white rounded-2xl shadow-lg p-6">
-                    <h4 class="text-xl font-bold text-gray-800 mb-4">Technical & Analytical Skills</h4>
-                    <ul class="list-disc list-inside text-gray-600 space-y-1">
-                        <li>Technical Troubleshooting (Robotics, Machines)</li>
+                 <div class="section-card">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4"><i class="fas fa-chart-line text-primary mr-2"></i>Technical & Analytical</h3>
+                    <ul class="text-gray-600 text-sm list-disc list-inside space-y-1">
+                        <li>Technical Troubleshooting</li>
                         <li>Data Analysis (Excel)</li>
                         <li>Report Generation</li>
-                        <li>Problem Identification & Solution Suggestion</li>
-                        <li>Machine Manual Interpretation</li>
-                        <li>Parameter Adjustment</li>
-                        <li>Sequence Editing</li>
+                        <li>Problem Identification</li>
                     </ul>
                 </div>
-                <div class="bg-white rounded-2xl shadow-lg p-6">
-                    <h4 class="text-xl font-bold text-gray-800 mb-4">Communication & Leadership</h4>
-                    <ul class="list-disc list-inside text-gray-600 space-y-1">
-                        <li>Technical Presentation Development</li>
+                 <div class="section-card">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4"><i class="fas fa-users text-primary mr-2"></i>Communication</h3>
+                    <ul class="text-gray-600 text-sm list-disc list-inside space-y-1">
+                        <li>Technical Presentations</li>
                         <li>Cross-functional Collaboration</li>
-                        <li>Operational Meeting Participation</li>
-                        <li>Strategic Discussion Contribution</li>
-                        <li>Explaining Complex Concepts</li>
+                        <li>Operational Meetings</li>
                         <li>Team Coordination</li>
                     </ul>
                 </div>
             </div>
-
-            <div class="mt-8 bg-white rounded-2xl shadow-lg p-6">
-                <h4 class="text-xl font-bold text-gray-800 mb-4 text-center">Software & Tools Utilized</h4>
+             <div class="mt-8 section-card">
+                <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Software & Tools Utilized</h3>
                 <div class="flex flex-wrap justify-center gap-3">
                     <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">SAP (MM, PP Modules)</span>
                     <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Microsoft Excel</span>
                     <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Arburg Machine Manuals</span>
-                    <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Arburg Machine Softwares</span>
                     <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Notion</span>
                     <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Microsoft Teams</span>
-                    <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Microsoft PowerPoint</span>
                 </div>
             </div>
         </section>
 
-        <!-- Call to Action Section -->
-        <section class="text-center bg-teal-600 text-white p-12 rounded-3xl shadow-xl my-16 md:my-24">
+        <section class="text-center bg-gradient-to-r from-teal-600 to-green-500 text-white p-12 rounded-3xl shadow-xl my-16 md:my-24 reveal">
             <h3 class="text-4xl md:text-5xl font-extrabold mb-4">Ready to Drive Operational Excellence?</h3>
-            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
                 Let's discuss how my hands-on experience and problem-solving skills can bring tangible value to your organization.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://www.linkedin.com/in/mahmoudseeny" target="_blank" class="btn-call-to-action btn-linkedin">
-                    <i class="fab fa-linkedin mr-3 text-2xl"></i> Schedule a Consultation
+                <a href="https://www.linkedin.com/in/mahmoudseeny" target="_blank" class="btn-call-to-action bg-white text-teal-700 hover:bg-gray-100">
+                    <i class="fab fa-linkedin mr-3 text-2xl"></i> Connect on LinkedIn
                 </a>
-                <a href="tel:+201127961626" class="btn-call-to-action btn-contact">
+                <a href="tel:+201127961626" class="btn-call-to-action bg-black bg-opacity-20 text-white hover:bg-opacity-30">
                     <i class="fas fa-phone-alt mr-3 text-xl"></i> Call Me Directly
                 </a>
             </div>
@@ -249,11 +261,10 @@
 
     </main>
 
-    <footer class="bg-gray-800 text-white">
+    <footer class="bg-gray-900 text-white">
         <div class="container mx-auto px-6 py-8 text-center">
             <p>&copy; 2024 Mahmoud Mohamed. All rights reserved.</p>
-            <p class="text-gray-400 mt-2">This interactive portfolio showcases key contributions and skills gained during my production internship.</p>
-            <p class="text-gray-400 text-sm mt-4">Phone: +20 1127961626</p>
+            <p class="text-gray-400 mt-2">Connecting engineering excellence with digital innovation.</p>
         </div>
     </footer>
 
@@ -261,239 +272,121 @@
         const internshipContributions = [
             {
                 id: 'cycle_time_optimization',
-                title: "Accelerating Production: Targeted Cycle Time Optimization Across 52 Machines",
-                summary: "Spearheaded the identification of critical inefficiencies in machine cycle times across YesPac's extensive fleet of 52 machines, laying the groundwork for a significant potential increase in production output.",
-                details: "Through a deep dive into the comprehensive Arburg machine manual (spanning 17 chapters and over 1000 pages), I developed an expert understanding of machine functionalities and optimal operational parameters. Each product has a standard cycle time, encompassing stages like injection, cooling, and molding. My challenge was systematically identifying deviations and inefficiencies stemming from factors such as extended cooling times or critical delays in mold opening. Collaborating closely with the installation department, I meticulously assessed machine performance, particularly after mold changes. By precisely analyzing cycle time data, I could pinpoint root causes and propose actionable solutions to enhance process efficiency. While operational authority was limited as an intern, my role was pivotal in reporting and championing optimizations that promised to dramatically improve machine productivity. With an average cycle time of 7 seconds, even a marginal 0.1-second improvement across 52 machines translates into a substantial boost in overall production output.",
-                gainedExperience: [
-                    "Developed a comprehensive and expert-level understanding of Arburg machine operations and technical specifications.",
-                    "Mastered the identification of subtle and critical inefficiencies within complex production cycles.",
-                    "Significantly improved skills in advanced data analysis, reporting, and strategic communication for cycle time optimization."
-                ],
+                title: "Accelerating Production: Cycle Time Optimization",
+                summary: "Identified critical inefficiencies across 52 machines, laying the groundwork for a significant potential increase in production output.",
+                details: "Through a deep dive into the 1000+ page Arburg machine manual, I developed an expert understanding of optimal operational parameters. By precisely analyzing cycle time data, I pinpointed root causes of delays and proposed actionable solutions to enhance process efficiency. Even a marginal 0.1-second improvement across 52 machines translates into a substantial boost in overall production output.",
+                image: "yespac images/cycle.PNG",
                 documentationLink: "https://drive.google.com/drive/folders/1Fxfz0oy1n2R5irlh59O0TqR_wk0LCQJt?usp=sharing",
-                image: "yespac images/cycle.PNG" // Updated image path
             },
             {
                 id: 'technician_training',
-                title: "Empowering the Workforce: Comprehensive Technical Training Program Design & Delivery",
-                summary: "Designed and delivered an impactful, multi-part training program for production technicians and engineers, expertly translating complex machine manuals into actionable, skill-building presentations that significantly enhanced operational efficiency and staff capability.",
-                details: `One of the most challenging yet profoundly rewarding tasks during my internship was the creation and delivery of a detailed, empowering training program for both technicians and engineers. This involved meticulously analyzing a dense 500-page Arburg machine manual and distilling its critical information into a five-part, highly structured and accessible training curriculum. Each presentation was thoughtfully designed to cater to different levels of expertise and specific operational needs, ensuring maximum impact:
-                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                        <li><strong>Presentation 1 (Foundational):</strong> Introduced core machine parts and detailed each component's function. Provided a clear, step-by-step description of the entire machine process. Explained critical operational concepts, control panel symbols, and alarm indicators to equip beginners with a solid foundational understanding. This accelerated their onboarding and reduced initial errors.</li>
-                        <li><strong>Presentation 2 (Optimization Focus):</strong> Concentrated on advanced techniques for optimizing cycle time, including precise sequence editing and testing the machine in both setup and automatic modes. Critically demonstrated how to manage orders efficiently to proactively avoid machine downtime, directly impacting productivity.</li>
-                        <li><strong>Presentation 3 (Parameter Mastery):</strong> Delved into crucial parameters and intricate directions for various machine movements, with a strong emphasis on mold, ejector, and nozzle actions. Showed operators how to accurately adjust and change data in parameter charts for real-time tracking, enabling finer control.</li>
-                        <li><strong>Presentation 4 (Thermal Control & Plasticizing):</strong> Explained the nuanced temperature settings for the injection unit and mold heating, along with nominal values for cylinder control. Detailed the critical plasticizing process and key factors like dosage and cooling time, essential for material quality.</li>
-                        <li><strong>Presentation 5 (Engineer-Specific Quality Control):</strong> Exclusively tailored for engineers, this session covered advanced quality assurance and control, with a laser focus on monitoring charts and precise tolerance setting. Taught engineers how to effectively configure monitoring functions and efficiently print key data (e.g., CSV and charts) to ensure consistent product quality and compliance.</li>
-                    </ul>`,
-                gainedExperience: [
-                    "Developed expert-level proficiency in instructional design and technical content creation, tailored for diverse industrial audiences.",
-                    "Enhanced ability to translate highly complex technical information into clear, actionable, and engaging training modules.",
-                    "Strengthened advanced communication skills by effectively conveying intricate engineering concepts to both technical and non-technical personnel, fostering team-wide understanding and capability."
-                ],
+                title: "Empowering the Workforce: Technical Training Program",
+                summary: "Designed and delivered a five-part training program for technicians and engineers, translating complex manuals into actionable, skill-building presentations.",
+                details: `I created an empowering training program by distilling a dense 500-page machine manual into an accessible curriculum. The five presentations covered: 1) Foundational machine parts and processes; 2) Advanced cycle time optimization techniques; 3) Parameter mastery for machine movements; 4) Thermal control and plasticizing; 5) Engineer-specific quality control and monitoring. This directly enhanced staff capability and operational efficiency.`,
+                image: "yespac images/pres.PNG",
                 documentationLink: "https://drive.google.com/drive/folders/1Id8n4cw0pDKH8pc0KDfIsP1ifhKm2IL2?usp=sharing",
-                image: "yespac images/pres.PNG" // Updated image path
             },
             {
                 id: 'sap_implementation',
-                category: 'sap',
-                title: "SAP for Production & Logistics: Streamlining Material Flow and Warehouse Management",
-                summary: "Gained hands-on experience utilizing SAP to meticulously track production processes, manage critical material flow (plastics and labels), and execute efficient Stock Transfer Orders (STOs) for optimized warehouse and supply chain management, directly contributing to operational agility.",
-                details: "During my internship, I gained invaluable practical experience leveraging the SAP system to meticulously track production processes and ensure the efficient management of critical materials. Specifically, I tracked the precise amount of plastic and labels consumed for each production order, ensuring accurate resource allocation. I also mastered the execution of Stock Transfer Orders (STOs), which was crucial for properly accounting for excess materials and facilitating their movement between warehouses. I utilized SAP to actively monitor the shop floor, ensuring that production outputs consistently met demand forecasts and adhered to stringent quality standards. By seamlessly integrating real-time production data with the broader supply chain, I played a direct role in contributing to more informed decision-making and significantly greater efficiency across multiple departments within the organization.",
-                gainedExperience: [
-                    "Achieved hands-on expertise with SAP in managing production execution, material flow, and inventory across complex operations.",
-                    "Developed a strong understanding of how to integrate production data for superior supply chain visibility and management.",
-                    "Significantly improved skills in tracking key production metrics, generating comprehensive consumption reports, and contributing to data-driven operational decisions."
-                ],
-                documentationLink: "", // No specific link provided in the document for this
-                image: "yespac images/sap.jpg" // Updated image path
+                title: "SAP for Production & Logistics",
+                summary: "Utilized SAP to track material flow, manage production processes, and execute Stock Transfer Orders (STOs) for optimized warehouse and supply chain management.",
+                details: "I gained invaluable experience leveraging SAP to track the consumption of plastic and labels for each production order, ensuring accurate resource allocation. I also mastered executing Stock Transfer Orders (STOs) to account for excess materials and facilitate their movement between warehouses. By monitoring the shop floor via SAP, I helped ensure production outputs met demand forecasts and adhered to quality standards, contributing to greater efficiency.",
+                image: "yespac images/sap.jpg",
             },
             {
                 id: 'robotic_system_adjustment',
-                category: 'mechatronics',
-                title: "Optimizing Robotic System Precision: Enhancing Production Speed and Quality",
-                summary: "Acquired critical expertise in diagnosing and resolving intricate issues related to the precise alignment of robotic systems with manufactured products, a crucial skill for maintaining peak production speed, consistent quality, and operational efficiency.",
-                details: "I gained hands-on experience in diagnosing and resolving complex issues related to the precise alignment of robotic systems with manufactured products. Ensuring that robots worked seamlessly and accurately with the production machines was absolutely crucial for maintaining optimal production speed, upholding stringent quality standards, and guaranteeing overall operational precision. This involved detailed troubleshooting and fine-tuning to eliminate discrepancies that could lead to defects or slowdowns. My involvement directly contributed to minimizing production interruptions and maximizing throughput.",
-                gainedExperience: [
-                    "Mastered advanced technical troubleshooting for robotic alignment and optimizing synchronization with high-speed production machines.",
-                    "Enhanced problem-solving skills through active collaboration with cross-functional teams to address and swiftly resolve complex technical issues.",
-                    "Developed a deep understanding of the critical interplay between robotic precision and overall manufacturing line efficiency."
-                ],
-                documentationLink: "", // No specific link provided in the document for this
-                image: "yespac images/arburg.webp" // Updated image path
+                title: "Optimizing Robotic System Precision",
+                summary: "Acquired expertise in diagnosing and resolving intricate issues related to the precise alignment of robotic systems with manufactured products, enhancing production speed and quality.",
+                details: "I gained hands-on experience in diagnosing and resolving complex alignment issues between robotic systems and production machines. This was crucial for maintaining optimal production speed and upholding stringent quality standards. This involved detailed troubleshooting and fine-tuning to eliminate discrepancies, directly contributing to minimizing production interruptions and maximizing throughput.",
+                image: "yespac images/arburg.webp",
             }
         ];
 
         const dailyTasks = [
             {
                 id: 'team_allocation',
-                title: "Strategic Production Team Allocation: Maximizing Resource Utilization",
-                summary: "Consistently supported daily team allocation processes to ensure the most efficient utilization of manpower, machinery, and materials, thereby maintaining seamless operational flow and maximizing productivity.",
-                details: "Every day, I provided essential support to the production engineer, ensuring that the production team was strategically allocated to tasks, and that all processes and operations functioned with peak efficiency. Through consistent involvement in daily team allocation, I cultivated a deep understanding of complex production workflows and the critical importance of meticulous resource management. This hands-on experience empowered me to make real-time, informed decisions, ensuring that manpower, machinery, and materials were optimally utilized to sustain an uninterrupted operational flow and prevent costly delays.",
+                title: "Strategic Team Allocation",
+                summary: "Supported daily team allocation to ensure efficient utilization of manpower, machinery, and materials, maintaining seamless operational flow.",
+                details: "Every day, I provided essential support to the production engineer, ensuring that the production team was strategically allocated to tasks, and that all processes and operations functioned with peak efficiency. This hands-on experience empowered me to make real-time, informed decisions, ensuring that resources were optimally utilized to sustain an uninterrupted operational flow.",
             },
             {
                 id: 'machine_cycle_monitoring',
-                title: "Proactive Machine Cycle Monitoring: Diagnosing & Preventing Downtime",
-                summary: "Implemented regular, detailed checks of machine cycle times to proactively identify inefficiencies, diagnose potential issues, and suggest corrective measures, significantly contributing to downtime prevention and continuous operational uptime.",
-                details: "I regularly conducted meticulous checks on the cycle times of all production machines, ensuring they consistently operated within the expected, optimized range. If a machine's cycle time showed any deviation or was excessively high, I swiftly reported the issue and proposed data-driven solutions to rectify the problem. This consistent monitoring significantly enhanced my technical skills in identifying subtle and critical production inefficiencies. By rigorously analyzing deviations in cycle times, I learned to diagnose issues with precision, rapidly suggest effective corrective measures, and collaborate seamlessly with the maintenance department to prevent unscheduled downtime. This role honed my sharp attention to detail and dramatically improved my problem-solving abilities concerning intricate machine performance dynamics.",
+                title: "Proactive Machine Monitoring",
+                summary: "Implemented regular checks of machine cycle times to proactively identify inefficiencies and suggest corrective measures, preventing downtime.",
+                details: "I regularly conducted meticulous checks on the cycle times of all production machines. If a machine's cycle time showed any deviation, I swiftly reported the issue and proposed data-driven solutions. This consistent monitoring honed my sharp attention to detail and dramatically improved my problem-solving abilities concerning intricate machine performance dynamics.",
             },
             {
                 id: 'excel_reporting',
-                title: "Advanced Excel Reporting: Illuminating Machine Status & Productivity Insights",
-                summary: "Leveraged advanced Excel functionalities to meticulously document daily machine status, productivity metrics, and critical repair needs, generating comprehensive reports that provided management with actionable insights for strategic decision-making.",
-                details: "On a daily basis, I worked extensively with company-standard Excel sheets, meticulously documenting key operational data including machine productivity, real-time machine status, and all detected repair needs. My responsibility extended to ensuring that all machine reports were consistently up-to-date, providing clear, actionable insights for management review. This daily engagement with Excel significantly strengthened my data management, analytical, and reporting skills. I gained proficiency in maintaining accurate records of machine performance and productivity, which enabled me to analyze production data, identify critical trends over time, and forecast potential issues. This experience dramatically improved my ability to generate compelling, data-driven reports that empowered management to make highly informed decisions regarding operations and proactive machine maintenance strategies.",
-            },
-            {
-                id: 'quality_audits',
-                title: "Collaborative Quality Audits: Upholding Production Standards & Integrity",
-                summary: "Actively participated in comprehensive quality audits, meticulously assessing machine performance and ensuring that all production processes rigorously adhered to stringent company quality standards and operational excellence benchmarks.",
-                details: "My active participation in quality audits provided me with an invaluable, deeper understanding of the critical imperative for production processes to meet and exceed stringent quality standards. I gained profound insights into how to systematically evaluate machine performance from a holistic quality perspective, rigorously ensuring that all production processes align seamlessly with both regulatory requirements and the company's internal benchmarks. This hands-on involvement underscored the vital role of cross-departmental collaboration in consistently maintaining product integrity and achieving operational excellence.",
-            },
-            {
-                id: 'operational_meetings',
-                title: "Strategic Operational Meetings: Driving Efficiency & Problem-Solving Across Shifts",
-                summary: "Engaged in critical operational meetings focused on rapidly resolving production challenges and optimizing the timeline of every shift, directly contributing to enhanced efficiency and seamless workflow management.",
-                details: "My participation in daily operational meetings allowed me to actively observe and contribute to strategic discussions aimed at significantly improving shift timelines and swiftly resolving emergent operational issues. I gained practical, high-impact knowledge in real-world operational management, contributing directly to innovative solutions that dramatically enhanced efficiency and effectively resolved common production bottlenecks. These meetings provided invaluable exposure to high-level decision-making processes and cultivated a broader, more integrated understanding of inter-shift coordination and strategic resource deployment.",
+                title: "Advanced Excel Reporting",
+                summary: "Leveraged Excel to document daily machine status, productivity metrics, and repair needs, generating reports for management.",
+                details: "On a daily basis, I worked extensively with company-standard Excel sheets, meticulously documenting key operational data. This daily engagement with Excel significantly strengthened my data management and analytical skills, improving my ability to generate compelling, data-driven reports that empowered management to make highly informed decisions.",
             }
         ];
 
         function renderContributions() {
             const container = document.getElementById('project-contributions-container');
-            container.innerHTML = '';
-            internshipContributions.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'bg-white rounded-2xl p-6 shadow-lg border border-gray-100 flex flex-col justify-between';
-                
-                let gainedExperienceHtml = '';
-                if (item.gainedExperience && item.gainedExperience.length > 0) {
-                    gainedExperienceHtml = `<h6 class="font-semibold text-teal-700 uppercase tracking-wide text-xs mb-1 mt-3">Gained Experience & Skills</h6><ul class="list-disc list-inside text-gray-600 text-sm space-y-1">`;
-                    item.gainedExperience.forEach(exp => {
-                        gainedExperienceHtml += `<li>${exp}</li>`;
-                    });
-                    gainedExperienceHtml += `</ul>`;
-                }
-
-                let documentationLinkHtml = '';
-                if (item.documentationLink) {
-                    documentationLinkHtml = `<a href="${item.documentationLink}" target="_blank" class="text-teal-600 hover:underline text-sm font-semibold mt-3 block">View Documentation</a>`;
-                }
-
-                card.innerHTML = `
+            if (!container) return;
+            container.innerHTML = internshipContributions.map(item => `
+                <div class="section-card flex flex-col justify-between">
                     <div>
-                        <img src="${item.image}" alt="${item.title} Image" class="contribution-card-img" onerror="this.onerror=null;this.src='https://placehold.co/600x200/E5E7EB/6B7280?text=Image+Not+Found';">
-                        <h5 class="text-lg md:text-xl font-bold text-gray-800 mb-2">${item.title}</h5>
+                        <img src="${item.image}" alt="${item.title}" class="contribution-image" onerror="this.onerror=null;this.src='https://placehold.co/600x220/E5E7EB/6B7280?text=Image+Not+Found';">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">${item.title}</h3>
                         <p class="text-gray-600 text-sm mb-4">${item.summary}</p>
-                        <div id="details-${item.id}" class="content-details-wrapper">
-                            <p class="text-gray-600 text-sm mb-3">${item.details}</p>
-                            ${gainedExperienceHtml}
-                            ${documentationLinkHtml}
-                            <!-- Call to Action within details -->
-                            <p class="text-md font-semibold text-gray-800 mt-6 mb-3">
-                                Intrigued by this work or have a similar challenge? Let's discuss how I can bring this expertise to your team!
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-3">
-                                <a href="https://www.linkedin.com/in/mahmoudseeny" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition duration-300 flex items-center justify-center">
-                                    <i class="fab fa-linkedin mr-2"></i> Connect on LinkedIn
-                                </a>
-                                <a href="tel:+201127961626" class="bg-teal-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-teal-700 transition duration-300 flex items-center justify-center">
-                                    <i class="fas fa-phone-alt mr-2"></i> Call Me
-                                </a>
-                            </div>
+                        <div id="details-${item.id}" class="expandable-content">
+                            <p class="text-gray-600 text-sm">${item.details}</p>
                         </div>
                     </div>
-                    <button class="view-details-btn mt-4 bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600 transition duration-300 text-sm font-semibold self-start" data-item-id="${item.id}">View Details</button>
-                `;
-                container.appendChild(card);
-            });
-
-            document.querySelectorAll('#project-contributions-container .view-details-btn').forEach(button => {
-                button.addEventListener('click', (event) => {
-                    const itemId = event.target.dataset.itemId;
-                    const detailsDiv = document.getElementById(`details-${itemId}`);
-                    detailsDiv.classList.toggle('expanded');
-                    if (detailsDiv.classList.contains('expanded')) {
-                        event.target.textContent = 'Hide Details';
-                    } else {
-                        event.target.textContent = 'View Details';
-                    }
-                });
-            });
+                    <div class="mt-4 flex items-center gap-4">
+                        <button class="expand-button bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition duration-300 text-sm font-semibold" data-target="details-${item.id}">View Details</button>
+                        ${item.documentationLink ? `<a href="${item.documentationLink}" target="_blank" class="btn-glow text-sm"><i class="fas fa-file-alt mr-2"></i> View Documentation</a>` : ''}
+                    </div>
+                </div>
+            `).join('');
         }
 
         function renderDailyTasks() {
             const container = document.getElementById('daily-tasks-container');
-            container.innerHTML = '';
-            dailyTasks.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'bg-white rounded-2xl p-6 shadow-lg border border-gray-100 flex flex-col justify-between';
-                
-                card.innerHTML = `
+            if (!container) return;
+            container.innerHTML = dailyTasks.map(item => `
+                <div class="section-card flex flex-col justify-between">
                     <div>
-                        <h5 class="text-lg md:text-xl font-bold text-gray-800 mb-2">${item.title}</h5>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">${item.title}</h3>
                         <p class="text-gray-600 text-sm mb-4">${item.summary}</p>
-                        <div id="details-${item.id}" class="content-details-wrapper">
-                            <p class="text-gray-600 text-sm mb-3">${item.details}</p>
-                            <!-- Call to Action within details -->
-                            <p class="text-md font-semibold text-gray-800 mt-6 mb-3">
-                                Intrigued by this work or have a similar challenge? Let's discuss how I can bring this expertise to your team!
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-3">
-                                <a href="https://www.linkedin.com/in/mahmoudseeny" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition duration-300 flex items-center justify-center">
-                                    <i class="fab fa-linkedin mr-2"></i> Connect on LinkedIn
-                                </a>
-                                <a href="tel:+201127961626" class="bg-teal-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-teal-700 transition duration-300 flex items-center justify-center">
-                                    <i class="fas fa-phone-alt mr-2"></i> Call Me
-                                </a>
-                            </div>
+                        <div id="details-${item.id}" class="expandable-content">
+                            <p class="text-gray-600 text-sm">${item.details}</p>
                         </div>
                     </div>
-                    <button class="view-details-btn mt-4 bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600 transition duration-300 text-sm font-semibold self-start" data-item-id="${item.id}">View Details</button>
-                `;
-                container.appendChild(card);
-            });
-
-            document.querySelectorAll('#daily-tasks-container .view-details-btn').forEach(button => {
-                button.addEventListener('click', (event) => {
-                    const itemId = event.target.dataset.itemId;
-                    const detailsDiv = document.getElementById(`details-${itemId}`);
-                    detailsDiv.classList.toggle('expanded');
-                    if (detailsDiv.classList.contains('expanded')) {
-                        event.target.textContent = 'Hide Details';
-                    } else {
-                        event.target.textContent = 'View Details';
-                    }
-                });
-            });
+                     <button class="expand-button mt-4 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition duration-300 text-sm font-semibold self-start" data-target="details-${item.id}">View Details</button>
+                </div>
+            `).join('');
         }
 
         document.addEventListener('DOMContentLoaded', () => {
             renderContributions();
             renderDailyTasks();
 
-            const navLinks = document.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('section');
+            document.body.addEventListener('click', (event) => {
+                const button = event.target.closest('.expand-button');
+                if (button) {
+                    const targetId = button.dataset.target;
+                    const content = document.getElementById(targetId);
+                    content.classList.toggle('expanded');
+                    button.textContent = content.classList.contains('expanded') ? 'Hide Details' : 'View Details';
+                }
+            });
 
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.3 // Adjust threshold as needed
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        navLinks.forEach(link => {
-                            link.classList.remove('active-nav');
-                            if (link.getAttribute('href').substring(1) === entry.target.id) {
-                                link.classList.add('active-nav');
-                            }
-                        });
+                        entry.target.classList.add('visible');
                     }
                 });
-            }, observerOptions);
+            }, { threshold: 0.1 });
 
-            sections.forEach(section => {
-                observer.observe(section);
-            });
+            revealElements.forEach(el => revealObserver.observe(el));
         });
     </script>
 </body>
 </html>
+
